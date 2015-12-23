@@ -1,0 +1,14 @@
+resources:
+  update-on-startup: true
+
+---
+spring:
+  profiles: dev
+
+---
+spring:
+  profiles: test
+
+---
+spring:
+  profiles: prod

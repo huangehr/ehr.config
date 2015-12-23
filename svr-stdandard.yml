@@ -1,0 +1,14 @@
+standard-svr:
+  schema-storage-path: "d:/"
+
+---
+spring:
+  profiles: dev
+
+---
+spring:
+  profiles: test
+
+---
+spring:
+  profiles: prod
