@@ -1,4 +1,6 @@
-
+#用户默认密码
+user:
+  default-password: 123456
 
 ---
 spring:

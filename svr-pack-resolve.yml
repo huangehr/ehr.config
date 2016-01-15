@@ -1,0 +1,119 @@
+data-source:
+  driver-class-name: com.mysql.jdbc.Driver
+  initialize-size: 1
+  max-total: 20
+  max-idle: 10
+  min-idle: 1
+  validation-query: SELECT 1
+  test-on-borrow: true
+  remove-abandoned-timeout: 55
+
+hibernate:
+  dialect: org.hibernate.dialect.MySQL5Dialect
+
+redis:
+  connection-factory:
+    port: 6379
+
+  pool:
+    max-total: 10
+    max-idle: 5
+    min-idle: 3
+
+fast-dfs:
+  pool:
+    init-size: 5
+    max-size: 20
+    wait-time: 500
+
+  connect-timeout: 2
+  network-timeout: 30
+  fast-dfs:
+    charset: ISO8859-1
+
+  http:
+    tracker-http-port: 80
+    anti-steal-token: no
+    secret-key: FastDFS1234567890
+
+solr:
+  zkClientTimeout: 10000
+  zkConnectTimeout: 10000
+
+#error code and message
+
+---
+spring:
+  profiles: dev
+
+data-source:
+  url: jdbc:mysql://192.168.1.220:3306/healtharchive?useUnicode=true&characterEncoding=UTF-8
+  user-name: ha
+  password: ha
+
+hibernate:
+  show-sql: true
+  format-sql: true
+
+redis:
+  connection-factory:
+    host-name: 172.19.103.47
+
+fast-dfs:
+  tracker-server: 172.19.103.54:22122
+
+solr:
+  server: http://172.19.103.10:8983/solr
+  zookeeper: host-172-17-110-23,host-172-17-110-27,host-172-17-110-26:2181/solr
+
+---
+spring:
+  profiles: test
+
+data-source:
+  url: jdbc:mysql://172.19.103.50:3306/healtharchive?useUnicode=true&characterEncoding=UTF-8
+  username: fujian
+  password: fujian
+
+hibernate:
+  hibernate-properties:
+    hibernate:
+      show-sql: true
+      format-sql: true
+
+redis:
+  connection-factory:
+    host-name: 172.17.110.68
+
+fast-dfs:
+  tracker-server: 172.19.103.13:22122
+
+solr:
+  server: http://172.19.103.10:8983/solr
+  zookeeper: host-172-17-110-23,host-172-17-110-27,host-172-17-110-26:2181/solr
+
+---
+spring:
+  profiles: prod
+
+data-source:
+  url: jdbc:mysql://11.1.2.5:3306/healtharchive?useUnicode=true&amp;characterEncoding=UTF-8
+  username: ha
+  password: jkzlxm
+
+hibernate:
+  hibernate-properties:
+    hibernate:
+      show-sql: false
+      format-sql: false
+
+redis:
+  connection-factory:
+    host-name: 11.1.2.20
+
+fast-dfs:
+  tracker-server: 11.1.2.9:22122
+
+solr:
+  server: http://172.19.103.10:8983/solr
+  zookeeper: host-172-17-110-23,host-172-17-110-27,host-172-17-110-26:2181/solr

@@ -1,4 +1,9 @@
+quartz:
+  auto-startup: false
 
+#应用部署所在区域
+deploy:
+  region: 3502
 
 ---
 spring:

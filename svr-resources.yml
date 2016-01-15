@@ -1,5 +1,4 @@
-resources:
-  update-on-startup: true
+
 
 ---
 spring:
