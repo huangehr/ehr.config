@@ -1,6 +1,3 @@
-standard-svr:
-  schema-storage-path: "d:/"
-
 ---
 spring:
   profiles: dev
