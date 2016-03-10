@@ -39,6 +39,7 @@ data-source:
   user-name: yuhaihua
   password: yuhaihua
 
+
 hibernate:
   hibernate-properties:
     hibernate:
