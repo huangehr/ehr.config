@@ -11,6 +11,23 @@ data-source:
 hibernate:
   dialect: org.hibernate.dialect.MySQL5Dialect
 
+fast-dfs:
+  pool:
+    init-size: 5
+    max-size: 20
+    wait-time: 500
+
+  connect-timeout: 2
+  network-timeout: 30
+  fast-dfs:
+    charset: ISO8859-1
+  tracker-server: l27.0.0.1
+
+  http:
+    tracker-http-port: 80
+    anti-steal-token: no
+    secret-key: FastDFS1234567890
+
 
 ---
 spring:
@@ -24,6 +41,9 @@ data-source:
 hibernate:
   show-sql: true
   format-sql: true
+
+fast-dfs:
+  tracker-server: 172.19.103.54:22122
 
 
 ---
@@ -40,6 +60,9 @@ hibernate:
     hibernate:
       show-sql: true
       format-sql: true
+
+fast-dfs:
+  tracker-server: 172.19.103.54:22122
 
 ---
 spring:
