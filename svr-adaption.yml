@@ -44,7 +44,9 @@ data-source:
 ---
 spring:
   profiles: test
-
+hibernate:
+  show-sql: true
+  format-sql: true
 fast-dfs:
   tracker-server: 172.19.103.54:22122
 
