@@ -26,8 +26,6 @@ fast-dfs:
     anti-steal-token: no
     secret-key: FastDFS1234567890
 
-
-
 ---
 spring:
   profiles: dev
@@ -53,10 +51,8 @@ data-source:
   url: jdbc:mysql://192.168.1.220:3306/healtharchive?useUnicode=true&characterEncoding=UTF-8
   user-name: ha
   password: ha
-
 fast-dfs:
   tracker-server: 172.19.103.54:22122
-
 
 ---
 spring:
@@ -66,6 +62,5 @@ data-source:
   url: jdbc:mysql://192.168.1.220:3306/healtharchive?useUnicode=true&characterEncoding=UTF-8
   user-name: ha
   password: ha
-
 fast-dfs:
   tracker-server: 172.19.103.54:22122
