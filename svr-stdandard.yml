@@ -56,6 +56,7 @@ hibernate:
   show-sql: true
   format-sql: true
 
+
 ---
 spring:
   profiles: prod
