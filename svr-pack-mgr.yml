@@ -51,9 +51,9 @@ spring:
   profiles: test
 
 data-source:
-  url: jdbc:mysql://192.168.1.220:3306/healtharchive?useUnicode=true&characterEncoding=UTF-8
-  user-name: ha
-  password: ha
+  url: jdbc:mysql://172.19.103.50:3306/healtharchive?useUnicode=true&characterEncoding=UTF-8
+  user-name: weifuwu
+  password: weifuwu
 
 hibernate:
   hibernate-properties:
@@ -62,7 +62,7 @@ hibernate:
       format-sql: true
 
 fast-dfs:
-  tracker-server: 172.19.103.54:22122
+  tracker-server: 172.19.103.13:22122
 
 ---
 spring:
