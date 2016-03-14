@@ -67,15 +67,14 @@ fast-dfs:
 ---
 spring:
   profiles: prod
+hibernate:
+  show-sql: true
+  format-sql: true
+fast-dfs:
+  tracker-server: 11.1.2.9:22122
 
 data-source:
   url: jdbc:mysql://11.1.2.5:3306/healtharchive?useUnicode=true&amp;characterEncoding=UTF-8
   user-name: ha
   password: jkzlxm
-
-hibernate:
-  hibernate-properties:
-    hibernate:
-      show-sql: false
-      format-sql: false
 
