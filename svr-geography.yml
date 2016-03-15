@@ -32,8 +32,8 @@ spring:
 
 data-source:
   url: jdbc:mysql://172.19.103.50:3306/healtharchive?useUnicode=true&characterEncoding=UTF-8
-  username: fujian
-  password: fujian
+  user-name: weifuwu
+  password: weifuwu
 
 hibernate:
   hibernate-properties:
@@ -45,14 +45,12 @@ hibernate:
 spring:
   profiles: prod
 
+hibernate:
+  show-sql: true
+  format-sql: true
+
 data-source:
   url: jdbc:mysql://11.1.2.5:3306/healtharchive?useUnicode=true&amp;characterEncoding=UTF-8
-  username: ha
+  user-name: ha
   password: jkzlxm
-
-hibernate:
-  hibernate-properties:
-    hibernate:
-      show-sql: false
-      format-sql: false
 
