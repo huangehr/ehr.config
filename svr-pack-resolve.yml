@@ -40,6 +40,9 @@ solr:
   zkClientTimeout: 10000
   zkConnectTimeout: 10000
 
+profile:
+  data-buffer-size: 200   # 记录缓冲区数量
+
 #error code and message
 
 ---
