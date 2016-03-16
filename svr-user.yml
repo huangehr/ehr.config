@@ -1,6 +1,6 @@
 ﻿#用户默认密码
-user:
-  default-password: 123456
+default:
+  password: 123456
 
 data-source:
   driver-class-name: com.mysql.jdbc.Driver

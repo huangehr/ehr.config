@@ -18,37 +18,37 @@ spring:
 micro:
   service:
     adaption:
-      address-str: http://localhost:
+      address-str: http://localhost
       port: 10150
     app:
-      address-str: http://localhost:
+      address-str: http://localhost
       port: 10160
     dict:
-      address-str: http://localhost:
+      address-str: http://localhost
       port: 10050
     esb:
-      address-str: http://localhost:
+      address-str: http://localhost
       port: 10130
     geography:
-      address-str: http://localhost:
+      address-str: http://localhost
       port: 10090
     organization:
-      address-str: http://localhost:
+      address-str: http://localhost
       port: 10070
     package:
-      address-str: http://localhost:
+      address-str: http://localhost
       port: 6010
     patient:
-      address-str: http://localhost:
+      address-str: http://localhost
       port: 10100
     security:
-      address-str: http://localhost:
+      address-str: http://localhost
       port: 10110
     standard:
-      address-str: http://localhost:
+      address-str: http://localhost
       port: 10040
     user:
-      address-str: http://localhost:
+      address-str: http://localhost
       port: 10120
 
 
@@ -59,37 +59,37 @@ spring:
 micro:
   service:
     adaption:
-      address-str: http://172.19.103.73:
+      address-str: http://172.19.103.73
       port: 10150
     app:
-      address-str: http://172.19.103.73:
+      address-str: http://172.19.103.73
       port: 10160
     dict:
-      address-str: http://172.19.103.74:
+      address-str: http://172.19.103.74
       port: 10050
     esb:
-      address-str: http://172.19.103.74:
+      address-str: http://172.19.103.74
       port: 10130
     geography:
-      address-str: http://172.19.103.74:
+      address-str: http://172.19.103.74
       port: 10090
     organization:
-      address-str: http://172.19.103.74:
+      address-str: http://172.19.103.74
       port: 10070
     package:
-      address-str: http://172.19.103.74:
+      address-str: http://172.19.103.74
       port: 6010
     patient:
-      address-str: http://172.19.103.75:
+      address-str: http://172.19.103.75
       port: 10100
     security:
-      address-str: http://172.19.103.75:
+      address-str: http://172.19.103.75
       port: 10110
     standard:
-      address-str: http://172.19.103.75:
+      address-str: http://172.19.103.75
       port: 10040
     user:
-      address-str: http://172.19.103.75:
+      address-str: http://172.19.103.75
       port: 10120
 
 ---
