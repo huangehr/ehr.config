@@ -18,10 +18,10 @@ spring:
 micro:
   service:
     adaption:
-      address-str: http://localhost:
+      address-str: http://localhost\:
       port: 10150
     app:
-      address-str: http://localhost:
+      address-str: http://localhost\:
       port: 10160
     dict:
       address-str: http://localhost:
