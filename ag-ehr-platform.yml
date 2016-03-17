@@ -1,10 +1,10 @@
 
 redis:
- pool:
+  pool:
     min-idle: 5
     max-idle: 10
     max-total: 15
- connection-factory:
+  connection-factory:
     host-name: 172.17.110.68
- connection-factory:
+  connection-factory:
     port: 6379
