@@ -1,5 +1,4 @@
-
-redis:
+rediss:
   connection-factory:
     host-name: 172.17.110.68
   connection-factory:
