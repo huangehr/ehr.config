@@ -1,3 +1,4 @@
+
 redis:
   pool:
     min-idle: 5
