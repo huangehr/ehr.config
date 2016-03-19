@@ -1,11 +1,7 @@
 spring:
   jpa:
     database-platform: org.hibernate.dialect.MySQL5Dialect
-    hibernate:
-      dialect: org.hibernate.dialect.MySQL5Dialect
-
-quartz:
-  auto-startup: false
+    hibernate.dialect: org.hibernate.dialect.MySQL5Dialect
 
 #应用部署所在区域
 deploy:

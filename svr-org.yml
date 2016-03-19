@@ -1,5 +1,4 @@
-﻿
-data-source:
+﻿data-source:
   driver-class-name: com.mysql.jdbc.Driver
   initialize-size: 1
   max-total: 20
@@ -8,10 +7,6 @@ data-source:
   validation-query: SELECT 1
   test-on-borrow: true
   remove-abandoned-timeout: 55
-
-hibernate:
-  dialect: org.hibernate.dialect.MySQL5Dialect
-
 
 ---
 spring:
@@ -22,11 +17,6 @@ data-source:
   user-name: ha
   password: ha
 
-hibernate:
-  show-sql: true
-  format-sql: true
-
-
 ---
 spring:
   profiles: test
@@ -36,19 +26,9 @@ data-source:
   user-name: weifuwu
   password: weifuwu
 
-hibernate:
-  hibernate-properties:
-    hibernate:
-      show-sql: true
-      format-sql: true
-
 ---
 spring:
   profiles: prod
-
-hibernate:
-  show-sql: true
-  format-sql: true
 
 data-source:
   url: jdbc:mysql://11.1.2.5:3306/healtharchive?useUnicode=true&amp;characterEncoding=UTF-8
