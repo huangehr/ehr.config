@@ -1,3 +1,8 @@
+logging:
+  level:
+    com:
+      netflix: DEBUG
+
 spring:
   jpa:
     database-platform: org.hibernate.dialect.MySQL5Dialect
@@ -7,50 +12,27 @@ spring:
 deploy:
   region: 3502
 
-#微服务列表
-micro-service:
-  adaption: svr-adaption
-  application: svr-app
-  configuration: svr-configuration
-  dict: svr-dict
-  discovery: svr-discovery
-  esb: svr-dsb
-  geography: svr-geography
-  health-profiles: svr-health-profiles
-  organization: svr-org
-  package: svr-pack-mgr
-  package-resolve: svr-pack-resolve
-  patient: svr-patient
-  security: svr-security
-  standard: svr-standard
-  user: svr-user
+#服务端口，以10100开始，每个服务间隔为10，当前最大：10180
+svr-adaption.ribbon.listOfServers:           ${servers.server1}:10150
+svr-app.ribbon.listOfServers:                 ${servers.server1}:10160
+svr-configuration.ribbon.listOfServers:      ${servers.server1}:1221
+svr-dict.ribbon.listOfServers:                ${servers.server1}:10050
+svr-discovelry.ribbon.listOfServers:         ${servers.server1}:8761
+svr-esb.ribbon.listOfServers:                 ${servers.server1}:10130
+svr-geography.ribbon.listOfServers:          ${servers.server1}:10090
+svr-health-profiles.ribbon.listOfServers:   ${servers.server1}:9009
+svr-organization.ribbon.listOfServers:       ${servers.server1}:10070
+svr-pack-mgr.ribbon.listOfServers:           ${servers.server1}:10140
+svr-pack-resolve.ribbon.listOfServers:      ${servers.server1}:10170
+svr-patient.ribbon.listOfServers:            ${servers.server1}:10100
+svr-security.ribbon.listOfServers:           ${servers.server1}:10110
+svr-special-dict.ribbon.listOfServers:      ${servers.server1}:10180
+svr-standard.ribbon.listOfServers:           ${servers.server1}:10040
+svr-user.ribbon.listOfServers:               ${servers.server1}:10120
 
 ---
 spring:
   profiles: dev
-
-#服务器IP列表
-servers:
-  server1: http://localhost
-  server2: http://localhost
-
-#服务端口，以10100开始，每个服务间隔为10，当前最大：10180
-svr-adaption.ribbon.listOfServers: ${servers.server1}:10150
-svr-app.ribbon.listOfServers: ${servers.server1}:10160
-svr-configuration.ribbon.listOfServers: ${servers.server1}:1221
-svr-dict.ribbon.listOfServers: ${servers.server1}:10050
-svr-discovelry.ribbon.listOfServers: ${servers.server1}:8761
-svr-esb.ribbon.listOfServers: ${servers.server1}:10130
-svr-geography.ribbon.listOfServers: ${servers.server1}:10090
-svr-health-profiles.ribbon.listOfServers: ${servers.server1}:9009
-svr-organization.ribbon.listOfServers: ${servers.server1}:10070
-svr-pack-mgr.ribbon.listOfServers: ${servers.server1}:10140
-svr-pack-resolve.ribbon.listOfServers: ${servers.server1}:10170
-svr-patient.ribbon.listOfServers: ${servers.server1}:10100
-svr-security.ribbon.listOfServers: ${servers.server1}:10110
-svr-special-dict.ribbon.listOfServers: ${servers.server1}:10180
-svr-standard.ribbon.listOfServers: ${servers.server1}:10040
-svr-user.ribbon.listOfServers: ${servers.server1}:10120
 
 ---
 spring:
