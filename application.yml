@@ -3,6 +3,10 @@ logging:
     com:
       netflix: DEBUG
 
+eureka:
+  instance:
+    prefer-ip-address: true
+
 spring:
   jpa:
     database-platform: org.hibernate.dialect.MySQL5Dialect
