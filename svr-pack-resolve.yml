@@ -8,9 +8,6 @@ data-source:
   test-on-borrow: true
   remove-abandoned-timeout: 55
 
-hibernate:
-  dialect: org.hibernate.dialect.MySQL5Dialect
-
 redis:
   connection-factory:
     port: 6379
@@ -54,10 +51,6 @@ data-source:
   user-name: ha
   password: ha
 
-hibernate:
-  show-sql: true
-  format-sql: true
-
 redis:
   connection-factory:
     host-name: 172.19.103.47
@@ -78,12 +71,6 @@ data-source:
   username: fujian
   password: fujian
 
-hibernate:
-  hibernate-properties:
-    hibernate:
-      show-sql: true
-      format-sql: true
-
 redis:
   connection-factory:
     host-name: 172.17.110.68
@@ -103,12 +90,6 @@ data-source:
   url: jdbc:mysql://11.1.2.5:3306/healtharchive?useUnicode=true&amp;characterEncoding=UTF-8
   username: ha
   password: jkzlxm
-
-hibernate:
-  hibernate-properties:
-    hibernate:
-      show-sql: false
-      format-sql: false
 
 redis:
   connection-factory:

@@ -12,10 +12,6 @@ data-source:
   test-on-borrow: true
   remove-abandoned-timeout: 55
 
-hibernate:
-  dialect: org.hibernate.dialect.MySQL5Dialect
-
-
 ---
 spring:
   profiles: dev
@@ -25,11 +21,6 @@ data-source:
   user-name: ha
   password: ha
 
-hibernate:
-  show-sql: true
-  format-sql: true
-
-
 ---
 spring:
   profiles: test
@@ -38,13 +29,6 @@ data-source:
   url: jdbc:mysql://172.19.103.50:3306/healtharchive?useUnicode=true&characterEncoding=UTF-8
   user-name: weifuwu
   password: weifuwu
-
-
-hibernate:
-  hibernate-properties:
-    hibernate:
-      show-sql: true
-      format-sql: true
 
 ---
 spring:

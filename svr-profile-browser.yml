@@ -8,9 +8,6 @@ data-source:
   test-on-borrow: true
   remove-abandoned-timeout: 55
 
-hibernate:
-  dialect: org.hibernate.dialect.MySQL5Dialect
-
 redis:
   pool:
     max-total: 10
@@ -23,7 +20,6 @@ solr:
 
 #error code and message
 
-
 ---
 spring:
   profiles: dev
@@ -32,10 +28,6 @@ data-source:
   url: jdbc:mysql://192.168.1.220:3306/healtharchive?useUnicode=true&characterEncoding=UTF-8
   user-name: ha
   password: ha
-
-hibernate:
-  show_sql: true
-  format_sql: true
 
 redis:
   connection-factory:
@@ -54,10 +46,6 @@ data-source:
   username: fujian
   password: fujian
 
-hibernate:
-  show_sql: true
-  format_sql: true
-
 redis:
   connection-factory:
     host-name: 172.17.110.68
@@ -74,10 +62,6 @@ data-source:
   url: jdbc:mysql://11.1.2.5:3306/healtharchive?useUnicode=true&amp;characterEncoding=UTF-8
   username: ha
   password: jkzlxm
-
-hibernate:
-  show_sql: false
-  format_sql: false
 
 redis:
   connection-factory:
