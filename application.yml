@@ -21,7 +21,6 @@ ehr.common.invalid.parameter: 参数解析错误
 ehr.common.query.not.found: 不存在该对象
 ehr.common.repeat.code: 代码重复
 
-
 #应用部署所在区域
 deploy:
   region: 3502
@@ -29,6 +28,14 @@ deploy:
 #用户默认密码
 default:
   password: 123456
+
+#应用不要使用虚拟网卡
+spring:
+  cloud:
+    inetutils:
+      ignoredInterfaces:
+        - docker0
+        - veth.*
 
 endpoints:
   restart:

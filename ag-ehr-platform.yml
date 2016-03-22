@@ -1,4 +1,8 @@
-
+zuul:
+  prefix: /esb/**
+  routes:
+    - /esb/**
+    
 ---
 spring:
   profiles: dev
