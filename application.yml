@@ -34,6 +34,11 @@ svr-standard.server.port: 10040
 svr-user.server.port: 10120
 ag-ehr-platform.server.port: 443
 
+#错误消息
+ehr.common.invalid.parameter: 参数解析错误
+ehr.common.query.not.found: 不存在该对象
+ehr.common.repeat.code: 代码重复
+
 ---
 spring:
   profiles: dev
