@@ -17,31 +17,43 @@ deploy:
   region: 3502
 
 #服务端口，以10100开始，每个服务间隔为10，当前最大：10180
-#svr-adaption.ribbon.listOfServers:           ${servers.server1}:10150
-#svr-app.ribbon.listOfServers:                 ${servers.server1}:10160
-#svr-configuration.ribbon.listOfServers:      ${servers.server1}:1221
-#svr-dict.ribbon.listOfServers:                ${servers.server1}:10050
-#svr-discovelry.ribbon.listOfServers:         ${servers.server1}:8761
-#svr-esb.ribbon.listOfServers:                 ${servers.server1}:10130
-#svr-geography.ribbon.listOfServers:          ${servers.server1}:10090
-#svr-health-profiles.ribbon.listOfServers:   ${servers.server1}:9009
-#svr-organization.ribbon.listOfServers:       ${servers.server1}:10070
-#svr-pack-mgr.ribbon.listOfServers:           ${servers.server1}:10140
-#svr-pack-resolve.ribbon.listOfServers:      ${servers.server1}:10170
-#svr-patient.ribbon.listOfServers:            ${servers.server1}:10100
-#svr-security.ribbon.listOfServers:           ${servers.server1}:10110
-#svr-special-dict.ribbon.listOfServers:      ${servers.server1}:10180
-#svr-standard.ribbon.listOfServers:           ${servers.server1}:10040
-#svr-user.ribbon.listOfServers:               ${servers.server1}:10120
+svr-adaption.server.port: 10150
+svr-app.server.port: 10160
+svr-configuration.server.port: 1221
+svr-dict.server.port: 10050
+svr-esb.server.port: 10130
+svr-geography.server.port: 10090
+svr-health-profiles.server.port: 9009
+svr-organization.server.port: 10070
+svr-pack-mgr.server.port: 10140
+svr-pack-resolve.server.port: 10170
+svr-patient.server.port: 10100
+svr-security.server.port: 10110
+svr-special-dict.server.port: 10180
+svr-standard.server.port: 10040
+svr-user.server.port: 10120
+ag-ehr-platform.server.port: 443
 
 ---
 spring:
   profiles: dev
 
+eureka:
+  instance:
+    ipAddress: 127.0.0.1
+
 ---
 spring:
   profiles: test
 
+eureka:
+  instance:
+    ipAddress: 172.19.103.73
+
 ---
 spring:
   profiles: prod
+
+eureka:
+  instance:
+    ipAddress: 11.1.2.21
