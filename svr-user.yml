@@ -1,8 +1,4 @@
-﻿#用户默认密码
-default:
-  password: 123456
-
-data-source:
+﻿data-source:
   driver-class-name: com.mysql.jdbc.Driver
   initialize-size: 1
   max-total: 20
@@ -42,13 +38,3 @@ data-source:
   url: jdbc:mysql://11.1.2.5:3306/healtharchive?useUnicode=true&amp;characterEncoding=UTF-8
   user-name: ha
   password: jkzlxm
-
-
----
-spring:
-  profiles: ha
-
-data-source:
-  url: jdbc:mysql://192.168.1.220:3306/healtharchive?useUnicode=true&characterEncoding=UTF-8
-  user-name: ha
-  password: ha

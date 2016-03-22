@@ -7,8 +7,6 @@ data-source:
   validation-query: SELECT 1
   test-on-borrow: true
   remove-abandoned-timeout: 55
-hibernate:
-  dialect: org.hibernate.dialect.MySQL5Dialect
 
 fast-dfs:
   pool:
@@ -25,10 +23,6 @@ fast-dfs:
     tracker-http-port: 80
     anti-steal-token: no
     secret-key: FastDFS1234567890
-
-ehr.common.invalid.parameter: 参数解析错误
-ehr.common.query.not.found: 不存在该对象
-ehr.common.repeat.code: 代码重复
 
 ---
 spring:
@@ -68,14 +62,3 @@ data-source:
   url: jdbc:mysql://11.1.2.5:3306/healtharchive?useUnicode=true&amp;characterEncoding=UTF-8
   user-name: ha
   password: jkzlxm
-
-
----
-spring:
-  profiles: ha
-
-data-source:
-  url: jdbc:mysql://192.168.1.220:3306/healtharchive?useUnicode=true&characterEncoding=UTF-8
-  user-name: ha
-  password: ha
-

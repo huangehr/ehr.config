@@ -18,8 +18,6 @@ solr:
   zkClientTimeout: 10000
   zkConnectTimeout: 10000
 
-#error code and message
-
 ---
 spring:
   profiles: dev
