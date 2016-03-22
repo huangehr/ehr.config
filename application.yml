@@ -1,7 +1,6 @@
 #服务端口，以10100开始，每个服务间隔为10，若有新服务，请更新最大端口号。当前最大：10180
 svr-adaption.server.port: 10150
 svr-app.server.port: 10160
-svr-configuration.server.port: 1221
 svr-dict.server.port: 10050
 svr-esb.server.port: 10130
 svr-geography.server.port: 10090
@@ -21,6 +20,7 @@ ag-admin.server.port: 0
 ehr.common.invalid.parameter: 参数解析错误
 ehr.common.query.not.found: 不存在该对象
 ehr.common.repeat.code: 代码重复
+
 
 #应用部署所在区域
 deploy:
@@ -54,7 +54,7 @@ eureka:
 
   client:
     serviceUrl:
-      defaultZone: http://user:eureka@${eureka-server-ip}/eureka/
+      defaultZone: http://${eureka-server-ip}/eureka/
 
 ---
 spring:
