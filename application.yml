@@ -29,7 +29,14 @@ deploy:
 default:
   password: 123456
 
-
+#屏蔽虚拟网卡IP
+spring:
+  cloud:
+    inetutils:
+      ignoredInterfaces:
+        - docker0
+        - veth.*
+        - vmnet.*
 
 endpoints:
   restart:
