@@ -29,13 +29,7 @@ deploy:
 default:
   password: 123456
 
-#应用不要使用虚拟网卡
-spring:
-  cloud:
-    inetutils:
-      ignoredInterfaces:
-        - docker0
-        - veth.*
+
 
 endpoints:
   restart:
