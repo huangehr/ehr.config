@@ -15,7 +15,7 @@ svr-special-dict.server.port: 10180
 svr-standard.server.port: 10040
 svr-user.server.port: 10120
 ag-ehr-platform.server.port: 443
-ag-admin.server.port: 0
+ag-admin.server.port: 10000
 
 #错误消息
 ehr.common.invalid.parameter: 参数解析错误
