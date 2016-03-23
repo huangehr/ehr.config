@@ -1,8 +1,12 @@
+#zuul:
+#  prefix: /esb/**
+#  routes:
+#    - /esb/**
 zuul:
-  prefix: /esb/**
+  ignored-services: "*"
   routes:
-    - /esb/**
-    
+    svr-pack-mgr: /api/v1.0/packages
+
 ---
 spring:
   profiles: dev
