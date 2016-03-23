@@ -54,7 +54,7 @@ spring:
 logging:
   level:
     com:
-      netflix: DEBUG
+      netflix: INFO
 
 eureka:
   instance:
