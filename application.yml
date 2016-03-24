@@ -54,11 +54,7 @@ spring:
         - veth.*
         - vmnet.*
 
-#Each application use ip to register it in eureka, eureka host is defined in "eureka-server-ip"
 eureka:
-  instance:
-    prefer-ip-address: true
-
   client:
     serviceUrl:
       defaultZone: http://${eureka-server-ip}/eureka/
@@ -67,16 +63,34 @@ eureka:
 spring:
   profiles: dev
 
+#If true, each application use ip to register it in eureka, eureka host is defined in "eureka-server-ip".
+#else the server must have host map.
+eureka:
+  instance:
+    prefer-ip-address: false
+
 eureka-server-ip: 192.168.1.220:8761
 
 ---
 spring:
   profiles: test
 
+#If true, each application use ip to register it in eureka, eureka host is defined in "eureka-server-ip".
+#else the server must have host map.
+eureka:
+  instance:
+    prefer-ip-address: true
+
 eureka-server-ip: 172.19.103.73:8761
 
 ---
 spring:
   profiles: prod
+
+#If true, each application use ip to register it in eureka, eureka host is defined in "eureka-server-ip".
+#else the server must have host map.
+eureka:
+  instance:
+    prefer-ip-address: false
 
 eureka-server-ip: 11.1.2.21:8761
