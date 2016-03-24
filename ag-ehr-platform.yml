@@ -1,8 +1,14 @@
 zuul:
-  ignored-services: "*"
   routes:
-    svr-esb: /api/v1.0/esb/uploadLog
-    svr-pack-mgr: /api/v1.0/packages
+    packages:
+      path: /api/v1.0/packages
+      serviceId: svr-pack-mgr
+    json_package:
+      path: /api/v1.0/json_package
+      serviceId: svr-pack-mgr
+    uploadLog:
+      path: /api/v1.0/esb/uploadLog
+      serviceId: svr-esb
 
 ---
 spring:
