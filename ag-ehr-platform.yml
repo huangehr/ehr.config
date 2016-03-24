@@ -1,13 +1,9 @@
 zuul:
-  prefix: /esb/**
+  ignored-services: "*"
   routes:
-    - /esb/**
-    
-logging:
-  level:
-    com:
-      netflix: DEBUG
-      
+    svr-esb: /api/v1.0/esb/uploadLog
+    svr-pack-mgr: /api/v1.0/packages
+
 ---
 spring:
   profiles: dev
@@ -21,6 +17,8 @@ server:
     key-store-password: 123456
     key-password: 123456
 
+svr-package.ip-address: "http://localhost:10140"
+
 ---
 spring:
   profiles: test
@@ -32,6 +30,7 @@ server:
     key-store-password: 123456
     key-password: 123456
 
+svr-package.ip-address: "http://172.19.103.73:10140"
 ---
 spring:
   profiles: prod
@@ -40,4 +39,6 @@ server:
   ssl:
     key-store-password: 123456
     key-password: 123456
+
+svr-package.ip-address: "http://11.1.2.21:10140"
 
