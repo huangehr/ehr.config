@@ -3,6 +3,11 @@ zuul:
   routes:
     - /esb/**
     
+logging:
+  level:
+    com:
+      netflix: DEBUG
+      
 ---
 spring:
   profiles: dev

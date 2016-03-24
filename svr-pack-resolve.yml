@@ -1,3 +1,8 @@
+logging:
+  level:
+    com:
+      netflix: DEBUG
+      
 data-source:
   driver-class-name: com.mysql.jdbc.Driver
   initialize-size: 1
@@ -8,14 +13,28 @@ data-source:
   test-on-borrow: true
   remove-abandoned-timeout: 55
 
-redis:
-  connection-factory:
-    port: 6379
+spring:
+  # REDIS
+  redis:
+    database: 0 # Database index used by the connection factory.
+    host: localhost # Redis server host.
+    port: 6379 # Redis server port.
+    password: # Login password of the redis server.
+    timeout: 0 # Connection timeout in milliseconds.
+    #sentinel:
+    #  master: # Name of Redis server.
+    #  nodes: # Comma-separated list of host:port pairs.
+    
+    pool:
+      max-active: 8 # Max number of connections that can be allocated by the pool at a given time. Use a negative value for no limit.
+      max-idle: 8 # Max number of "idle" connections in the pool. Use a negative value to indicate an unlimited number of idle connections.
+      max-wait: -1 # Maximum amount of time (in milliseconds) a connection allocation should block before throwing an exception when the pool is exhausted. Use a negative value to block indefinitely.
+      min-idle: 1 # Target for the minimum number of idle connections to maintain in the pool. This setting only has an effect if it is positive.
 
-  pool:
-    max-total: 10
-    max-idle: 5
-    min-idle: 3
+  # SOLR (SolrProperties)
+  data:
+    solr:
+      repositories.enabled: true # Enable Solr repositories.
 
 fast-dfs:
   pool:
@@ -33,10 +52,6 @@ fast-dfs:
     anti-steal-token: no
     secret-key: FastDFS1234567890
 
-solr:
-  zkClientTimeout: 10000
-  zkConnectTimeout: 10000
-
 profile:
   data-buffer-size: 200   # 记录缓冲区数量
 
@@ -46,58 +61,58 @@ profile:
 spring:
   profiles: dev
 
+  redis:
+    host: 172.19.103.47 # Redis server host.
+
+  data:
+    solr:
+      host: http://172.19.103.10:8983/solr # Solr host. Ignored if "zk-host" is set.
+      zk-host: host-172-17-110-23,host-172-17-110-27,host-172-17-110-26:2181/solr # ZooKeeper host address in the form HOST:PORT.
+
 data-source:
   url: jdbc:mysql://192.168.1.220:3306/healtharchive?useUnicode=true&characterEncoding=UTF-8
   user-name: ha
   password: ha
 
-redis:
-  connection-factory:
-    host-name: 172.19.103.47
-
 fast-dfs:
   tracker-server: 172.19.103.54:22122
-
-solr:
-  server: http://172.19.103.10:8983/solr
-  zookeeper: host-172-17-110-23,host-172-17-110-27,host-172-17-110-26:2181/solr
 
 ---
 spring:
   profiles: test
+
+  redis:
+    host: 172.17.110.68 # Redis server host.
+
+  data:
+    solr:
+      host: http://172.19.103.10:8983/solr # Solr host. Ignored if "zk-host" is set.
+      zk-host: host-172-17-110-23,host-172-17-110-27,host-172-17-110-26:2181/solr # ZooKeeper host address in the form HOST:PORT.
 
 data-source:
   url: jdbc:mysql://172.19.103.50:3306/healtharchive?useUnicode=true&characterEncoding=UTF-8
   username: fujian
   password: fujian
 
-redis:
-  connection-factory:
-    host-name: 172.17.110.68
-
 fast-dfs:
   tracker-server: 172.19.103.13:22122
-
-solr:
-  server: http://172.19.103.10:8983/solr
-  zookeeper: host-172-17-110-23,host-172-17-110-27,host-172-17-110-26:2181/solr
 
 ---
 spring:
   profiles: prod
+
+  redis:
+    host: 11.1.2.20 # Redis server host.
+
+  data:
+    solr:
+      host: http://172.19.103.10:8983/solr # Solr host. Ignored if "zk-host" is set.
+      zk-host: host-172-17-110-23,host-172-17-110-27,host-172-17-110-26:2181/solr # ZooKeeper host address in the form HOST:PORT.
 
 data-source:
   url: jdbc:mysql://11.1.2.5:3306/healtharchive?useUnicode=true&amp;characterEncoding=UTF-8
   username: ha
   password: jkzlxm
 
-redis:
-  connection-factory:
-    host-name: 11.1.2.20
-
 fast-dfs:
   tracker-server: 11.1.2.9:22122
-
-solr:
-  server: http://172.19.103.10:8983/solr
-  zookeeper: host-172-17-110-23,host-172-17-110-27,host-172-17-110-26:2181/solr

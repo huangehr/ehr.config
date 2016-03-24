@@ -1,3 +1,8 @@
+logging:
+  level:
+    com:
+      netflix: DEBUG
+
 data-source:
   driver-class-name: com.mysql.jdbc.Driver
   initialize-size: 1

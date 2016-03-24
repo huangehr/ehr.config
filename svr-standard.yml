@@ -1,3 +1,8 @@
+logging:
+  level:
+    com:
+      netflix: DEBUG
+      
 common.query.not.found: 该{0}不存在：{1}
 common.miss.parameter: 参数不能为空：{0}！
 common.notfound.entity: 没有找到{0}实体：{}

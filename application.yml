@@ -1,5 +1,5 @@
 
-#服务端口，以10100开始，每个服务间隔为10，若有新服务，请更新最大端口号。当前最大：10180
+#Application port, since 10100, 10 per step. Update max port if new application created. Current max: 10180
 svr-adaption.server.port: 10150
 svr-app.server.port: 10160
 svr-dict.server.port: 10050
@@ -17,19 +17,21 @@ svr-user.server.port: 10120
 ag-ehr-platform.server.port: 443
 ag-admin.server.port: 10000
 
-#错误消息
+#Application error definition, this file define common errors,
+#if the error is used only in your application, please define it in your application configuration file.
 ehr.common.invalid.parameter: 参数解析错误
 ehr.common.query.not.found: 不存在该对象
 ehr.common.repeat.code: 代码重复
 
-#应用部署所在区域
+#The region code, where application deployed
 deploy:
   region: 3502
 
-#用户默认密码
+#EHR platform user default password
 default:
   password: 123456
 
+#Application acuator
 endpoints:
   restart:
     enabled: true
@@ -38,12 +40,13 @@ endpoints:
   health:
     sensitive: false
 
+#JPA config for MySQL
 spring:
   jpa:
     database-platform: org.hibernate.dialect.MySQL5Dialect
     hibernate.dialect: org.hibernate.dialect.MySQL5Dialect
 
-  #屏蔽虚拟网卡IP
+  #block the inet address of nic, virtual card and so on. Need spring version: Brixton M5
   cloud:
     inetutils:
       ignoredInterfaces:
@@ -51,11 +54,7 @@ spring:
         - veth.*
         - vmnet.*
 
-logging:
-  level:
-    com:
-      netflix: DEBUG
-
+#Each application use ip to register it in eureka, eureka host is defined in "eureka-server-ip"
 eureka:
   instance:
     prefer-ip-address: true
