@@ -13,6 +13,10 @@ data-source:
   test-on-borrow: true
   remove-abandoned-timeout: 55
 
+eureka:
+  instance:
+    prefer-ip-address: false
+
 ---
 spring:
   profiles: dev
