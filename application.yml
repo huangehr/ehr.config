@@ -58,7 +58,6 @@ spring:
 eureka:
   instance:
     prefer-ip-address: true
-    status-page-url: http://${server.address}:${server.port}/swagger-ui.html
 
   client:
     serviceUrl:
