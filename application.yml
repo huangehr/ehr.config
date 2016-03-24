@@ -1,5 +1,6 @@
 
 #Application port, since 10100, 10 per step. Update max port if new application created. Current max: 10180
+ag-admin.server.port: 8080
 svr-adaption.server.port: 10150
 svr-app.server.port: 10160
 svr-dict.server.port: 10050
