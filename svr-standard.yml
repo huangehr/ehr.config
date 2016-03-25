@@ -28,9 +28,7 @@ fast-dfs:
     wait-time: 500
   connect-timeout: 2
   network-timeout: 30
-  fast-dfs:
-    charset: ISO8859-1
-  tracker-server: l27.0.0.1
+  charset: ISO8859-1
 
   http:
     tracker-http-port: 80
