@@ -60,7 +60,7 @@ data-source:
   password: weifuwu
 
 fast-dfs:
-  tracker-server: 172.19.103.54:22122
+  tracker-server: 172.19.103.13:22122
   
 ---
 spring:
