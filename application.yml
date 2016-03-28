@@ -9,19 +9,20 @@ default:
 redis-key-schema:
   std:
     version-table-prefix: std_cda_versions
-    version-name-column: name
+    version-name: name
 
     data-set-table-prefix: std_data_set_
-    data-set-code-column: code
+    data-set-code: code
 
     meta-data-table-prefix: std_meta_data_
-    meta-data-dict-id-column: dict_id
+    meta-data-dict-id: dict_id
+    meta-data-type: type
 
-    dict-entry-table: std_dictionary_entry_
-    dict-entry-value-column: value
+    dict-entry-table-prefix: std_dictionary_entry_
+    dict-entry-value: value
   org:
     table: organizations
-    name-column: name
+    name: name
 
 #Application error definition, this file define common errors,
 #if the error is used only in your application, please define it in your application configuration file.
