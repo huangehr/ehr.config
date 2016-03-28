@@ -1,3 +1,33 @@
+#The region code, where application deployed
+deploy:
+  region: 3502
+
+#EHR platform user default password
+default:
+  password: 123456
+
+redis-key-schema:
+  std:
+    version-table-prefix: std_cda_versions
+    version-name-column: name
+
+    data-set-table-prefix: std_data_set_
+    data-set-code-column: code
+
+    meta-data-table-prefix: std_meta_data_
+    meta-data-dict-id-column: dict_id
+
+    dict-entry-table: std_dictionary_entry_
+    dict-entry-value-column: value
+  org:
+    table: organizations
+    name-column: name
+
+#Application error definition, this file define common errors,
+#if the error is used only in your application, please define it in your application configuration file.
+ehr.common.invalid.parameter: 参数解析错误
+ehr.common.query.not.found: 不存在该对象
+ehr.common.repeat.code: 代码重复
 
 #Application port, since 10100, 10 per step. Update max port if new application created. Current max: 10180
 svr-adaption.server.port: 10150
@@ -17,20 +47,6 @@ svr-user.server.port: 10120
 ag-ehr-platform.server.port: 443
 ag-admin.server.port: 10000
 
-#Application error definition, this file define common errors,
-#if the error is used only in your application, please define it in your application configuration file.
-ehr.common.invalid.parameter: 参数解析错误
-ehr.common.query.not.found: 不存在该对象
-ehr.common.repeat.code: 代码重复
-
-#The region code, where application deployed
-deploy:
-  region: 3502
-
-#EHR platform user default password
-default:
-  password: 123456
-
 #Application acuator
 endpoints:
   restart:
@@ -40,8 +56,8 @@ endpoints:
   health:
     sensitive: false
 
-#JPA config for MySQL
 spring:
+  #JPA config for MySQL
   jpa:
     database-platform: org.hibernate.dialect.MySQL5Dialect
     hibernate.dialect: org.hibernate.dialect.MySQL5Dialect
