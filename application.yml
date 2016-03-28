@@ -79,7 +79,7 @@ spring:
 #else the server must have host map.
 eureka:
   instance:
-    prefer-ip-address: true
+    prefer-ip-address: false
 
 eureka-server-ip: 172.19.103.73:8761
 
