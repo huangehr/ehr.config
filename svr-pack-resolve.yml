@@ -65,8 +65,6 @@ extractor:
   identity:
     data-sets:
       - HDSA00_01 # 人口学
-      - HDSC01_01 # 门诊摘要
-      - HDSC02_01 # 住院摘要
     meta-data:
       id-card-no: HDSA00_01_017_S     # 身份标识
       id-card-type: HDSA00_01_016_S   # 身份类型
