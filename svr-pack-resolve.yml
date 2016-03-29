@@ -2,16 +2,6 @@ logging:
   level:
     com:
       netflix: DEBUG
-      
-data-source:
-  driver-class-name: com.mysql.jdbc.Driver
-  initialize-size: 1
-  max-total: 20
-  max-idle: 10
-  min-idle: 1
-  validation-query: SELECT 1
-  test-on-borrow: true
-  remove-abandoned-timeout: 55
 
 spring:
   # REDIS
@@ -68,11 +58,6 @@ spring:
       host: http://172.19.103.10:8983/solr # Solr host. Ignored if "zk-host" is set.
       zk-host: host-172-17-110-23,host-172-17-110-27,host-172-17-110-26:2181/solr # ZooKeeper host address in the form HOST:PORT.
 
-data-source:
-  url: jdbc:mysql://192.168.1.220:3306/healtharchive?useUnicode=true&characterEncoding=UTF-8
-  user-name: ha
-  password: ha
-
 fast-dfs:
   tracker-server: 172.19.103.54:22122
 
@@ -88,11 +73,6 @@ spring:
       host: http://172.19.103.10:8983/solr # Solr host. Ignored if "zk-host" is set.
       zk-host: host-172-17-110-23,host-172-17-110-27,host-172-17-110-26:2181/solr # ZooKeeper host address in the form HOST:PORT.
 
-data-source:
-  url: jdbc:mysql://172.19.103.50:3306/healtharchive?useUnicode=true&characterEncoding=UTF-8
-  username: fujian
-  password: fujian
-
 fast-dfs:
   tracker-server: 172.19.103.13:22122
 
@@ -107,11 +87,6 @@ spring:
     solr:
       host: http://172.19.103.10:8983/solr # Solr host. Ignored if "zk-host" is set.
       zk-host: host-172-17-110-23,host-172-17-110-27,host-172-17-110-26:2181/solr # ZooKeeper host address in the form HOST:PORT.
-
-data-source:
-  url: jdbc:mysql://11.1.2.5:3306/healtharchive?useUnicode=true&amp;characterEncoding=UTF-8
-  username: ha
-  password: jkzlxm
 
 fast-dfs:
   tracker-server: 11.1.2.9:22122
