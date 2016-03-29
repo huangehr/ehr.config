@@ -70,7 +70,7 @@ extractor:
         HDSD00_01_185_D: 出院时间
   # 身份提取参数
   identity:
-    datasets:
+    data-sets:
       - HDSA00_01 # 人口学
       - HDSC01_01 # 门诊摘要
       - HDSC02_01 # 住院摘要
