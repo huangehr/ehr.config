@@ -1,7 +1,7 @@
 ﻿logging:
   level:
     com:
-      netflix: DEBUG
+      netflix: ERROR
 
 spring:
   # REDIS
