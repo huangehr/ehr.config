@@ -71,12 +71,9 @@ extractor:
   # 身份提取参数
   identity:
     data-set:
-      - 
-        HDSA00_01: 人口学数据集
-      - 
-        HDSC01_01: 门诊-病人摘要
-      - 
-        HDSC02_01: 住院-病人摘要
+      - HDSA00_01: 人口学数据集
+      - HDSC01_01: 门诊-病人摘要
+      - HDSC02_01: 住院-病人摘要
     meta-data:
       id-card-no: HDSA00_01_016_S # 身份类型
       id-card-type: HDSA00_01_017_S # 身份标识
