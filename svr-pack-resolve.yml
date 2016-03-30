@@ -41,30 +41,79 @@ fast-dfs:
     anti-steal-token: no
     secret-key: FastDFS1234567890
 
-profile:
-  data-buffer-size: 200   # HBase batch insert record buffer size.
+hadoop:
+    hbase-options:
+    - dfs.domain.socket.path: /var/lib/hadoop-hdfs/dn_socket
+    - hbase.zookeeper.property.maxClientCnxns: 300
+    - hbase.zookeeper.useMulti: true
+    - hbase.bulkload.staging.dir: /apps/hbase/staging
+    - hbase.client.keyvalue.maxsize: 1048576
+    - hbase.client.retries.number: 35
+    - hbase.client.scanner.caching: 100
+    - hbase.cluster.distributed: true
+    - hbase.coprocessor.master.classes:
+    - hbase.coprocessor.region.classes: org.apache.hadoop.hbase.security.access.SecureBulkLoadEndpoint
+    - hbase.coprocessor.regionserver.classes:
+    - hbase.defaults.for.version.skip: true
+    - hbase.hregion.majorcompaction: 604800000
+    - hbase.hregion.majorcompaction.jitter: 0.50
+    - hbase.hregion.max.filesize: 10737418240
+    - hbase.hregion.memstore.block.multiplier: 4
+    - hbase.hregion.memstore.flush.size: 134217728
+    - hbase.hregion.memstore.mslab.enabled: true
+    - hbase.hstore.blockingStoreFiles: 10
+    - hbase.hstore.compaction.max: 10
+    - hbase.hstore.compactionThreshold: 3
+    - hbase.local.dir: ${hbase.tmp.dir}/local
+    - hbase.master.info.bindAddress: 0.0.0.0
+    - hbase.master.info.port: 16010
+    - hbase.master.port: 16000
+    - hbase.regionserver.global.memstore.size: 0.4
+    - hbase.regionserver.handler.count: 30
+    - hbase.regionserver.info.port: 16030
+    - hbase.regionserver.port: 16020
+    - hbase.regionserver.wal.codec: org.apache.hadoop.hbase.regionserver.wal.WALCellCodec
+    - hbase.replication: true
+    - hbase.rootdir: hdfs://nameservice/apps/hbase/data
+    - hbase.rpc.controllerfactory.class:
+    - hbase.rpc.protection: authentication
+    - hbase.rpc.timeout: 90000
+    - hbase.security.authentication: simple
+    - hbase.security.authorization: false
+    - hbase.superuser: hbase
+    - hbase.tmp.dir: /tmp/hbase-${user.name}
+    - hfile.block.cache.size: 0.40
+    - phoenix.functions.allowUserDefinedFunctions:
+    - phoenix.query.timeoutMs: 60000
+    - replication.replicationsource.implementation: com.ngdata.sep.impl.SepReplicationSource
+    - replication.source.nb.capacity: 1000
+    - replication.source.ratio: 1.0
+    - zookeeper.session.timeout: 90000
+    - zookeeper.znode.parent: /hbase-unsecure
+
+profile-persist:
+  record-buffer-size: 200   # HBase batch insert record buffer size.
 
 # 提取器参数，从数据集中提取摘要、事件时间与身份标识
 extractor:
   # 事件提取参数
+  # 门诊从“门诊摘要”与“挂号”数据集提取事件
+  # 住院从“病人摘要”，“入院记录”与“病案首页”提取事件
+  # 值用于生成事件摘要
   event:
     data-sets:
-      # 门诊从“门诊摘要”与“挂号”数据集提取事件
-      # 住院从“病人摘要”，“入院记录”与“病案首页”提取事件
-      # 值用于生成事件摘要
       - HDSC01_01: 门诊
       - HDSC01_02: 门诊
       - HDSC02_01: 住院
       - HDSC02_02: 住院
       - HDSC02_09: 住院
     meta-data:
-      # 事件时间数据元
       - HDSD00_01_457_D # 挂号时间
       - HDSD00_01_185_D # 出院时间
-  # 身份提取参数
+  # 身份提取参数，从人口学处提取
   identity:
     data-sets:
-      - HDSA00_01 # 人口学
+      - HDSA00_01
     meta-data:
       id-card-no: HDSA00_01_017_S     # 身份标识
       id-card-type: HDSA00_01_016_S   # 身份类型
@@ -76,8 +125,8 @@ extractor:
       - HDSC02_01: 住院-病人摘要
       - HDSC02_02: 住院-首页
     meta-data:
-      - CARD_NO   # 就诊卡号
-      - CARD_TYPE # 就诊卡类型
+      - CARD_NO
+      - CARD_TYPE
 
 #error code and message
 
@@ -96,6 +145,10 @@ spring:
 fast-dfs:
   tracker-server: 172.19.103.54:22122
 
+hadoop:
+  - hbase.zookeeper.quorum: node2.jkzldev.com,node1.jkzldev.com,node4.jkzldev.com
+  - hbase.zookeeper.property.clientPort: 2181
+
 ---
 spring:
   profiles: test
@@ -111,6 +164,10 @@ spring:
 fast-dfs:
   tracker-server: 172.19.103.13:22122
 
+hadoop:
+  - hbase.zookeeper.quorum: node2.jkzldev.com,node1.jkzldev.com,node4.jkzldev.com
+  - hbase.zookeeper.property.clientPort: 2181
+
 ---
 spring:
   profiles: prod
@@ -125,3 +182,7 @@ spring:
 
 fast-dfs:
   tracker-server: 11.1.2.9:22122
+
+hadoop:
+  - hbase.zookeeper.quorum: node2.jkzl.com,node3.jkzl.com,node1.jkzl.com
+  - hbase.zookeeper.property.clientPort: 2181
