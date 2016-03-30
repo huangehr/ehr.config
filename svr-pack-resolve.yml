@@ -146,8 +146,9 @@ fast-dfs:
   tracker-server: 172.19.103.54:22122
 
 hadoop:
-  - hbase.zookeeper.quorum: node2.jkzldev.com,node1.jkzldev.com,node4.jkzldev.com
-  - hbase.zookeeper.property.clientPort: 2181
+  hbase-properties:
+    - hbase.zookeeper.quorum: node2.jkzldev.com,node1.jkzldev.com,node4.jkzldev.com
+    - hbase.zookeeper.property.clientPort: 2181
 
 ---
 spring:
@@ -165,8 +166,9 @@ fast-dfs:
   tracker-server: 172.19.103.13:22122
 
 hadoop:
-  - hbase.zookeeper.quorum: node2.jkzldev.com,node1.jkzldev.com,node4.jkzldev.com
-  - hbase.zookeeper.property.clientPort: 2181
+  hbase-properties:
+    - hbase.zookeeper.quorum: node2.jkzldev.com,node1.jkzldev.com,node4.jkzldev.com
+    - hbase.zookeeper.property.clientPort: 2181
 
 ---
 spring:
@@ -184,5 +186,6 @@ fast-dfs:
   tracker-server: 11.1.2.9:22122
 
 hadoop:
-  - hbase.zookeeper.quorum: node2.jkzl.com,node3.jkzl.com,node1.jkzl.com
-  - hbase.zookeeper.property.clientPort: 2181
+  hbase-properties:
+    - hbase.zookeeper.quorum: node2.jkzl.com,node3.jkzl.com,node1.jkzl.com
+    - hbase.zookeeper.property.clientPort: 2181
