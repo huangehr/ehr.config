@@ -43,53 +43,53 @@ fast-dfs:
 
 hadoop:
     hbase-properties:
-    - dfs.domain.socket.path: /var/lib/hadoop-hdfs/dn_socket
-    - hbase.zookeeper.property.maxClientCnxns: 300
-    - hbase.zookeeper.useMulti: true
-    - hbase.bulkload.staging.dir: /apps/hbase/staging
-    - hbase.client.keyvalue.maxsize: 1048576
-    - hbase.client.retries.number: 35
-    - hbase.client.scanner.caching: 100
-    - hbase.cluster.distributed: true
-    - hbase.coprocessor.master.classes:
-    - hbase.coprocessor.region.classes: org.apache.hadoop.hbase.security.access.SecureBulkLoadEndpoint
-    - hbase.coprocessor.regionserver.classes:
-    - hbase.defaults.for.version.skip: true
-    - hbase.hregion.majorcompaction: 604800000
-    - hbase.hregion.majorcompaction.jitter: 0.50
-    - hbase.hregion.max.filesize: 10737418240
-    - hbase.hregion.memstore.block.multiplier: 4
-    - hbase.hregion.memstore.flush.size: 134217728
-    - hbase.hregion.memstore.mslab.enabled: true
-    - hbase.hstore.blockingStoreFiles: 10
-    - hbase.hstore.compaction.max: 10
-    - hbase.hstore.compactionThreshold: 3
-    - hbase.local.dir: ${hbase.tmp.dir}/local
-    - hbase.master.info.bindAddress: 0.0.0.0
-    - hbase.master.info.port: 16010
-    - hbase.master.port: 16000
-    - hbase.regionserver.global.memstore.size: 0.4
-    - hbase.regionserver.handler.count: 30
-    - hbase.regionserver.info.port: 16030
-    - hbase.regionserver.port: 16020
-    - hbase.regionserver.wal.codec: org.apache.hadoop.hbase.regionserver.wal.WALCellCodec
-    - hbase.replication: true
-    - hbase.rootdir: hdfs://nameservice/apps/hbase/data
-    - hbase.rpc.controllerfactory.class:
-    - hbase.rpc.protection: authentication
-    - hbase.rpc.timeout: 90000
-    - hbase.security.authentication: simple
-    - hbase.security.authorization: false
-    - hbase.superuser: hbase
-    - hbase.tmp.dir: /tmp/hbase-${user.name}
-    - hfile.block.cache.size: 0.40
-    - phoenix.functions.allowUserDefinedFunctions:
-    - phoenix.query.timeoutMs: 60000
-    - replication.replicationsource.implementation: com.ngdata.sep.impl.SepReplicationSource
-    - replication.source.nb.capacity: 1000
-    - replication.source.ratio: 1.0
-    - zookeeper.session.timeout: 90000
-    - zookeeper.znode.parent: /hbase-unsecure
+      - dfs.domain.socket.path: /var/lib/hadoop-hdfs/dn_socket
+      - hbase.zookeeper.property.maxClientCnxns: 300
+      - hbase.zookeeper.useMulti: true
+      - hbase.bulkload.staging.dir: /apps/hbase/staging
+      - hbase.client.keyvalue.maxsize: 1048576
+      - hbase.client.retries.number: 35
+      - hbase.client.scanner.caching: 100
+      - hbase.cluster.distributed: true
+      - hbase.coprocessor.master.classes:
+      - hbase.coprocessor.region.classes: org.apache.hadoop.hbase.security.access.SecureBulkLoadEndpoint
+      - hbase.coprocessor.regionserver.classes:
+      - hbase.defaults.for.version.skip: true
+      - hbase.hregion.majorcompaction: 604800000
+      - hbase.hregion.majorcompaction.jitter: 0.50
+      - hbase.hregion.max.filesize: 10737418240
+      - hbase.hregion.memstore.block.multiplier: 4
+      - hbase.hregion.memstore.flush.size: 134217728
+      - hbase.hregion.memstore.mslab.enabled: true
+      - hbase.hstore.blockingStoreFiles: 10
+      - hbase.hstore.compaction.max: 10
+      - hbase.hstore.compactionThreshold: 3
+      - hbase.local.dir: ${hbase.tmp.dir}/local
+      - hbase.master.info.bindAddress: 0.0.0.0
+      - hbase.master.info.port: 16010
+      - hbase.master.port: 16000
+      - hbase.regionserver.global.memstore.size: 0.4
+      - hbase.regionserver.handler.count: 30
+      - hbase.regionserver.info.port: 16030
+      - hbase.regionserver.port: 16020
+      - hbase.regionserver.wal.codec: org.apache.hadoop.hbase.regionserver.wal.WALCellCodec
+      - hbase.replication: true
+      - hbase.rootdir: hdfs://nameservice/apps/hbase/data
+      - hbase.rpc.controllerfactory.class:
+      - hbase.rpc.protection: authentication
+      - hbase.rpc.timeout: 90000
+      - hbase.security.authentication: simple
+      - hbase.security.authorization: false
+      - hbase.superuser: hbase
+      - hbase.tmp.dir: /tmp/hbase-${user.name}
+      - hfile.block.cache.size: 0.40
+      - phoenix.functions.allowUserDefinedFunctions:
+      - phoenix.query.timeoutMs: 60000
+      - replication.replicationsource.implementation: com.ngdata.sep.impl.SepReplicationSource
+      - replication.source.nb.capacity: 1000
+      - replication.source.ratio: 1.0
+      - zookeeper.session.timeout: 90000
+      - zookeeper.znode.parent: /hbase-unsecure
 
 profile-persist:
   record-buffer-size: 200   # HBase batch insert record buffer size.
