@@ -42,7 +42,7 @@ fast-dfs:
     secret-key: FastDFS1234567890
 
 hadoop:
-    hbase-options:
+    hbase-properties:
     - dfs.domain.socket.path: /var/lib/hadoop-hdfs/dn_socket
     - hbase.zookeeper.property.maxClientCnxns: 300
     - hbase.zookeeper.useMulti: true
