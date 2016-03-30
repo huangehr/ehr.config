@@ -33,8 +33,7 @@ fast-dfs:
 
   connect-timeout: 2
   network-timeout: 30
-  fast-dfs:
-    charset: ISO8859-1
+  charset: ISO8859-1
 
   http:
     tracker-http-port: 80
@@ -45,9 +44,6 @@ hadoop:
   hbase-properties:
     - hbase.zookeeper.property.clientPort: 2181
     - zookeeper.znode.parent: /hbase-unsecure
-
-profile-persist:
-  record-buffer-size: 200   # HBase batch insert record buffer size.
 
 # 提取器参数，从数据集中提取摘要、事件时间与身份标识
 extractor:
