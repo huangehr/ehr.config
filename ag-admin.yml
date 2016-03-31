@@ -3,6 +3,23 @@ logging:
     com:
       netflix: INFO
 
+ribbon:
+  ReadTimeout: 30000
+  ConnectTimeout: 6000
+
+zuul:
+  ignored-services: "*"
+  routes:
+    svr-adaption: /api/v1.0/adapter/plan/adapterDataSet
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 30000
+
 ---
 spring:
   profiles: dev
