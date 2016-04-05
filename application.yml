@@ -36,7 +36,7 @@ svr-app.server.port: 10160
 svr-dict.server.port: 10050
 svr-esb.server.port: 10130
 svr-geography.server.port: 10090
-svr-health-profiles.server.port: 9009
+svr-health-profile.server.port: 9009
 svr-organization.server.port: 10070
 svr-pack-mgr.server.port: 10140
 svr-pack-resolve.server.port: 10170
