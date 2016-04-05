@@ -44,7 +44,7 @@ spring:
 
   data:
     solr:
-      host: http://172.19.103.10:8983/solr # Solr host. Ignored if "zk-host" is set.
+      host: http://172.19.103.68:8983/solr # Solr host. Ignored if "zk-host" is set.
       zk-host: host-172-17-110-23,host-172-17-110-27,host-172-17-110-26:2181/solr # ZooKeeper host address in the form HOST:PORT.
 
 data-source:
@@ -61,7 +61,7 @@ spring:
 
   data:
     solr:
-      host: http://172.19.103.10:8983/solr # Solr host. Ignored if "zk-host" is set.
+      host: http://172.19.103.68:8983/solr # Solr host. Ignored if "zk-host" is set.
       zk-host: host-172-17-110-23,host-172-17-110-27,host-172-17-110-26:2181/solr # ZooKeeper host address in the form HOST:PORT.
 
 data-source:
@@ -78,7 +78,7 @@ spring:
 
   data:
     solr:
-      host: http://172.19.103.10:8983/solr # Solr host. Ignored if "zk-host" is set.
+      host: http://172.19.103.68:8983/solr # Solr host. Ignored if "zk-host" is set.
       zk-host: host-172-17-110-23,host-172-17-110-27,host-172-17-110-26:2181/solr # ZooKeeper host address in the form HOST:PORT.
 
 data-source:
