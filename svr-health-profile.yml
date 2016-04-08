@@ -13,6 +13,11 @@ data-source:
   test-on-borrow: true
   remove-abandoned-timeout: 55
 
+hadoop:
+  hbase-properties:
+    - hbase.zookeeper.property.clientPort: 2181
+    - zookeeper.znode.parent: /hbase-unsecure
+
 spring:
   # REDIS
   redis:
@@ -52,6 +57,10 @@ data-source:
   user-name: ha
   password: ha
 
+hadoop:
+  hbase-properties:
+    - hbase.zookeeper.quorum: node2.jkzldev.com,node1.jkzldev.com,node4.jkzldev.com
+
 ---
 spring:
   profiles: test
@@ -69,6 +78,10 @@ data-source:
   username: fujian
   password: fujian
 
+hadoop:
+  hbase-properties:
+    - hbase.zookeeper.quorum: node2.jkzldev.com,node1.jkzldev.com,node4.jkzldev.com
+
 ---
 spring:
   profiles: prod
@@ -85,3 +98,7 @@ data-source:
   url: jdbc:mysql://11.1.2.5:3306/healtharchive?useUnicode=true&amp;characterEncoding=UTF-8
   username: ha
   password: jkzlxm
+
+hadoop:
+  hbase-properties:
+    - hbase.zookeeper.quorum: node2.jkzl.com,node3.jkzl.com,node1.jkzl.com
