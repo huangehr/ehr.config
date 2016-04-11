@@ -40,6 +40,21 @@ spring:
     solr:
       repositories.enabled: true # Enable Solr repositories.
 
+fast-dfs:
+  pool:
+    init-size: 5
+    max-size: 20
+    wait-time: 500
+
+  connect-timeout: 2
+  network-timeout: 30
+  charset: ISO8859-1
+
+  http:
+    tracker-http-port: 80
+    anti-steal-token: no
+    secret-key: FastDFS1234567890
+
 ---
 spring:
   profiles: dev
@@ -60,6 +75,9 @@ data-source:
 hadoop:
   hbase-properties:
     - hbase.zookeeper.quorum: node2.jkzldev.com,node1.jkzldev.com,node4.jkzldev.com
+
+fast-dfs:
+  tracker-server: 172.19.103.54:22122
 
 ---
 spring:
@@ -82,6 +100,9 @@ hadoop:
   hbase-properties:
     - hbase.zookeeper.quorum: node2.jkzldev.com,node1.jkzldev.com,node4.jkzldev.com
 
+fast-dfs:
+  tracker-server: 172.19.103.13:22122
+
 ---
 spring:
   profiles: prod
@@ -102,3 +123,6 @@ data-source:
 hadoop:
   hbase-properties:
     - hbase.zookeeper.quorum: node2.jkzl.com,node3.jkzl.com,node1.jkzl.com
+
+fast-dfs:
+  tracker-server: 11.1.2.9:22122
