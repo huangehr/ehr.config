@@ -13,6 +13,7 @@ redis-key-schema:
 
     data-set-table-prefix: std_data_set_
     data-set-code: code
+    data-set-name: name
 
     meta-data-table-prefix: std_meta_data_
     meta-data-dict-id: dict_id
