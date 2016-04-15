@@ -4,7 +4,7 @@ logging:
       netflix: INFO
 
 ribbon:
-  ReadTimeout: 30000
+  ReadTimeout: 300000
   ConnectTimeout: 6000
 
 zuul:
@@ -19,7 +19,7 @@ hystrix:
       execution:
         isolation:
           thread:
-            timeoutInMilliseconds: 30000
+            timeoutInMilliseconds: 300000
 
 ---
 spring:
