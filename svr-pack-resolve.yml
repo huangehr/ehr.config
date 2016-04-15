@@ -2,22 +2,11 @@ logging:
   level:
     com:
       netflix: DEBUG
-      
-data-source:
-  driver-class-name: com.mysql.jdbc.Driver
-  initialize-size: 1
-  max-total: 20
-  max-idle: 10
-  min-idle: 1
-  validation-query: SELECT 1
-  test-on-borrow: true
-  remove-abandoned-timeout: 55
 
 spring:
   # REDIS
   redis:
     database: 0 # Database index used by the connection factory.
-    host: localhost # Redis server host.
     port: 6379 # Redis server port.
     password: # Login password of the redis server.
     timeout: 0 # Connection timeout in milliseconds.
@@ -44,22 +33,76 @@ fast-dfs:
 
   connect-timeout: 2
   network-timeout: 30
-  fast-dfs:
-    charset: ISO8859-1
+  charset: ISO8859-1
 
   http:
     tracker-http-port: 80
     anti-steal-token: no
     secret-key: FastDFS1234567890
 
-profile:
-  data-buffer-size: 200   # 记录缓冲区数量
+hadoop:
+  hbase-properties:
+    - hbase.zookeeper.property.clientPort: 2181
+    - zookeeper.znode.parent: /hbase-unsecure
+
+# 提取器参数，从数据集中提取摘要、事件时间与身份标识
+extractor:
+  # 事件提取参数
+  # 门诊从“门诊摘要”与“挂号”数据集提取事件
+  # 住院从“病人摘要”，“入院记录”与“病案首页”提取事件
+  # 值用于生成事件摘要
+  event:
+    data-sets:
+      - HDSC01_01: 门诊
+      - HDSC01_02: 门诊
+      - HDSC02_01: 住院
+      - HDSC02_02: 住院
+      - HDSC02_09: 住院
+    meta-data:
+      - HDSD00_01_457_D # 挂号时间
+      - HDSD00_01_185_D # 出院时间
+  # 身份提取参数，从人口学处提取
+  identity:
+    data-sets:
+      - HDSA00_01
+    meta-data:
+      id-card-no: HDSA00_01_017_S     # 身份标识
+      id-card-type: HDSA00_01_016_S   # 身份类型
+  # 卡提取参数
+  card:
+    data-sets:
+      - HDSC01_01: 门诊-病人摘要
+      - HDSC01_02: 门诊-挂号
+      - HDSC02_01: 住院-病人摘要
+      - HDSC02_02: 住院-首页
+    meta-data:
+      - CARD_NO
+      - CARD_TYPE
 
 #error code and message
 
 ---
 spring:
   profiles: dev
+
+  redis:
+    host: 192.168.1.220 # Redis server host.
+
+  data:
+    solr:
+      host: http://172.19.103.10:8983/solr # Solr host. Ignored if "zk-host" is set.
+      zk-host: host-172-17-110-23,host-172-17-110-27,host-172-17-110-26:2181/solr # ZooKeeper host address in the form HOST:PORT.
+
+fast-dfs:
+  tracker-server: 172.19.103.54:22122
+
+hadoop:
+  hbase-properties:
+    - hbase.zookeeper.quorum: node2.jkzldev.com,node1.jkzldev.com,node4.jkzldev.com
+
+---
+spring:
+  profiles: test
 
   redis:
     host: 172.19.103.47 # Redis server host.
@@ -69,33 +112,12 @@ spring:
       host: http://172.19.103.10:8983/solr # Solr host. Ignored if "zk-host" is set.
       zk-host: host-172-17-110-23,host-172-17-110-27,host-172-17-110-26:2181/solr # ZooKeeper host address in the form HOST:PORT.
 
-data-source:
-  url: jdbc:mysql://192.168.1.220:3306/healtharchive?useUnicode=true&characterEncoding=UTF-8
-  user-name: ha
-  password: ha
-
-fast-dfs:
-  tracker-server: 172.19.103.54:22122
-
----
-spring:
-  profiles: test
-
-  redis:
-    host: 172.17.110.68 # Redis server host.
-
-  data:
-    solr:
-      host: http://172.19.103.10:8983/solr # Solr host. Ignored if "zk-host" is set.
-      zk-host: host-172-17-110-23,host-172-17-110-27,host-172-17-110-26:2181/solr # ZooKeeper host address in the form HOST:PORT.
-
-data-source:
-  url: jdbc:mysql://172.19.103.50:3306/healtharchive?useUnicode=true&characterEncoding=UTF-8
-  username: fujian
-  password: fujian
-
 fast-dfs:
   tracker-server: 172.19.103.13:22122
+
+hadoop:
+  hbase-properties:
+    - hbase.zookeeper.quorum: node2.jkzldev.com,node1.jkzldev.com,node4.jkzldev.com
 
 ---
 spring:
@@ -109,10 +131,9 @@ spring:
       host: http://172.19.103.10:8983/solr # Solr host. Ignored if "zk-host" is set.
       zk-host: host-172-17-110-23,host-172-17-110-27,host-172-17-110-26:2181/solr # ZooKeeper host address in the form HOST:PORT.
 
-data-source:
-  url: jdbc:mysql://11.1.2.5:3306/healtharchive?useUnicode=true&amp;characterEncoding=UTF-8
-  username: ha
-  password: jkzlxm
-
 fast-dfs:
   tracker-server: 11.1.2.9:22122
+
+hadoop:
+  hbase-properties:
+    - hbase.zookeeper.quorum: node2.jkzl.com,node3.jkzl.com,node1.jkzl.com

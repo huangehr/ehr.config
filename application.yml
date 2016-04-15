@@ -1,3 +1,35 @@
+#The region code, where application deployed
+deploy:
+  region: 3502
+
+#EHR platform user default password
+default:
+  password: 123456
+
+redis-key-schema:
+  std:
+    version-table-prefix: std_cda_versions
+    version-name: name
+
+    data-set-table-prefix: std_data_set_
+    data-set-code: code
+    data-set-name: name
+
+    meta-data-table-prefix: std_meta_data_
+    meta-data-dict-id: dict_id
+    meta-data-type: type
+
+    dict-entry-table-prefix: std_dictionary_entry_
+    dict-entry-value: value
+  org:
+    table: organizations
+    name: name
+
+#Application error definition, this file define common errors,
+#if the error is used only in your application, please define it in your application configuration file.
+ehr.common.invalid.parameter: 参数解析错误
+ehr.common.query.not.found: 不存在该对象
+ehr.common.repeat.code: 代码重复
 
 #Application port, since 10100, 10 per step. Update max port if new application created. Current max: 10190
 svr-adaption.server.port: 10150
@@ -5,7 +37,7 @@ svr-app.server.port: 10160
 svr-dict.server.port: 10050
 svr-esb.server.port: 10130
 svr-geography.server.port: 10090
-svr-health-profiles.server.port: 9009
+svr-health-profile.server.port: 9009
 svr-organization.server.port: 10070
 svr-pack-mgr.server.port: 10140
 svr-pack-resolve.server.port: 10170
@@ -18,20 +50,6 @@ ag-ehr-platform.server.port: 443
 ag-admin.server.port: 10000
 svr-family.server.port: 10190
 
-#Application error definition, this file define common errors,
-#if the error is used only in your application, please define it in your application configuration file.
-ehr.common.invalid.parameter: 参数解析错误
-ehr.common.query.not.found: 不存在该对象
-ehr.common.repeat.code: 代码重复
-
-#The region code, where application deployed
-deploy:
-  region: 3502
-
-#EHR platform user default password
-default:
-  password: 123456
-
 #Application acuator
 endpoints:
   restart:
@@ -41,11 +59,12 @@ endpoints:
   health:
     sensitive: false
 
-#JPA config for MySQL
 spring:
+  #JPA config for MySQL
   jpa:
     database-platform: org.hibernate.dialect.MySQL5Dialect
     hibernate.dialect: org.hibernate.dialect.MySQL5Dialect
+    show-sql: true
 
   #block the inet address of nic, virtual card and so on. Need spring version: Brixton M5
   cloud:

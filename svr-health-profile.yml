@@ -13,11 +13,15 @@ data-source:
   test-on-borrow: true
   remove-abandoned-timeout: 55
 
+hadoop:
+  hbase-properties:
+    - hbase.zookeeper.property.clientPort: 2181
+    - zookeeper.znode.parent: /hbase-unsecure
+
 spring:
   # REDIS
   redis:
     database: 0 # Database index used by the connection factory.
-    host: localhost # Redis server host.
     port: 6379 # Redis server port.
     password: # Login password of the redis server.
     timeout: 0 # Connection timeout in milliseconds.
@@ -36,39 +40,74 @@ spring:
     solr:
       repositories.enabled: true # Enable Solr repositories.
 
+fast-dfs:
+  pool:
+    init-size: 5
+    max-size: 20
+    wait-time: 500
+
+  connect-timeout: 2
+  network-timeout: 30
+  charset: ISO8859-1
+
+  http:
+    tracker-http-port: 80
+    anti-steal-token: no
+    secret-key: FastDFS1234567890
+
+# CDA类目关键数据集，以此判断CDA文档
+cda-document:
+  primary-data-set:
+    - HDSC01_02: 0dae000656721083269e0319806c0f22
+    - HDSC02_09: 0dae0006567210a6269e0319806c0f24
+
 ---
 spring:
   profiles: dev
 
   redis:
-    host: 172.19.103.47 # Redis server host.
+    host: 192.168.1.220 # Redis server host.
 
   data:
     solr:
-      host: http://172.19.103.10:8983/solr # Solr host. Ignored if "zk-host" is set.
-      zk-host: host-172-17-110-23,host-172-17-110-27,host-172-17-110-26:2181/solr # ZooKeeper host address in the form HOST:PORT.
+      host: http://172.19.103.68:8983/solr # Solr host. Ignored if "zk-host" is set.
+      zk-host: node1.jkzldev.com,node2.jkzldev.com,node4.jkzldev.com:2181/solr # ZooKeeper host address in the form HOST:PORT.
 
 data-source:
   url: jdbc:mysql://192.168.1.220:3306/healtharchive?useUnicode=true&characterEncoding=UTF-8
   user-name: ha
   password: ha
 
+hadoop:
+  hbase-properties:
+    - hbase.zookeeper.quorum: node2.jkzldev.com,node1.jkzldev.com,node4.jkzldev.com
+
+fast-dfs:
+  tracker-server: 172.19.103.54:22122
+
 ---
 spring:
   profiles: test
 
   redis:
-    host: 172.17.110.68 # Redis server host.
+    host: 172.19.103.47 # Redis server host.
 
   data:
     solr:
-      host: http://172.19.103.10:8983/solr # Solr host. Ignored if "zk-host" is set.
-      zk-host: host-172-17-110-23,host-172-17-110-27,host-172-17-110-26:2181/solr # ZooKeeper host address in the form HOST:PORT.
+      host: http://172.19.103.68:8983/solr # Solr host. Ignored if "zk-host" is set.
+      zk-host: node1.jkzldev.com,node2.jkzldev.com,node4.jkzldev.com:2181/solr # ZooKeeper host address in the form HOST:PORT.
 
 data-source:
   url: jdbc:mysql://172.19.103.50:3306/healtharchive?useUnicode=true&characterEncoding=UTF-8
-  username: fujian
-  password: fujian
+  user-name: yuhaihua
+  password: yuhaihua
+
+hadoop:
+  hbase-properties:
+    - hbase.zookeeper.quorum: node2.jkzldev.com,node1.jkzldev.com,node4.jkzldev.com
+
+fast-dfs:
+  tracker-server: 172.19.103.13:22122
 
 ---
 spring:
@@ -79,10 +118,17 @@ spring:
 
   data:
     solr:
-      host: http://172.19.103.10:8983/solr # Solr host. Ignored if "zk-host" is set.
-      zk-host: host-172-17-110-23,host-172-17-110-27,host-172-17-110-26:2181/solr # ZooKeeper host address in the form HOST:PORT.
+      host: http://172.19.103.68:8983/solr # Solr host. Ignored if "zk-host" is set.
+      zk-host: node1.jkzldev.com,node2.jkzldev.com,node4.jkzldev.com:2181/solr # ZooKeeper host address in the form HOST:PORT.
 
 data-source:
   url: jdbc:mysql://11.1.2.5:3306/healtharchive?useUnicode=true&amp;characterEncoding=UTF-8
-  username: ha
+  user-name: ha
   password: jkzlxm
+
+hadoop:
+  hbase-properties:
+    - hbase.zookeeper.quorum: node2.jkzl.com,node3.jkzl.com,node1.jkzl.com
+
+fast-dfs:
+  tracker-server: 11.1.2.9:22122

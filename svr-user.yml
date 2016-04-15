@@ -1,7 +1,7 @@
 ﻿logging:
   level:
     com:
-      netflix: DEBUG
+      netflix: ERROR
       
 data-source:
   driver-class-name: com.mysql.jdbc.Driver
@@ -34,10 +34,6 @@ data-source:
 ---
 spring:
   profiles: prod
-
-hibernate:
-  show-sql: true
-  format-sql: true
 
 data-source:
   url: jdbc:mysql://11.1.2.5:3306/healtharchive?useUnicode=true&amp;characterEncoding=UTF-8
