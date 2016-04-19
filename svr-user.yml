@@ -13,9 +13,25 @@ data-source:
   test-on-borrow: true
   remove-abandoned-timeout: 55
 
+fast-dfs:
+  pool:
+    init-size: 5
+    max-size: 20
+    wait-time: 500
+  connect-timeout: 2
+  network-timeout: 30
+  charset: ISO8859-1
+  http:
+    tracker-http-port: 80
+    anti-steal-token: no
+    secret-key: FastDFS1234567890
+
 ---
 spring:
   profiles: dev
+
+fast-dfs:
+  tracker-server: 172.19.103.54:22122
 
 data-source:
   url: jdbc:mysql://192.168.1.220:3306/healtharchive?useUnicode=true&characterEncoding=UTF-8
@@ -26,6 +42,9 @@ data-source:
 spring:
   profiles: test
 
+fast-dfs:
+  tracker-server: 172.19.103.13:22122
+
 data-source:
   url: jdbc:mysql://172.19.103.50:3306/healtharchive?useUnicode=true&characterEncoding=UTF-8
   user-name: weifuwu
@@ -34,6 +53,9 @@ data-source:
 ---
 spring:
   profiles: prod
+
+fast-dfs:
+  tracker-server: 11.1.2.9:22122
 
 data-source:
   url: jdbc:mysql://11.1.2.5:3306/healtharchive?useUnicode=true&amp;characterEncoding=UTF-8
