@@ -3,6 +3,8 @@ logging:
     com:
       netflix: DEBUG
 
+logging.level.root: INFO
+
 # service routes
 zuul:
   addProxyHeaders: false
