@@ -20,7 +20,7 @@ zuul:
       serviceId: svr-health-profile
     health_profile:
       path: /api/v1.0/health_profiles
-      serviceId: svr-health-profiles
+      serviceId: svr-health-profile
 
 ---
 spring:
