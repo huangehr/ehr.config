@@ -15,6 +15,9 @@ zuul:
     saveDataSetRelationships:
       path: /api/v1.0/std/documents/data_set_relationships
       serviceId: svr-standard
+    uploadTemplateFile:
+          path: /api/v1.0/templates/{id}/content
+          serviceId: svr-health-profile
 
 hystrix:
   command:
