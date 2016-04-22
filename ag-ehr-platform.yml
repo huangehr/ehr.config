@@ -2,7 +2,7 @@ logging:
   level:
     com:
       netflix: DEBUG
-      
+
 # service routes
 zuul:
   routes:
@@ -17,6 +17,9 @@ zuul:
       serviceId: svr-esb
     sanofi_support:
       path: /api/v1.0/sanofi/physic_signs
+      serviceId: svr-health-profile
+    health_profile:
+      path: /api/v1.0/health_profile
       serviceId: svr-health-profile
 
 ---
