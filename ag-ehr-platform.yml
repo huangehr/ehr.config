@@ -23,7 +23,7 @@ zuul:
     health_profile:
       path: /api/v1.0/health_profiles/**
       serviceId: svr-health-profile
-      #stripPrefix: false
+      stripPrefix: false
 
 ---
 spring:
