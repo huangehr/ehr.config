@@ -1,14 +1,21 @@
+# service routes
 zuul:
   routes:
     packages:
       path: /api/v1.0/packages
       serviceId: svr-pack-mgr
-    json_package:
+    package_json:
       path: /api/v1.0/json_package
       serviceId: svr-pack-mgr
-    uploadLog:
+    esb_log:
       path: /api/v1.0/esb/uploadLog
       serviceId: svr-esb
+    health_profile:
+      path: /api/v1.0/health_profile
+      serviceId: svr-health-profile
+    sanofi_support:
+      path: /api/v1.0/sanofi/physic_signs
+      serviceId: svr-health-profile
 
 ---
 spring:
