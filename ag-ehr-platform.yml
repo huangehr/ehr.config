@@ -22,9 +22,11 @@ zuul:
     sanofi_support:
       path: /api/v1.0/sanofi/physic_signs/**
       serviceId: svr-health-profile
+      stripPrefix: false
     health_profile:
       path: /api/v1.0/health_profiles/**
       serviceId: svr-health-profile
+      stripPrefix: false
 
 ---
 spring:
