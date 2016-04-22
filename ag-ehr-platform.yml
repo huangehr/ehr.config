@@ -5,6 +5,7 @@ logging:
 
 # service routes
 zuul:
+  ignoredServices: '*'
   routes:
     packages:
       path: /api/v1.0/packages
@@ -16,10 +17,10 @@ zuul:
       path: /api/v1.0/esb/uploadLog
       serviceId: svr-esb
     sanofi_support:
-      path: /api/v1.0/sanofi/physic_signs
+      path: /api/v1.0/sanofi/physic_signs/**
       serviceId: svr-health-profile
     health_profile:
-      path: /api/v1.0/health_profiles
+      path: /api/v1.0/health_profiles/**
       serviceId: svr-health-profile
 
 ---
