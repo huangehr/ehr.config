@@ -53,11 +53,11 @@ extractor:
   # 值用于生成事件摘要
   event:
     data-sets:
-      - HDSC01_01: 门诊
-      - HDSC01_02: 门诊
-      - HDSC02_01: 住院
-      - HDSC02_02: 住院
-      - HDSC02_09: 住院
+      - HDSC01_01: Clinic
+      - HDSC01_02: Clinic
+      - HDSC02_01: Resident
+      - HDSC02_02: Resident
+      - HDSC02_09: Resident
     meta-data:
       - HDSD00_01_457_D # 挂号时间
       - HDSD00_01_185_D # 出院时间
