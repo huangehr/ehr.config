@@ -1,3 +1,8 @@
+logging:
+  level:
+    com:
+      netflix: DEBUG
+
 #The region code, where application deployed
 deploy:
   region: 3502

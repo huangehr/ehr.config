@@ -1,7 +1,7 @@
 logging:
   level:
     com:
-      netflix: INFO
+      netflix: DEBUG
 
 ribbon:
   ReadTimeout: 300000
