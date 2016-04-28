@@ -83,6 +83,7 @@ hadoop:
 
 fast-dfs:
   tracker-server: 172.19.103.54:22122
+  public-server: http://172.19.103.54:22122
 
 ---
 spring:
@@ -106,6 +107,7 @@ hadoop:
 
 fast-dfs:
   tracker-server: 172.19.103.13:22122
+  public-server: http://172.19.103.52:80
 
 ---
 spring:
@@ -129,3 +131,4 @@ hadoop:
 
 fast-dfs:
   tracker-server: 11.1.2.9:22122
+  public-server: http://ds.ehr.yihu.com:22122
