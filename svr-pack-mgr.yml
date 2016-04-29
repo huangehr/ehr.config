@@ -59,6 +59,7 @@ data-source:
 
 fast-dfs:
   tracker-server: 172.19.103.54:22122
+  public-server: http://172.19.103.54:22122
 
 ---
 spring:
@@ -74,6 +75,7 @@ data-source:
 
 fast-dfs:
   tracker-server: 172.19.103.13:22122
+  public-server: http://172.19.103.52:80
 
 ---
 spring:
@@ -84,6 +86,7 @@ spring:
 
 fast-dfs:
   tracker-server: 11.1.2.9:22122
+  public-server: http://ds.ehr.yihu.com:22122
 
 data-source:
   url: jdbc:mysql://11.1.2.5:3306/healtharchive?useUnicode=true&amp;characterEncoding=UTF-8
