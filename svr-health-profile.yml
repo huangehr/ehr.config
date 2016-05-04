@@ -58,8 +58,8 @@ fast-dfs:
 # 就诊事件与CDA文档类型关联
 cda-document-type-options:
   event-type:
-    - "0": 0dae000656721083269e0319806c0f22   # 门诊
-    - "1": 0dae0006567210a6269e0319806c0f24   # 住院
+    - "0": 0dae00065684c9920dc35654490aa9ac   # 门诊
+    - "1": 0dae00065684cb220dc35654490aa9ae   # 住院
 
 ---
 spring:
