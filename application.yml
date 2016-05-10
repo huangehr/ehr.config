@@ -1,3 +1,8 @@
+#set max http header size
+server:
+  tomcat:
+    max-http-header-size: 100000
+
 #The region code, where application deployed
 deploy:
   region: 3502
