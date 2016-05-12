@@ -83,6 +83,8 @@ svr-user.server.port: 10120
 ag-ehr-platform.server.port: 443
 ag-admin.server.port: 10000
 svr-family.server.port: 10190
+svr-health-profile-search.server.port: 9009
+svr-workflow.server.port: 10190
 
 #Application acuator
 endpoints:

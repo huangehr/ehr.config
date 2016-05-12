@@ -1,0 +1,34 @@
+logging:
+  level:
+    com:
+      netflix: DEBUG
+
+spring:
+  # SOLR (SolrProperties)
+  data:
+    solr:
+      repositories.enabled: true # Enable Solr repositories.
+
+---
+spring:
+  profiles: dev
+
+  data:
+    solr:
+      zk-host: node1.jkzldev.com,node2.jkzldev.com,node4.jkzldev.com:2181/solr # ZooKeeper host address in the form HOST:PORT.
+
+---
+spring:
+  profiles: test
+
+  data:
+    solr:
+      zk-host: node1.jkzldev.com,node2.jkzldev.com,node4.jkzldev.com:2181/solr # ZooKeeper host address in the form HOST:PORT.
+
+---
+spring:
+  profiles: prod
+
+  data:
+    solr:
+      zk-host: node1.jkzldev.com,node2.jkzldev.com,node4.jkzldev.com:2181/solr # ZooKeeper host address in the form HOST:PORT.
