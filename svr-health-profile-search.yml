@@ -9,6 +9,10 @@ spring:
     solr:
       repositories.enabled: true # Enable Solr repositories.
 
+    datasource:
+      url: http://invalid.com
+      driverClassName: com.mysql.jdbc.Driver
+
 ---
 spring:
   profiles: dev
