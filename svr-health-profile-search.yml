@@ -1,7 +1,7 @@
 logging:
   level:
     com:
-      netflix: DEBUG
+      netflix: INFO
 
 spring:
   # SOLR (SolrProperties)
@@ -9,9 +9,9 @@ spring:
     solr:
       repositories.enabled: true # Enable Solr repositories.
 
-    datasource:
-      url: http://invalid.com
-      driverClassName: com.mysql.jdbc.Driver
+  datasource:
+    url: http://invalid.com
+    driverClassName: com.mysql.jdbc.Driver
 
 ---
 spring:
