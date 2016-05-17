@@ -16,8 +16,14 @@ zuul:
       path: /api/v1.0/std/documents/data_set_relationships
       serviceId: svr-standard
     uploadTemplateFile:
-          path: /api/v1.0/templates/{id}/content
-          serviceId: svr-health-profile
+      path: /api/v1.0/templates/{id}/content
+      serviceId: svr-health-profile
+    createHosEsbMiniRelease:
+      path: /api/v1.0/esb/createHosEsbMiniRelease
+      serviceId: svr-esb
+    updateHosEsbMiniRelease:
+      path: /api/v1.0/esb/updateHosEsbMiniRelease
+      serviceId: svr-esb
 
 hystrix:
   command:
