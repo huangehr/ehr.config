@@ -59,15 +59,15 @@ ehr:
         - HDSC02_02: Resident
         - HDSC02_09: Resident
       meta-data:
-        - HDSD00_01_457_D # 挂号时间
-        - HDSD00_01_185_D # 出院时间
+        - HDSD00_01_457 # 挂号时间
+        - HDSD00_01_185 # 出院时间
     # 身份提取参数，从人口学提取
     identity:
       data-sets:
         - HDSA00_01
       meta-data:
-        id-card-no: HDSA00_01_017_S     # 身份标识
-        id-card-type: HDSA00_01_016_S   # 身份类型
+        id-card-no: HDSA00_01_017     # 身份标识
+        id-card-type: HDSA00_01_016   # 身份类型
     # 卡提取参数，从就诊摘要提取
     card:
       data-sets:
