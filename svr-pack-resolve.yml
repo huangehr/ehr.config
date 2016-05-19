@@ -60,7 +60,7 @@ ehr:
         - HDSC02_09: Resident
       meta-data:
         - HDSD00_01_457 # 挂号时间
-        - HDSD00_01_185 # 出院时间
+        - HDSD00_01_575 # 入院时间
     # 身份提取参数，从人口学提取
     identity:
       data-sets:

@@ -20,6 +20,7 @@ ehr:
       data-set-table-prefix: std_data_set_
       data-set-code: code
       data-set-name: name
+      data-set-is-multi-record: multi_record
 
       meta-data-table-prefix: std_meta_data_
       meta-data-dict-id: dict_id
