@@ -11,32 +11,39 @@ deploy:
 default:
   password: 123456
 
-redis-key-schema:
-  std:
-    version-table-prefix: std_cda_versions
-    version-name: name
+ehr:
+  redis-key-schema:
+    std:
+      version-table-prefix: std_cda_versions
+      version-name: name
 
-    data-set-table-prefix: std_data_set_
-    data-set-code: code
-    data-set-name: name
+      data-set-table-prefix: std_data_set_
+      data-set-code: code
+      data-set-name: name
+      data-set-is-multi-record: multi_record
 
-    meta-data-table-prefix: std_meta_data_
-    meta-data-dict-id: dict_id
-    meta-data-type: type
+      meta-data-table-prefix: std_meta_data_
+      meta-data-dict-id: dict_id
+      meta-data-type: type
 
-    dict-entry-table-prefix: std_dictionary_entry_
-    dict-entry-value: value
-  org:
-    table: organizations
-    name: name
-
+      dict-entry-table-prefix: std_dictionary_entry_
+      dict-entry-value: value
+    org:
+      table: organizations
+      name: name
+    resource-adaption:
+      table: rs_adapter_metadata
+      resource-meta-data: resource_metadata
+      
 #Application error definition, this file define common errors,
 #if the error is used only in your application, please define it in your application configuration file.
 ehr.common.invalid.parameter: 参数解析错误
 ehr.common.query.not.found: 不存在该对象
 ehr.common.repeat.code: 代码重复
 
-#Application port, since 10100, 10 per step. Update max port if new application created. Current max: 10200
+#Application port, since 10100, 10 per step. Update max port if new application created. Current max: 10210
+ag-ehr-platform.server.port: 443
+ag-admin.server.port: 10000
 svr-adaption.server.port: 10150
 svr-app.server.port: 10160
 svr-dict.server.port: 10050
@@ -51,10 +58,9 @@ svr-security.server.port: 10110
 svr-special-dict.server.port: 10180
 svr-standard.server.port: 10040
 svr-user.server.port: 10120
-ag-ehr-platform.server.port: 443
-ag-admin.server.port: 10000
 svr-family.server.port: 10190
-svr-resource.server.port: 10200
+svr-health-profile-search.server.port: 10200
+svr-workflow.server.port: 10210
 
 #Application acuator
 endpoints:

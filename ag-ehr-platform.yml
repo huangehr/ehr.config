@@ -5,6 +5,11 @@ logging:
 
 logging.level.root: INFO
 
+netflix:
+  metrics:
+    rest:
+      metricName: api
+
 # service routes
 zuul:
   addProxyHeaders: false
