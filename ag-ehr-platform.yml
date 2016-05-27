@@ -40,6 +40,12 @@ spring:
   thymeleaf:
     cache: false
 
+  metrics:
+    export:
+      statsd:
+        host: 192.168.1.221
+        port: 8125
+
 server:
   ssl:
     key-store: C:/Windows/tomcat.keystore
@@ -51,6 +57,12 @@ spring:
   profiles: test
   thymeleaf:
     cache: false
+
+  metrics:
+    export:
+      statsd:
+        host: 192.168.1.221
+        port: 8125
 
 server:
   ssl:
