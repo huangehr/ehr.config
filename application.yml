@@ -34,6 +34,9 @@ ehr:
     resource-adaption:
       table: rs_adapter_metadata
       resource-meta-data: resource_metadata
+    hp_icd10_relation:
+      table: hp_icd10_relation
+      icd10_id: icd10_id
       
 #Application error definition, this file define common errors,
 #if the error is used only in your application, please define it in your application configuration file.
