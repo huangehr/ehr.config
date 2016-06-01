@@ -37,6 +37,7 @@ ehr:
     hp_icd10_relation:
       table: hp_icd10_relation
       icd10_id: icd10_id
+      icd10_code: icd10_code
       
 #Application error definition, this file define common errors,
 #if the error is used only in your application, please define it in your application configuration file.
