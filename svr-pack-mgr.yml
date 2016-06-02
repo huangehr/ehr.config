@@ -1,7 +1,7 @@
 logging:
   level:
     com:
-      netflix: ERROR
+      netflix: DEBUG
       
 data-source:
   driver-class-name: com.mysql.jdbc.Driver
