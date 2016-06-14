@@ -109,6 +109,32 @@ hadoop:
 
 ---
 spring:
+  profiles: alpha
+
+  redis:
+    host: 192.168.1.220 # Redis server host.
+
+  data:
+    solr:
+      host: http://172.19.103.10:8983/solr # Solr host. Ignored if "zk-host" is set.
+      zk-host: host-172-17-110-23,host-172-17-110-27,host-172-17-110-26:2181/solr # ZooKeeper host address in the form HOST:PORT.
+
+  metrics:
+    export:
+      statsd:
+        host: 192.168.1.221
+        port: 8125
+
+fast-dfs:
+  tracker-server: 172.19.103.54:22122
+  public-server: http://172.19.103.54:22122
+
+hadoop:
+  hbase-properties:
+    - hbase.zookeeper.quorum: node2.jkzldev.com,node1.jkzldev.com,node4.jkzldev.com
+
+---
+spring:
   profiles: test
 
   redis:

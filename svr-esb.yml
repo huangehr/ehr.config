@@ -53,6 +53,19 @@ fast-dfs:
 
 ---
 spring:
+  profiles: alpha
+
+data-source:
+  url: jdbc:mysql://192.168.1.220:3306/healtharchive?useUnicode=true&characterEncoding=UTF-8
+  user-name: ha
+  password: ha
+
+fast-dfs:
+  tracker-server: 172.19.103.54:22122
+  public-server: http://172.19.103.54:22122
+  
+---
+spring:
   profiles: test
 
 data-source:

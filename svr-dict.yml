@@ -44,6 +44,18 @@ data-source:
 
 ---
 spring:
+  profiles: alpha
+
+  redis:
+    host: 192.168.1.220 # Redis server host.
+
+data-source:
+  url: jdbc:mysql://192.168.1.220:3306/healtharchive?useUnicode=true&characterEncoding=UTF-8
+  user-name: ha
+  password: ha
+  
+---
+spring:
   profiles: test
 
   redis:

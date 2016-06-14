@@ -112,6 +112,18 @@ eureka-server-ip: 192.168.1.221:8761
 
 ---
 spring:
+  profiles: alpha
+
+#If true, each application use ip to register it in eureka, eureka host is defined in "eureka-server-ip".
+#else the server must have host map.
+eureka:
+  instance:
+    prefer-ip-address: false
+
+eureka-server-ip: 172.19.103.11:8761
+
+---
+spring:
   profiles: test
 
 #If true, each application use ip to register it in eureka, eureka host is defined in "eureka-server-ip".

@@ -39,6 +39,10 @@ spring:
 
 ---
 spring:
+  profiles: alpha
+
+---
+spring:
   profiles: test
 
 ---

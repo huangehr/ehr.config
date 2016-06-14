@@ -39,6 +39,25 @@ hadoop:
 
 ---
 spring:
+  profiles: alpha
+  redis:
+    host: 192.168.1.220 # Redis server host.
+
+  data:
+    solr:
+      zk-host: node1.jkzldev.com,node2.jkzldev.com,node4.jkzldev.com:2181/solr # ZooKeeper host address in the form HOST:PORT.
+
+data-source:
+  url: jdbc:mysql://192.168.1.220:3306/healtharchive?useUnicode=true&characterEncoding=UTF-8
+  user-name: ha
+  password: ha
+
+hadoop:
+  hbase-properties:
+    - hbase.zookeeper.quorum: node1.jkzldev.com,node2.jkzldev.com,node4.jkzldev.com
+
+---
+spring:
   profiles: test
 
   redis:
