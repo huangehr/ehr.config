@@ -8,30 +8,30 @@ hadoop:
     - hbase.zookeeper.property.clientPort: 2181
     - zookeeper.znode.parent: /hbase-unsecure
 
-data-source:
-  driver-class-name: com.mysql.jdbc.Driver
-  initialize-size: 1
-  max-total: 20
-  max-idle: 10
-  min-idle: 1
-  validation-query: SELECT 1
-  test-on-borrow: true
-  remove-abandoned-timeout: 55
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    max-active: 20
+    max-idle: 8
+    min-idle: 8
+    validation-query: SELECT 1
+    test-on-borrow: true
 
 ---
 spring:
   profiles: dev
+
+  datasource:
+    url: jdbc:mysql://192.168.1.220:3306/healtharchive?useUnicode=true&characterEncoding=UTF-8
+    username: ha
+    password: ha
+
   redis:
     host: 192.168.1.220 # Redis server host.
 
   data:
     solr:
       zk-host: node1.jkzldev.com,node2.jkzldev.com,node4.jkzldev.com:2181/solr # ZooKeeper host address in the form HOST:PORT.
-
-data-source:
-  url: jdbc:mysql://192.168.1.220:3306/healtharchive?useUnicode=true&characterEncoding=UTF-8
-  user-name: ha
-  password: ha
 
 hadoop:
   hbase-properties:
@@ -40,6 +40,12 @@ hadoop:
 ---
 spring:
   profiles: alpha
+
+  datasource:
+    url: jdbc:mysql://192.168.1.220:3306/healtharchive?useUnicode=true&characterEncoding=UTF-8
+    username: ha
+    password: ha
+
   redis:
     host: 192.168.1.220 # Redis server host.
 
@@ -47,10 +53,6 @@ spring:
     solr:
       zk-host: node1.jkzldev.com,node2.jkzldev.com,node4.jkzldev.com:2181/solr # ZooKeeper host address in the form HOST:PORT.
 
-data-source:
-  url: jdbc:mysql://192.168.1.220:3306/healtharchive?useUnicode=true&characterEncoding=UTF-8
-  user-name: ha
-  password: ha
 
 hadoop:
   hbase-properties:
@@ -60,6 +62,11 @@ hadoop:
 spring:
   profiles: test
 
+  datasource:
+    url: jdbc:mysql://172.19.103.50:3306/healtharchive?useUnicode=true&characterEncoding=UTF-8
+    username: weifuwu
+    password: weifuwu
+
   redis:
     host: 172.19.103.47 # Redis server host.
 
@@ -67,10 +74,6 @@ spring:
     solr:
       zk-host: node1.jkzldev.com,node2.jkzldev.com,node4.jkzldev.com:2181/solr # ZooKeeper host address in the form HOST:PORT.
 
-data-source:
-  url: jdbc:mysql://172.19.103.50:3306/healtharchive?useUnicode=true&characterEncoding=UTF-8
-  user-name: weifuwu
-  password: weifuwu
 
 hadoop:
   hbase-properties:
@@ -79,17 +82,18 @@ hadoop:
 ---
 spring:
   profiles: prod
+
+  datasource:
+    url: jdbc:mysql://11.1.2.5:3306/healtharchive?useUnicode=true&amp;characterEncoding=UTF-8
+    username: ha
+    password: jkzlxm
+
   redis:
     host: 11.1.2.20 # Redis server host.
 
   data:
     solr:
       zk-host: node1.jkzldev.com,node2.jkzldev.com,node4.jkzldev.com:2181/solr # ZooKeeper host address in the form HOST:PORT.
-
-data-source:
-  url: jdbc:mysql://11.1.2.5:3306/healtharchive?useUnicode=true&amp;characterEncoding=UTF-8
-  user-name: ha
-  password: jkzlxm
 
 hadoop:
   hbase-properties:
