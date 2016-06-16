@@ -47,10 +47,10 @@ spring:
   redis:
     host: 192.168.1.220 # Redis server host.
 
-data-source:
-  url: jdbc:mysql://192.168.1.220:3306/healtharchive?useUnicode=true&characterEncoding=UTF-8
-  user-name: ha
-  password: ha
+  datasource:
+    url: jdbc:mysql://192.168.1.220:3306/healtharchive?useUnicode=true&characterEncoding=UTF-8
+    username: ha
+    password: ha
   
 ---
 spring:
@@ -59,10 +59,10 @@ spring:
   redis:
     host: 172.19.103.47 # Redis server host.
 
-data-source:
-  url: jdbc:mysql://172.19.103.50:3306/healtharchive?useUnicode=true&characterEncoding=UTF-8
-  user-name: weifuwu
-  password: weifuwu
+  datasource:
+    url: jdbc:mysql://172.19.103.50:3306/healtharchive?useUnicode=true&characterEncoding=UTF-8
+    username: weifuwu
+    password: weifuwu
 
 ---
 spring:
@@ -71,7 +71,7 @@ spring:
   redis:
     host: 11.1.2.20 # Redis server host.
 
-data-source:
-  url: jdbc:mysql://11.1.2.5:3306/healtharchive?useUnicode=true&amp;characterEncoding=UTF-8
-  user-name: ha
-  password: jkzlxm
+  data-source:
+    url: jdbc:mysql://11.1.2.5:3306/healtharchive?useUnicode=true&amp;characterEncoding=UTF-8
+    username: ha
+    password: jkzlxm

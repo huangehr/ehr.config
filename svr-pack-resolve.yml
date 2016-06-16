@@ -4,13 +4,6 @@ logging:
       netflix: DEBUG
 
 spring:
-  security:
-    basic:
-      enabled: false
-  management:
-    security:
-      enabled: false
-
   # REDIS
   redis:
     database: 0 # Database index used by the connection factory.
