@@ -34,9 +34,21 @@ spring:
       max-wait: -1 # Maximum amount of time (in milliseconds) a connection allocation should block before throwing an exception when the pool is exhausted. Use a negative value to block indefinitely.
       min-idle: 1 # Target for the minimum number of idle connections to maintain in the pool. This setting only has an effect if it is positive.
 
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    max-active: 20
+    max-idle: 8
+    min-idle: 8
+    validation-query: SELECT 1
+    test-on-borrow: true
 ---
 spring:
   profiles: dev
+
+  datasource:
+    url: jdbc:mysql://192.168.1.220:3306/healtharchive?useUnicode=true&characterEncoding=UTF-8
+    username: ha
+    password: ha
 
   redis:
     host: 192.168.1.220 # Redis server host.
@@ -57,6 +69,10 @@ fast-dfs:
 spring:
   profiles: alpha
 
+  datasource:
+    url: jdbc:mysql://192.168.1.220:3306/healtharchive?useUnicode=true&characterEncoding=UTF-8
+    username: ha
+    password: ha
 
   redis:
     host: 192.168.1.220 # Redis server host.
@@ -77,6 +93,11 @@ fast-dfs:
 spring:
   profiles: test
 
+  datasource:
+    url: jdbc:mysql://172.19.103.50:3306/healtharchive?useUnicode=true&characterEncoding=UTF-8
+    username: weifuwu
+    password: weifuwu
+
   redis:
     host: 172.19.103.47 # Redis server host.
 
@@ -93,6 +114,11 @@ fast-dfs:
 ---
 spring:
   profiles: prod
+
+  datasource:
+    url: jdbc:mysql://11.1.2.5:3306/healtharchive?useUnicode=true&amp;characterEncoding=UTF-8
+    username: ha
+    password: jkzlxm
 
   redis:
     host: 11.1.2.20 # Redis server host.
