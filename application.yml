@@ -34,6 +34,12 @@ ehr:
     resource-adaption:
       table: rs_adapter_metadata
       resource-meta-data: resource_metadata
+    resource-metadata:
+      table: rs_metadata
+      column: dict_code
+    resource-adapter-dict:
+      table: rs_adapter_dictionary
+      column: code_name
     hp_icd10_relation:
       table: hp_icd10_relation
       icd10_id: icd10_id
