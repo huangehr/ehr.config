@@ -11,6 +11,14 @@ deploy:
 default:
   password: 123456
 
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 300000
+
 ehr:
   redis-key-schema:
     std:
