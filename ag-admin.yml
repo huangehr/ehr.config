@@ -25,13 +25,6 @@ zuul:
       path: /api/v1.0/esb/updateHosEsbMiniRelease
       serviceId: svr-esb
 
-hystrix:
-  command:
-    default:
-      execution:
-        isolation:
-          thread:
-            timeoutInMilliseconds: 300000
 
 ---
 spring:
