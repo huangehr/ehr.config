@@ -68,7 +68,7 @@ spring:
 
   data:
     solr:
-      zk-host: node6.jkzldev.com,node7.jkzldev.com:2181/solr # ZooKeeper host address in the form HOST:PORT.
+      zk-host: node1.jkzldev.com,node2.jkzldev.com,node4.jkzldev.com:2181/solr # ZooKeeper host address in the form HOST:PORT.
 
   datasource:
     url: jdbc:mysql://192.168.1.220:3306/healtharchive?useUnicode=true&characterEncoding=UTF-8
