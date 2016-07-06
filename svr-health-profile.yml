@@ -81,7 +81,7 @@ hadoop:
 
 fast-dfs:
   tracker-server: 172.19.103.54:22122
-  public-server: http://172.19.103.52:80
+  public-server: http://172.19.103.54:80
 
 ---
 spring:
@@ -105,7 +105,7 @@ hadoop:
 
 fast-dfs:
   tracker-server: 172.19.103.54:22122
-  public-server: http://172.19.103.52:80
+  public-server: http://172.19.103.54:80
   
 ---
 spring:
