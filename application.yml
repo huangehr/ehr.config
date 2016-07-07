@@ -135,7 +135,7 @@ eureka:
   instance:
     prefer-ip-address: false
 
-eureka-server-ip: 172.19.103.11:8761
+eureka-server-ip: localhost:8761
 
 ---
 spring:
