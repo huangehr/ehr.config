@@ -71,7 +71,7 @@ spring:
   redis:
     host: 11.1.2.20 # Redis server host.
 
-  data-source:
+  datasource:
     url: jdbc:mysql://11.1.2.5:3306/healtharchive?useUnicode=true&amp;characterEncoding=UTF-8
     username: ha
     password: jkzlxm
