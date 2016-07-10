@@ -97,4 +97,4 @@ spring:
 
 hadoop:
   hbase-properties:
-    - hbase.zookeeper.quorum: node1.jkzldev.com,node2.jkzldev.com,node4.jkzldev.com
+    - hbase.zookeeper.quorum: node2.jkzl.com,node3.jkzl.com,node1.jkzl.com
