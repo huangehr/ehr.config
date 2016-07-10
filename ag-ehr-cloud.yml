@@ -46,11 +46,11 @@ spring:
         host: 192.168.1.221
         port: 8125
 
-#server:
-#  ssl:
-#    key-store: C:/Windows/tomcat.keystore
-#    key-store-password: 123456
-#    key-password: 123456
+server:
+  ssl:
+    key-store: C:/Windows/tomcat.keystore
+    key-store-password: 123456
+    key-password: 123456
 
 ---
 spring:
@@ -64,12 +64,12 @@ spring:
       statsd:
         host: 192.168.1.221
         port: 8125
-#
-#server:
-#  ssl:
-#    key-store: tomcat.keystore
-#    key-store-password: 123456
-#    key-password: 123456
+
+server:
+  ssl:
+    key-store: tomcat.keystore
+    key-store-password: 123456
+    key-password: 123456
 
 ---
 spring:
@@ -83,10 +83,10 @@ spring:
         host: 192.168.1.221
         port: 8125
 
-#server:
-#  ssl:
-#    key-store-password: 123456
-#    key-password: 123456
+server:
+  ssl:
+    key-store-password: 123456
+    key-password: 123456
 
 ---
 spring:
