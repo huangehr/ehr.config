@@ -17,7 +17,7 @@ hystrix:
       execution:
         isolation:
           thread:
-            timeoutInMilliseconds: 300000
+            timeoutInMilliseconds: 3000000
 
 ehr:
   redis-key-schema:
