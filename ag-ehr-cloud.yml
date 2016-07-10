@@ -48,8 +48,8 @@ spring:
 
 server:
   ssl:
-    key-store: C:/Windows/tomcat.keystore
     key-store-password: 123456
+    key-store: tomcat.keystore
     key-password: 123456
 
 ---
@@ -67,7 +67,7 @@ spring:
 
 server:
   ssl:
-    key-store: tomcat.keystore
+    key-store: C:/Windows/tomcat.keystore
     key-store-password: 123456
     key-password: 123456
 
@@ -86,6 +86,7 @@ spring:
 server:
   ssl:
     key-store-password: 123456
+    key-store: tomcat.keystore
     key-password: 123456
 
 ---
