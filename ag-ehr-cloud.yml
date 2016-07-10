@@ -92,7 +92,7 @@ spring:
 spring:
   profiles: prod
 
-#server:
-#  ssl:
-#    key-store-password: 123456
-#    key-password: 123456
+server:
+  ssl:
+    key-store-password: 123456
+    key-password: 123456
