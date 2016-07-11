@@ -49,7 +49,6 @@ spring:
 server:
   ssl:
     key-store-password: 123456
-    key-store: tomcat.keystore
     key-password: 123456
 
 ---
