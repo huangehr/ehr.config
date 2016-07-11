@@ -81,6 +81,7 @@ svr-family.server.port: 10190
 svr-health-profile-search.server.port: 10200
 svr-workflow.server.port: 10210
 svr-resource.server.port: 10220
+svr-archive-security.server.port: 10230
 
 #Application acuator
 endpoints:
@@ -135,7 +136,7 @@ eureka:
   instance:
     prefer-ip-address: false
 
-eureka-server-ip: localhost:8761
+eureka-server-ip: 192.168.1.221:8761
 
 ---
 spring:
