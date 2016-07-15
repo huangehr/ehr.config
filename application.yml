@@ -109,6 +109,7 @@ spring:
         - veth.*
         - vmnet.*
         - TAP-Win.*
+        - Software Loopback.*
         - .*VPN.*
         - .*Virtual.*
         - .*Debug.*
