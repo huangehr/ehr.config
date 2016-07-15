@@ -93,6 +93,10 @@ spring:
         - docker0
         - veth.*
         - vmnet.*
+        - TAP-Win.*
+        - .*VPN.*
+        - .*Virtual.*
+        - .*Debug.*
 
 eureka:
   client:
