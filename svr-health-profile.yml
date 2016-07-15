@@ -81,7 +81,7 @@ hadoop:
 
 fast-dfs:
   tracker-server: 172.19.103.54:22122
-  public-server: http://172.19.103.54:22122
+  public-server: http://172.19.103.54:80
 
 ---
 spring:
@@ -105,7 +105,7 @@ hadoop:
 
 fast-dfs:
   tracker-server: 172.19.103.54:22122
-  public-server: http://172.19.103.54:22122
+  public-server: http://172.19.103.54:80
   
 ---
 spring:
@@ -128,8 +128,8 @@ hadoop:
     - hbase.zookeeper.quorum: node2.jkzldev.com,node1.jkzldev.com,node4.jkzldev.com
 
 fast-dfs:
-  tracker-server: 172.19.103.13:22122
-  public-server: http://172.19.103.52:80
+  tracker-server: 172.19.103.54:22122
+  public-server: http://172.19.103.54:80
 
 ---
 spring:
@@ -140,7 +140,7 @@ spring:
 
   data:
     solr:
-      zk-host: node1.jkzldev.com,node2.jkzldev.com,node4.jkzldev.com:2181/solr # ZooKeeper host address in the form HOST:PORT.
+      zk-host: 11.1.2.51,11.1.2.52,11.1.2.53:2181/solr # ZooKeeper host address in the form HOST:PORT.
 
   datasource:
     url: jdbc:mysql://11.1.2.5:3306/healtharchive?useUnicode=true&amp;characterEncoding=UTF-8

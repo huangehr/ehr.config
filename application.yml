@@ -11,6 +11,14 @@ deploy:
 default:
   password: 123456
 
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 3000000
+
 ehr:
   redis-key-schema:
     std:
@@ -34,6 +42,12 @@ ehr:
     resource-adaption:
       table: rs_adapter_metadata
       resource-meta-data: resource_metadata
+    resource-metadata:
+      table: rs_metadata
+      column: dict_code
+    resource-adapter-dict:
+      table: rs_adapter_dictionary
+      column: code_name
     hp_icd10_relation:
       table: hp_icd10_relation
       icd10_id: icd10_id
@@ -67,6 +81,7 @@ svr-family.server.port: 10190
 svr-health-profile-search.server.port: 10200
 svr-workflow.server.port: 10210
 svr-resource.server.port: 10220
+svr-archive-security.server.port: 10230
 
 #Application acuator
 endpoints:
@@ -125,7 +140,7 @@ eureka:
   instance:
     prefer-ip-address: false
 
-eureka-server-ip: 172.19.103.11:8761
+eureka-server-ip: 192.168.1.221:8761
 
 ---
 spring:

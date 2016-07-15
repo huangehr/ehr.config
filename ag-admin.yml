@@ -4,14 +4,14 @@ logging:
       netflix: DEBUG
 
 ribbon:
-  ReadTimeout: 300000
+  ReadTimeout: 3000000
   ConnectTimeout: 6000
 
 zuul:
   routes:
     adapterDataSet:
       path: /api/v1.0/adapter/plan/adapterDataSet
-      serviceId: svr-adaption
+      serviceId: svr-standard
     saveDataSetRelationships:
       path: /api/v1.0/std/documents/data_set_relationships
       serviceId: svr-standard
@@ -25,13 +25,6 @@ zuul:
       path: /api/v1.0/esb/updateHosEsbMiniRelease
       serviceId: svr-esb
 
-hystrix:
-  command:
-    default:
-      execution:
-        isolation:
-          thread:
-            timeoutInMilliseconds: 300000
 
 ---
 spring:
