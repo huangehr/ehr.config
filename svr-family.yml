@@ -1,7 +1,11 @@
 ﻿logging:
   level:
     com:
-      netflix: DEBUG
+      netflix: INFO
+    org:
+      springframework:
+        web: INFO
+      hibernate: ERROR
 
 spring:
   datasource:

@@ -1,7 +1,11 @@
 logging:
   level:
     com:
-      netflix: ERROR
+      netflix: INFO
+    org:
+      springframework:
+        web: INFO
+      hibernate: ERROR
       
 common.query.not.found: 该{0}不存在：{1}
 common.miss.parameter: 参数不能为空：{0}！

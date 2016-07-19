@@ -98,7 +98,7 @@ spring:
   jpa:
     database-platform: org.hibernate.dialect.MySQL5Dialect
     hibernate.dialect: org.hibernate.dialect.MySQL5Dialect
-    show-sql: true
+    show-sql: false
 
   #block the inet address of nic, virtual card and so on. Need spring version: Brixton M5
   cloud:

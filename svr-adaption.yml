@@ -2,6 +2,10 @@ logging:
   level:
     com:
       netflix: INFO
+    org:
+      springframework:
+        web: INFO
+      hibernate: ERROR
 
 spring:
   datasource:
