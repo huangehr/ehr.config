@@ -4,8 +4,8 @@ logging:
       netflix: DEBUG
 
 ribbon:
-  ReadTimeout: 3000000
-  ConnectTimeout: 6000
+  ReadTimeout: 30000
+  ConnectTimeout: 10000
 
 zuul:
   routes:
