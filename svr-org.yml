@@ -1,7 +1,11 @@
 ﻿logging:
   level:
     com:
-      netflix: ERROR
+      netflix: INFO
+    org:
+      springframework:
+        web: INFO
+      hibernate: ERROR
 
 spring:
   # REDIS
