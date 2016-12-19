@@ -103,7 +103,7 @@ spring:
     password: weifuwu
 
   redis:
-    host: 172.19.103.47 # Redis server host.
+    host: 172.17.110.193 # Redis server host.
 
   metrics:
     export:

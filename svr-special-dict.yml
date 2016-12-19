@@ -61,7 +61,7 @@ spring:
   profiles: test
 
   redis:
-    host: 172.19.103.47 # Redis server host.
+    host: 172.17.110.193 # Redis server host.
 
   datasource:
     url: jdbc:mysql://172.19.103.50:3306/healtharchive?useUnicode=true&characterEncoding=UTF-8
