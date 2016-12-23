@@ -98,14 +98,14 @@ spring:
 
   datasource:
     url: jdbc:mysql://172.19.103.50:3306/healtharchive?useUnicode=true&characterEncoding=UTF-8
-    username: chenweishan
-    password: chenweishan
-    #username: weifuwu
-    #password: weifuwu
+    username: weifuwu
+    password: weifuwu
+    #username: chenweishan
+    #password: chenweishan
 
   redis:
-    host: 172.17.110.193
-    #host: 172.19.103.47 # Redis server host.
+    #host: 172.17.110.193
+    host: 172.19.103.47 # Redis server host.
 
 fast-dfs:
   tracker-server: 172.19.103.13:22122
