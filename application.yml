@@ -62,6 +62,7 @@ ehr.common.repeat.code: 代码重复
 #Application port, since 10100, 10 per step. Update max port if new application created. Current max: 10220
 ag-ehr-platform.server.port: 443
 ag-ehr-cloud.server.port: 443
+ag-portal-cloud.server.port: 444
 ag-admin.server.port: 10000
 svr-adaption.server.port: 10150
 svr-app.server.port: 10160
@@ -83,6 +84,7 @@ svr-workflow.server.port: 10210
 svr-resource.server.port: 10220
 svr-archive-security.server.port: 10230
 svr-profile-statistics.server.port: 10240
+svr-portal.server.port: 10250
 #Application acuator
 endpoints:
   restart:
@@ -129,6 +131,7 @@ eureka:
   instance:
     prefer-ip-address: false
 
+#eureka-server-ip: 127.0.0.1:8761
 eureka-server-ip: 192.168.1.221:8761
 
 ---

@@ -96,6 +96,8 @@ spring:
     solr:
       host: http://172.19.103.10:8983/solr # Solr host. Ignored if "zk-host" is set.
       zk-host: host-172-17-110-23,host-172-17-110-27,host-172-17-110-26:2181/solr # ZooKeeper host address in the form HOST:PORT.
+      #host: http://172.17.110.20:8983/solr # Solr host. Ignored if "zk-host" is set.
+      #zk-host: host-172-17-110-20,host-172-17-110-186,host-172-17-110-18:2181/solr # ZooKeeper host address in the form HOST:PORT.
 
   metrics:
     export:
@@ -110,6 +112,7 @@ fast-dfs:
 hadoop:
   hbase-properties:
     - hbase.zookeeper.quorum: node2.jkzldev.com,node1.jkzldev.com,node4.jkzldev.com
+    #- hbase.zookeeper.quorum: node1,node2,node3
 
 ---
 spring:
@@ -122,6 +125,8 @@ spring:
     solr:
       host: http://172.19.103.10:8983/solr # Solr host. Ignored if "zk-host" is set.
       zk-host: host-172-17-110-23,host-172-17-110-27,host-172-17-110-26:2181/solr # ZooKeeper host address in the form HOST:PORT.
+      #host: http://172.17.110.20:8983/solr # Solr host. Ignored if "zk-host" is set.
+      #zk-host: host-172-17-110-20,host-172-17-110-186,host-172-17-110-18:2181/solr # ZooKeeper host address in the form HOST:PORT.
 
   metrics:
     export:
@@ -136,6 +141,7 @@ fast-dfs:
 hadoop:
   hbase-properties:
     - hbase.zookeeper.quorum: node2.jkzldev.com,node1.jkzldev.com,node4.jkzldev.com
+    #- hbase.zookeeper.quorum: node1,node2,node3
 
 ---
 spring:
@@ -148,6 +154,8 @@ spring:
     solr:
       host: http://172.19.103.10:8983/solr # Solr host. Ignored if "zk-host" is set.
       zk-host: host-172-17-110-23,host-172-17-110-27,host-172-17-110-26:2181/solr # ZooKeeper host address in the form HOST:PORT.
+      #host: http://172.17.110.20:8983/solr # Solr host. Ignored if "zk-host" is set.
+      #zk-host: host-172-17-110-20,host-172-17-110-186,host-172-17-110-18:2181/solr # ZooKeeper host address in the form HOST:PORT.
 
   metrics:
     export:
@@ -162,6 +170,7 @@ fast-dfs:
 hadoop:
   hbase-properties:
     - hbase.zookeeper.quorum: node2.jkzldev.com,node1.jkzldev.com,node4.jkzldev.com
+    #- hbase.zookeeper.quorum: node1,node2,node3
 
 ---
 spring:
