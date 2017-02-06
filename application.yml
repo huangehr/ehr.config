@@ -84,6 +84,7 @@ svr-workflow.server.port: 10210
 svr-resource.server.port: 10220
 svr-archive-security.server.port: 10230
 svr-profile-statistics.server.port: 10240
+svr-portal.server.port: 10250
 #Application acuator
 endpoints:
   restart:
