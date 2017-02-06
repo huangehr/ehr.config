@@ -35,11 +35,13 @@ spring:
 
   data:
     solr:
-      zk-host: node1,node2,node3:2181/solr # ZooKeeper host address in the form HOST:PORT.
+      zk-host: node1.jkzldev.com,node2.jkzldev.com,node4.jkzldev.com:2181/solr # ZooKeeper host address in the form HOST:PORT.
+      #zk-host: node1,node2,node3:2181/solr # ZooKeeper host address in the form HOST:PORT.
 
 hadoop:
   hbase-properties:
-    - hbase.zookeeper.quorum: node1,node2,node3
+    - hbase.zookeeper.quorum: node1.jkzldev.com,node2.jkzldev.com,node4.jkzldev.com
+    #- hbase.zookeeper.quorum: node1,node2,node3
 
 ---
 spring:
@@ -55,12 +57,14 @@ spring:
 
   data:
     solr:
-      zk-host: node1,node2,node3:2181/solr # ZooKeeper host address in the form HOST:PORT.
+      zk-host: node1.jkzldev.com,node2.jkzldev.com,node4.jkzldev.com:2181/solr # ZooKeeper host address in the form HOST:PORT.
+      #zk-host: node1,node2,node3:2181/solr # ZooKeeper host address in the form HOST:PORT.
 
 
 hadoop:
   hbase-properties:
-    - hbase.zookeeper.quorum: node1,node2,node3
+    - hbase.zookeeper.quorum: node1.jkzldev.com,node2.jkzldev.com,node4.jkzldev.com
+    #- hbase.zookeeper.quorum: node1,node2,node3
 
 ---
 spring:
@@ -76,12 +80,14 @@ spring:
 
   data:
     solr:
-      zk-host: node1,node2,node3:2181/solr # ZooKeeper host address in the form HOST:PORT.
+      zk-host: node1.jkzldev.com,node2.jkzldev.com,node4.jkzldev.com:2181/solr # ZooKeeper host address in the form HOST:PORT.
+      #zk-host: node1,node2,node3:2181/solr # ZooKeeper host address in the form HOST:PORT.
 
 
 hadoop:
   hbase-properties:
-    - hbase.zookeeper.quorum: node1,node2,node3
+    - hbase.zookeeper.quorum: node1.jkzldev.com,node2.jkzldev.com,node4.jkzldev.com
+    #- hbase.zookeeper.quorum: node1,node2,node3
 
 ---
 spring:
