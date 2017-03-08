@@ -150,8 +150,8 @@ spring:
 
   data:
     solr:
-      zk-host: 11.1.2.51,11.1.2.52,11.1.2.53:2181/solr # ZooKeeper host address in the form HOST:PORT.
-
+      #zk-host: 11.1.2.51,11.1.2.52,11.1.2.53:2181/solr # ZooKeeper host address in the form HOST:PORT.
+      zk-host: node1.hde.jkzlehr.com,node2.hde.jkzlehr.com,node3.hde.jkzlehr.com:2181/solr
   datasource:
     url: jdbc:mysql://11.1.2.5:3306/healtharchive?useUnicode=true&amp;characterEncoding=UTF-8
     username: ha

@@ -77,7 +77,8 @@ spring:
     host: 11.1.2.20 # Redis server host.
   data:
     solr:
-      zk-host: 11.1.2.51,11.1.2.52,11.1.2.53:2181/solr # ZooKeeper host address in the form HOST:PORT.
+      #zk-host: 11.1.2.51,11.1.2.52,11.1.2.53:2181/solr # ZooKeeper host address in the form HOST:PORT.
+      zk-host: node1.hde.jkzlehr.com,node2.hde.jkzlehr.com,node3.hde.jkzlehr.com:2181/solr
 hadoop:
   hbase-properties:
     - hbase.zookeeper.quorum: node2.jkzl.com,node3.jkzl.com,node1.jkzl.com
