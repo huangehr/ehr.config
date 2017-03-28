@@ -58,6 +58,12 @@ spring:
   redis:
     host: 192.168.1.220 # Redis server host.
 
+  ldap:
+      host: 172.19.103.87
+      port: 389
+      bindDn: cn=admin,dc=ehr,dc=jkzl
+      password: jkzl
+      root: dc=ehr,dc=jkzl
 fast-dfs:
   tracker-server: 172.19.103.54:22122
   public-server: http://172.19.103.54:22122
@@ -95,6 +101,14 @@ spring:
   redis:
     host: 172.19.103.47 # Redis server host.
 
+
+  ldap:
+      host: 172.19.103.87
+      port: 389
+      bindDn: cn=admin,dc=ehr,dc=jkzl
+      password: jkzl
+      root: dc=ehr,dc=jkzl
+
 fast-dfs:
   tracker-server: 172.19.103.13:22122
   public-server: http://172.19.103.52:80
@@ -112,6 +126,12 @@ spring:
     username: ha
     password: jkzlxm
 
+  ldap:
+      host: 172.19.103.87
+      port: 389
+      bindDn: cn=admin,dc=ehr,dc=jkzl
+      password: jkzl
+      root: dc=ehr,dc=jkzl
 fast-dfs:
   tracker-server: 11.1.2.9:22122
   public-server: http://ds.ehr.yihu.com:22122
