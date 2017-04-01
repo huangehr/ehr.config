@@ -11,6 +11,29 @@ ribbon:
   ReadTimeout: 30000
   ConnectTimeout: 10000
 
+info:
+  app:
+    name: AgAdminService
+    description: EHR platform json app service.
+    version: 1.0.0
+  component: Zuul Server
+
+hystrix:
+  command:
+    default:
+      execution:
+#        timeout:
+#          enabled: false
+        isolation:
+          thread:
+            timeoutInMilliseconds: 30000
+ribbon:
+  ReadTimeout: 30000
+  ConnectTimeout: 6000
+spring:
+  ignoreUrls:
+    /api/v1.0/portal/oauth/login;/api/v1.0/portal/oauth/accessToken;/api/v1.0/portal/oauth/refreshToken;/api/v1.0/portal/oauth/validToken;/api/v1.0/portal/portalResourcesTop;/api/v1.0/portal/portalResources
+
 ---
 spring:
   profiles: dev
