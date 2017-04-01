@@ -87,6 +87,7 @@ svr-profile-statistics.server.port: 10240
 svr-authentication.server.port: 10260
 svr-portal.server.port: 10250
 svr-file-resource.server.port: 10270
+svr-ehr-basic.server.port: 10300
 #Application acuator
 endpoints:
   restart:
