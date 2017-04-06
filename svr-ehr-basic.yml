@@ -6,15 +6,23 @@ logging:
       springframework:
         web: INFO
       hibernate: ERROR
-      
-common.query.not.found: ËØ•{0}‰∏çÂ≠òÂú®Ôºö{1}
-common.miss.parameter: ÂèÇÊï∞‰∏çËÉΩ‰∏∫Á©∫Ôºö{0}ÔºÅ
-common.notfound.entity: Ê≤°ÊúâÊâæÂà∞{0}ÂÆû‰ΩìÔºö{}
-std.version.invalid.stage: ËØ•ÁâàÊú¨‰∏çÂ§Ñ‰∫éÁºñËæëÁä∂ÊÄÅÔºÅ
 
-multipart:
-  max-file-size: 100MB
-  max-request-size: 100MB
+server:
+  port: ${svr-ehr-basic.server.port}
+
+management:
+  port: ${server.port}
+
+info:
+  app:
+    name: AppService
+    description: EHR platform open service applicate administrative service.
+    version: 1.0.0
+
+common.query.not.found: ∏√{0}≤ª¥Ê‘⁄£∫{1}
+common.miss.parameter: ≤Œ ˝≤ªƒ‹Œ™ø’£∫{0}£°
+common.notfound.entity: √ª”–’“µΩ{0} µÃÂ£∫{}
+std.version.invalid.stage: ∏√∞Ê±æ≤ª¥¶”⁄±‡º≠◊¥Ã¨£°
 
 fast-dfs:
   pool:
@@ -29,12 +37,18 @@ fast-dfs:
     anti-steal-token: no
     secret-key: FastDFS1234567890
 
-hadoop:
-  hbase-properties:
-    - hbase.zookeeper.property.clientPort: 2181
-    - zookeeper.znode.parent: /hbase-unsecure
+multipart:
+  max-file-size: 100MB
+  max-request-size: 100MB
 
 spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    max-active: 20
+    max-idle: 8
+    min-idle: 8
+    validation-query: SELECT 1
+    test-on-borrow: true
   # REDIS
   redis:
     database: 0 # Database index used by the connection factory.
@@ -44,103 +58,90 @@ spring:
     #sentinel:
     #  master: # Name of Redis server.
     #  nodes: # Comma-separated list of host:port pairs.
-    
     pool:
       max-active: 8 # Max number of connections that can be allocated by the pool at a given time. Use a negative value for no limit.
       max-idle: 8 # Max number of "idle" connections in the pool. Use a negative value to indicate an unlimited number of idle connections.
       max-wait: -1 # Maximum amount of time (in milliseconds) a connection allocation should block before throwing an exception when the pool is exhausted. Use a negative value to block indefinitely.
       min-idle: 1 # Target for the minimum number of idle connections to maintain in the pool. This setting only has an effect if it is positive.
-
   # SOLR (SolrProperties)
   data:
     solr:
       repositories.enabled: true # Enable Solr repositories.
 
-  datasource:
-    driver-class-name: com.mysql.jdbc.Driver
-    max-active: 20
-    max-idle: 8
-    min-idle: 8
-    validation-query: SELECT 1
-    test-on-borrow: true
+hadoop:
+  hbase-properties:
+    - hbase.zookeeper.property.clientPort: 2181
+    - zookeeper.znode.parent: /hbase-unsecure
 
 ---
 spring:
   profiles: dev
-
   datasource:
     url: jdbc:mysql://192.168.1.220:3306/healtharchive?useUnicode=true&characterEncoding=UTF-8
     username: ha
     password: ha
-
   redis:
     host: 192.168.1.220 # Redis server host.
-
-  ldap:
-      host: 172.19.103.87
-      port: 389
-      bindDn: cn=admin,dc=ehr,dc=jkzl
-      password: jkzl
-      root: dc=ehr,dc=jkzl
+  data:
+    solr:
+      zk-host: node1.hde.h3c.com,node2.hde.h3c.com:2181/solr # ZooKeeper host address in the form HOST:PORT.
+hadoop:
+  hbase-properties:
+    - hbase.zookeeper.quorum: node1.hde.h3c.com,node2.hde.h3c.com,node3.hde.h3c.com
 
 fast-dfs:
   tracker-server: 172.19.103.54:22122
-  public-server: http://172.19.103.54:22122
-
-
+  public-server: http://172.19.103.54
 
 ---
 spring:
   profiles: alpha
-
   datasource:
     url: jdbc:mysql://192.168.1.220:3306/healtharchive?useUnicode=true&characterEncoding=UTF-8
     username: ha
     password: ha
-
   redis:
-    host: 192.168.1.220 # Redis server host.
+    host: 172.19.103.47 # Redis server host.
+  data:
+    solr:
+      zk-host: node1.hde.h3c.com,node2.hde.h3c.com:2181/solr # ZooKeeper host address in the form HOST:PORT.
+hadoop:
+  hbase-properties:
+    - hbase.zookeeper.quorum: node1.hde.h3c.com,node2.hde.h3c.com,node3.hde.h3c.com
 
 fast-dfs:
   tracker-server: 172.19.103.54:22122
-  public-server: http://172.19.103.54:22122
+  public-server: http://172.19.103.54
 
-
-  
 ---
 spring:
   profiles: test
-
   datasource:
     url: jdbc:mysql://172.19.103.50:3306/healtharchive?useUnicode=true&characterEncoding=UTF-8
     username: weifuwu
     password: weifuwu
-    #username: chenweishan
-    #password: chenweishan
-
-  redis:
-    #host: 172.17.110.193
-    host: 172.19.103.47 # Redis server host.
 
 fast-dfs:
   tracker-server: 172.19.103.13:22122
   public-server: http://172.19.103.52:80
 
-
 ---
 spring:
   profiles: prod
-
   datasource:
     url: jdbc:mysql://11.1.2.5:3306/healtharchive?useUnicode=true&amp;characterEncoding=UTF-8
     username: ha
     password: jkzlxm
-
   redis:
     host: 11.1.2.20 # Redis server host.
+  data:
+    solr:
+      #zk-host: 11.1.2.51,11.1.2.52,11.1.2.53:2181/solr # ZooKeeper host address in the form HOST:PORT.
+      zk-host: node1.hde.jkzlehr.com,node2.hde.jkzlehr.com,node3.hde.jkzlehr.com:2181/solr
+hadoop:
+  hbase-properties:
+    - hbase.zookeeper.quorum: node2.jkzl.com,node3.jkzl.com,node1.jkzl.com
 
 fast-dfs:
   tracker-server: 11.1.2.9:22122
   public-server: http://ds.ehr.yihu.com:22122
-
-
