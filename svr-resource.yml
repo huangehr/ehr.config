@@ -11,6 +11,8 @@ hadoop:
   hbase-properties:
     - hbase.zookeeper.property.clientPort: 2181
     - zookeeper.znode.parent: /hbase-unsecure
+  user:
+    name: root
 
 spring:
   datasource:

@@ -19,40 +19,6 @@ hystrix:
           thread:
             timeoutInMilliseconds: 3000000
 
-ehr:
-  redis-key-schema:
-    std:
-      version-table-prefix: std_cda_versions
-      version-name: name
-
-      data-set-table-prefix: std_data_set_
-      data-set-code: code
-      data-set-name: name
-      data-set-is-multi-record: multi_record
-
-      meta-data-table-prefix: std_meta_data_
-      meta-data-dict-id: dict_id
-      meta-data-type: type
-
-      dict-entry-table-prefix: std_dictionary_entry_
-      dict-entry-value: value
-    org:
-      table: organizations
-      name: name
-    resource-adaption:
-      table: rs_adapter_metadata
-      resource-meta-data: resource_metadata
-    resource-metadata:
-      table: rs_metadata
-      column: dict_code
-    resource-adapter-dict:
-      table: rs_adapter_dictionary
-      column: code_name
-    hp_icd10_relation:
-      table: hp_icd10_relation
-      icd10_id: icd10_id
-      icd10_code: icd10_code
-      
 #Application error definition, this file define common errors,
 #if the error is used only in your application, please define it in your application configuration file.
 ehr.common.invalid.parameter: 参数解析错误
@@ -88,6 +54,7 @@ svr-authentication.server.port: 10260
 svr-portal.server.port: 10250
 svr-file-resource.server.port: 10270
 svr-ehr-basic.server.port: 10300
+svr-redis.server.port: 10310
 #Application acuator
 endpoints:
   restart:
