@@ -1,3 +1,4 @@
+
 logging:
   level:
     com:
@@ -6,7 +7,6 @@ logging:
       springframework:
         web: INFO
       hibernate: ERROR
-
 
 spring:
   # REDIS
@@ -25,8 +25,6 @@ spring:
       max-wait: -1 # Maximum amount of time (in milliseconds) a connection allocation should block before throwing an exception when the pool is exhausted. Use a negative value to block indefinitely.
       min-idle: 1 # Target for the minimum number of idle connections to maintain in the pool. This setting only has an effect if it is positive.
 
-  # SOLR (SolrProperties)
-
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
     max-active: 20
@@ -35,41 +33,37 @@ spring:
     validation-query: SELECT 1
     test-on-borrow: true
 
+
 fast-dfs:
   pool:
     init-size: 5
     max-size: 20
     wait-time: 500
-
   connect-timeout: 2
   network-timeout: 30
   charset: ISO8859-1
-
   http:
     tracker-http-port: 80
     anti-steal-token: no
     secret-key: FastDFS1234567890
 
-# 就诊事件与CDA文档类型关联
-cda-document-type-options:
-  event-type:
-    - "0": 0dae00065684c9920dc35654490aa9ac   # 门诊
-    - "1": 0dae00065684cb220dc35654490aa9ae   # 住院
-
 ---
 spring:
   profiles: dev
-
 
   datasource:
     url: jdbc:mysql://192.168.1.220:3306/healtharchive?useUnicode=true&characterEncoding=UTF-8
     username: ha
     password: ha
 
+  redis:
+    host: 192.168.1.220 # Redis server host.
+
 
 fast-dfs:
   tracker-server: 172.19.103.54:22122
-  public-server: http://172.19.103.54:80
+  public-server: http://172.19.103.54:22122
+  password: ha
 
 ---
 spring:
@@ -80,10 +74,14 @@ spring:
     username: ha
     password: ha
 
+  redis:
+    host: 192.168.1.220 # Redis server host.
 
 fast-dfs:
   tracker-server: 172.19.103.54:22122
-  public-server: http://172.19.103.54:80
+  public-server: http://172.19.103.54:22122
+
+
 
 ---
 spring:
@@ -94,19 +92,25 @@ spring:
     username: weifuwu
     password: weifuwu
 
+  redis:
+    host: 172.19.103.47 # Redis server host.
+
 fast-dfs:
-  tracker-server: 172.19.103.54:22122
-  public-server: http://172.19.103.54:80
+  tracker-server: 172.19.103.13:22122
+  public-server: http://172.19.103.52:80
+
+
 
 ---
 spring:
   profiles: prod
 
+  redis:
+    host: 11.1.2.20 # Redis server host.
   datasource:
     url: jdbc:mysql://11.1.2.5:3306/healtharchive?useUnicode=true&amp;characterEncoding=UTF-8
     username: ha
     password: jkzlxm
-
 
 fast-dfs:
   tracker-server: 11.1.2.9:22122
