@@ -66,9 +66,9 @@ spring:
   profiles: test
 
   datasource:
-    url: jdbc:mysql://172.19.103.50:3306/healtharchive?useUnicode=true&characterEncoding=UTF-8
-    username: weifuwu
-    password: weifuwu
+    url: jdbc:mysql://172.19.103.38:3306/healtharchive?useUnicode=true&characterEncoding=UTF-8
+    username: cloud
+    password: cloud
 
 fast-dfs:
   tracker-server: 172.19.103.13:22122
