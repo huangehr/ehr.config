@@ -78,7 +78,7 @@ fast-dfs:
 spring:
   profiles: test
   datasource:
-    url: jdbc:mysql://172.19.103.38:3306/healtharchive?useUnicode=true&characterEncoding=UTF-8
+    url: jdbc:mysql://172.17.110.216:3306/healtharchive?useUnicode=true&characterEncoding=UTF-8
     username: cloud
     password: cloud
 
