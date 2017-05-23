@@ -102,8 +102,8 @@ eureka:
     prefer-ip-address: false
 
 #eureka-server-ip: 127.0.0.1:8761
-#eureka-server-ip: 192.168.1.221:8761
-eureka-server-ip: 172.19.103.33:8761
+eureka-server-ip: 192.168.1.221:8761
+#eureka-server-ip: 172.19.103.33:8761
 
 ---
 spring:
