@@ -66,8 +66,8 @@ spring:
 
 
 fast-dfs:
-  tracker-server: 172.19.103.54:80
-  public-server: http://172.19.103.54:80
+  tracker-server: 172.19.103.54:22122
+  public-server: http://172.19.103.54:22122
 
 ---
 spring:
@@ -90,8 +90,8 @@ spring:
 
 
 fast-dfs:
-  tracker-server: 172.19.103.54:80
-  public-server: http://172.19.103.54:80
+  tracker-server: 172.19.103.54:22122
+  public-server: http://172.19.103.54:22122
 
 ---
 spring:
