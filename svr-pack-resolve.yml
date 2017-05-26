@@ -56,7 +56,7 @@ ehr:
   pack-extractor:
     # 事件提取参数,用于生成事件摘要
     # 门诊从“门诊摘要”与“挂号”数据集提取事件
-    # 住院从“病人摘要”，“入院记录”与“病案首页”提取事件
+    # 住院从“病人摘要”，“入院记录”与“病案首页”提取事件    Clinic 0门诊 Resident 1住院  MedicalExam 2体检
     event:
       data-sets:
         - HDSC01_01: Clinic
@@ -74,6 +74,7 @@ ehr:
       meta-data:
         id-card-no: HDSA00_01_017     # 身份标识
         id-card-type: HDSA00_01_016   # 身份类型
+        patient-name: HDSD00_01_002  # 姓名
     # 卡提取参数，从就诊摘要提取
     card:
       data-sets:
@@ -82,8 +83,8 @@ ehr:
         - HDSC02_01: 住院-病人摘要
         - HDSC02_02: 住院-首页
       meta-data:
-        - CARD_NO
-        - CARD_TYPE
+        - card-no: CARD_NO #就诊卡号
+        - card-type: CARD_TYPE  #就诊卡类型
 
 #error code and message
 
@@ -96,10 +97,7 @@ spring:
 
   data:
     solr:
-      #host: http://172.19.103.10:8983/solr # Solr host. Ignored if "zk-host" is set.
-      #zk-host: host-172-17-110-23,host-172-17-110-27,host-172-17-110-26:2181/solr # ZooKeeper host address in the form HOST:PORT.
-      host: http://172.17.110.20:8983/solr # Solr host. Ignored if "zk-host" is set.
-      zk-host: host-172-17-110-20,host-172-17-110-186,host-172-17-110-18:2181/solr # ZooKeeper host address in the form HOST:PORT.
+      zk-host: node1.hde.h3c.com,node2.hde.h3c.com:2181/solr # ZooKeeper host address in the form HOST:PORT.
 
   metrics:
     export:
@@ -113,9 +111,7 @@ fast-dfs:
 
 hadoop:
   hbase-properties:
-    #- hbase.zookeeper.quorum: node2.jkzldev.com,node1.jkzldev.com,node4.jkzldev.com
-    - hbase.zookeeper.quorum: node1,node2,node3
-
+    - hbase.zookeeper.quorum: node1.hde.h3c.com,node2.hde.h3c.com,node3.hde.h3c.com
 ---
 spring:
   profiles: alpha
@@ -125,10 +121,7 @@ spring:
 
   data:
     solr:
-      #host: http://172.19.103.10:8983/solr # Solr host. Ignored if "zk-host" is set.
-      #zk-host: host-172-17-110-23,host-172-17-110-27,host-172-17-110-26:2181/solr # ZooKeeper host address in the form HOST:PORT.
-      host: http://172.17.110.20:8983/solr # Solr host. Ignored if "zk-host" is set.
-      zk-host: host-172-17-110-20,host-172-17-110-186,host-172-17-110-18:2181/solr # ZooKeeper host address in the form HOST:PORT.
+      zk-host: node1.hde.h3c.com,node2.hde.h3c.com:2181/solr # ZooKeeper host address in the form HOST:PORT.
 
   metrics:
     export:
@@ -142,8 +135,7 @@ fast-dfs:
 
 hadoop:
   hbase-properties:
-    #- hbase.zookeeper.quorum: node2.jkzldev.com,node1.jkzldev.com,node4.jkzldev.com
-    - hbase.zookeeper.quorum: node1,node2,node3
+    - hbase.zookeeper.quorum: node1.hde.h3c.com,node2.hde.h3c.com,node3.hde.h3c.com
 
 ---
 spring:
@@ -154,10 +146,7 @@ spring:
 
   data:
     solr:
-      #host: http://172.19.103.10:8983/solr # Solr host. Ignored if "zk-host" is set.
-      #zk-host: host-172-17-110-23,host-172-17-110-27,host-172-17-110-26:2181/solr # ZooKeeper host address in the form HOST:PORT.
-      host: http://172.17.110.20:8983/solr # Solr host. Ignored if "zk-host" is set.
-      zk-host: host-172-17-110-20,host-172-17-110-186,host-172-17-110-18:2181/solr # ZooKeeper host address in the form HOST:PORT.
+      zk-host: node1.hde.h3c.com,node2.hde.h3c.com:2181/solr # ZooKeeper host address in the form HOST:PORT.
 
   metrics:
     export:
@@ -171,8 +160,7 @@ fast-dfs:
 
 hadoop:
   hbase-properties:
-    #- hbase.zookeeper.quorum: node2.jkzldev.com,node1.jkzldev.com,node4.jkzldev.com
-    - hbase.zookeeper.quorum: node1,node2,node3
+    - hbase.zookeeper.quorum: node1.hde.h3c.com,node2.hde.h3c.com,node3.hde.h3c.com
 
 ---
 spring:
