@@ -1,0 +1,41 @@
+logging:
+  level:
+    root: INFO
+
+kafka:
+  broker:
+    address: node1.hde.h3c.com,node2.hde.h3c.com:6667
+
+zookeeper:
+  broker:
+    address: node1.hde.h3c.com,node2.hde.h3c.com:2181
+---
+spring:
+  profiles: test
+
+  data:
+    mongodb:
+      host: 192.168.1.220
+      port: 27017
+      username: admin
+      password: admin
+      authenticationDatabase: admin
+      database: ehr
+
+---
+spring:
+  profiles: dev
+
+  data:
+    mongodb:
+      host: 192.168.1.220
+      port: 27017
+      username: admin
+      password: admin
+      authenticationDatabase: admin
+      database: ehr
+
+
+---
+spring:
+  profiles: prod
