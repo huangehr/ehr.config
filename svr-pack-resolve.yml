@@ -1,3 +1,8 @@
+server:
+  port: ${svr-pack-resolve.server.port}
+
+management:
+  port: ${server.port}
 logging:
   level:
     com:
@@ -8,6 +13,14 @@ logging:
       hibernate: ERROR
 
 spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    max-active: 20
+    max-idle: 8
+    min-idle: 8
+    validation-query: SELECT 1
+    test-on-borrow: true
+
   # REDIS
   redis:
     database: 0 # Database index used by the connection factory.
@@ -17,7 +30,7 @@ spring:
     #sentinel:
     #  master: # Name of Redis server.
     #  nodes: # Comma-separated list of host:port pairs.
-    
+
     pool:
       max-active: 8 # Max number of connections that can be allocated by the pool at a given time. Use a negative value for no limit.
       max-idle: 8 # Max number of "idle" connections in the pool. Use a negative value to indicate an unlimited number of idle connections.
@@ -99,6 +112,12 @@ ehr:
 spring:
   profiles: dev
 
+  # Mysql
+  datasource:
+    url: jdbc:mysql://192.168.1.220:3306/healtharchive?useUnicode=true&characterEncoding=UTF-8
+    username: ha
+    password: ha
+
   redis:
     host: 192.168.1.220 # Redis server host.
 
@@ -119,6 +138,7 @@ fast-dfs:
 hadoop:
   hbase-properties:
     - hbase.zookeeper.quorum: node1.hde.h3c.com,node2.hde.h3c.com,node3.hde.h3c.com
+
 ---
 spring:
   profiles: alpha
