@@ -7,6 +7,12 @@ logging:
         web: INFO
       hibernate: ERROR
 
+server:
+  port: ${svr-quota.server.port}
+
+management:
+  port: ${server.port}
+
 ---
 spring:
   profiles: dev
