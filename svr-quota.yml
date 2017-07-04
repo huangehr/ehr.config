@@ -13,10 +13,18 @@ server:
 management:
   port: ${server.port}
 
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    max-active: 20
+    max-idle: 8
+    min-idle: 8
+    validation-query: SELECT 1
+    test-on-borrow: true
+
 ---
 spring:
   profiles: dev
-
   datasource:
     url: jdbc:mysql://192.168.1.220:3306/healtharchive?useUnicode=true&characterEncoding=UTF-8
     username: ha
@@ -25,7 +33,6 @@ spring:
 ---
 spring:
   profiles: test
-
   datasource:
     url: jdbc:mysql://172.19.103.50:3306/healtharchive_220?useUnicode=true&characterEncoding=UTF-8
     username: weifuwu
