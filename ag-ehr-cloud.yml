@@ -101,12 +101,6 @@ spring:
         host: 172.19.103.73
         port: 8125
 
-server:
-  ssl:
-    key-store-password: 123456
-    key-store: tomcat.keystore
-    key-password: 123456
-
 ---
 spring:
   profiles: prod
