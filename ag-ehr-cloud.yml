@@ -79,12 +79,6 @@ spring:
         host: 192.168.1.221
         port: 8125
 
-server:
-  ssl:
-    key-store: C:/Windows/tomcat.keystore
-    key-store-password: 123456
-    key-password: 123456
-
 ---
 spring:
   profiles: test
@@ -109,7 +103,22 @@ spring:
     username: ha
     password: jkzlxm
 
-server:
-  ssl:
-    key-store-password: 123456
-    key-password: 123456
+  metrics:
+    export:
+      statsd:
+        host: 11.1.2.5
+        port: 8125
+
+---
+spring:
+  profiles: prod_fz
+  datasource:
+    url: jdbc:mysql://192.168.135.39:3306/healtharchive?useUnicode=true&amp;characterEncoding=UTF-8
+    username: sr_healtharchive
+    password: data!@)1
+
+  metrics:
+    export:
+      statsd:
+        host: 192.168.135.29
+        port: 8125

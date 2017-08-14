@@ -38,4 +38,12 @@ spring:
 
 ---
 spring:
-  profiles: prod
+  profiles: prod_fz
+  data:
+    mongodb:
+      host: 192.168.135.41
+      port: 27017
+      username: sr_ehr
+      password: ehr@#(2^
+      authenticationDatabase: admin
+      database: wlyy
