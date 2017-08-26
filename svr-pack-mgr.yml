@@ -105,7 +105,7 @@ spring:
   metrics:
     export:
       statsd:
-        host: 192.168.1.221
+        host: 172.19.103.73
         port: 8125
 fast-dfs:
   tracker-server: 172.19.103.13:22122

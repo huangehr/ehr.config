@@ -68,8 +68,8 @@ spring:
 
 
 fast-dfs:
-  tracker-server: 172.19.103.54:22122
-  public-server: http://172.19.103.54:80
+  tracker-server: 172.19.103.13:22122
+  public-server: http://172.19.103.52:80
 
 ---
 spring:
@@ -95,8 +95,8 @@ spring:
     password: weifuwu
 
 fast-dfs:
-  tracker-server: 172.19.103.54:22122
-  public-server: http://172.19.103.54:80
+  tracker-server: 172.19.103.13:22122
+  public-server: http://172.19.103.52:80
 
 ---
 spring:
