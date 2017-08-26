@@ -1,4 +1,4 @@
-﻿logging:
+logging:
   level:
     com:
       netflix: INFO
@@ -24,6 +24,11 @@ spring:
       max-wait: -1 # Maximum amount of time (in milliseconds) a connection allocation should block before throwing an exception when the pool is exhausted. Use a negative value to block indefinitely.
       min-idle: 1 # Target for the minimum number of idle connections to maintain in the pool. This setting only has an effect if it is positive.
 
+  # SOLR (SolrProperties)
+  data:
+    solr:
+      repositories.enabled: true # Enable Solr repositories.
+
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
     max-active: 20
@@ -32,15 +37,16 @@ spring:
     validation-query: SELECT 1
     test-on-borrow: true
 
-
 fast-dfs:
   pool:
     init-size: 5
     max-size: 20
     wait-time: 500
+
   connect-timeout: 2
   network-timeout: 30
   charset: ISO8859-1
+
   http:
     tracker-http-port: 80
     anti-steal-token: no
@@ -50,70 +56,64 @@ fast-dfs:
 spring:
   profiles: dev
 
+  redis:
+    host: 192.168.1.220 # Redis server host.
+
+  data:
+    solr:
+      #zk-host: node1.jkzldev.com,node2.jkzldev.com,node4.jkzldev.com:2181/solr # ZooKeeper host address in the form HOST:PORT.
+      zk-host: node1,node2,node3:2181/solr # ZooKeeper host address in the form HOST:PORT.
+
   datasource:
     url: jdbc:mysql://192.168.1.220:3306/healtharchive?useUnicode=true&characterEncoding=UTF-8
     username: ha
     password: ha
 
-  redis:
-    host: 192.168.1.220 # Redis server host.
-
-  ldap:
-      host: 172.19.103.87
-      port: 389
-      bindDn: cn=admin,dc=ehr,dc=jkzl
-      password: jkzl
-      root: dc=ehr,dc=jkzl
 fast-dfs:
   tracker-server: 172.19.103.54:22122
-  public-server: http://172.19.103.54:22122
-
-
-  password: ha
+  public-server: http://172.19.103.54:80
 
 ---
 spring:
   profiles: alpha
 
+  redis:
+    host: 192.168.1.220 # Redis server host.
+
+  data:
+    solr:
+      #zk-host: node1.jkzldev.com,node2.jkzldev.com,node4.jkzldev.com:2181/solr # ZooKeeper host address in the form HOST:PORT.
+      zk-host: node1,node2,node3:2181/solr # ZooKeeper host address in the form HOST:PORT.
+
   datasource:
     url: jdbc:mysql://192.168.1.220:3306/healtharchive?useUnicode=true&characterEncoding=UTF-8
     username: ha
     password: ha
 
-  redis:
-    host: 192.168.1.220 # Redis server host.
-
 fast-dfs:
   tracker-server: 172.19.103.54:22122
-  public-server: http://172.19.103.54:22122
-
-
-
+  public-server: http://172.19.103.54:80
+  
 ---
 spring:
   profiles: test
+
+  redis:
+    host: 172.19.103.47 # Redis server host.
+
+  data:
+    solr:
+      #zk-host: node1.jkzldev.com,node2.jkzldev.com,node4.jkzldev.com:2181/solr # ZooKeeper host address in the form HOST:PORT.
+      zk-host: node1,node2,node3:2181/solr # ZooKeeper host address in the form HOST:PORT.
 
   datasource:
     url: jdbc:mysql://172.19.103.38:3306/healtharchive?useUnicode=true&characterEncoding=UTF-8
     username: cloud
     password: cloud
 
-  redis:
-    host: 172.19.103.47 # Redis server host.
-
-
-  ldap:
-      host: 172.19.103.87
-      port: 389
-      bindDn: cn=admin,dc=ehr,dc=jkzl
-      password: jkzl
-      root: dc=ehr,dc=jkzl
-
 fast-dfs:
-  tracker-server: 172.19.103.13:22122
-  public-server: http://172.19.103.52:80
-
-
+  tracker-server: 172.19.103.54:22122
+  public-server: http://172.19.103.54:80
 
 ---
 spring:
@@ -121,19 +121,16 @@ spring:
 
   redis:
     host: 11.1.2.20 # Redis server host.
+
+  data:
+    solr:
+      #zk-host: 11.1.2.51,11.1.2.52,11.1.2.53:2181/solr # ZooKeeper host address in the form HOST:PORT.
+      zk-host: node1.hde.jkzlehr.com,node2.hde.jkzlehr.com,node3.hde.jkzlehr.com:2181/solr
   datasource:
     url: jdbc:mysql://11.1.2.5:3306/healtharchive?useUnicode=true&amp;characterEncoding=UTF-8
     username: ha
     password: jkzlxm
 
-  ldap:
-      host: 172.19.103.87
-      port: 389
-      bindDn: cn=admin,dc=ehr,dc=jkzl
-      password: jkzl
-      root: dc=ehr,dc=jkzl
 fast-dfs:
   tracker-server: 11.1.2.9:22122
   public-server: http://ds.ehr.yihu.com:22122
-
-

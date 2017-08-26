@@ -6,7 +6,7 @@ logging:
       springframework:
         web: INFO
       hibernate: ERROR
-
+      
 spring:
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
@@ -24,7 +24,6 @@ fast-dfs:
   connect-timeout: 2
   network-timeout: 30
   charset: ISO8859-1
-
   http:
     tracker-http-port: 80
     anti-steal-token: no
@@ -44,6 +43,7 @@ fast-dfs:
   public-server: http://172.19.103.54:22122
 
 
+
 ---
 spring:
   profiles: alpha
@@ -57,7 +57,7 @@ fast-dfs:
   tracker-server: 172.19.103.54:22122
   public-server: http://172.19.103.54:22122
 
-
+  
 ---
 spring:
   profiles: test
@@ -84,5 +84,4 @@ spring:
 fast-dfs:
   tracker-server: 11.1.2.9:22122
   public-server: http://ds.ehr.yihu.com:22122
-
 

@@ -1,18 +1,156 @@
-quartz:
-  auto-startup: false
+#set max http header size
+server:
+  tomcat:
+    max-http-header-size: 100000
 
-#应用部署所在区域
+#The region code, where application deployed
 deploy:
   region: 3502
+
+#EHR platform user default password
+default:
+  password: 123456
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 3000000
+
+#Application error definition, this file define common errors,
+#if the error is used only in your application, please define it in your application configuration file.
+ehr.common.invalid.parameter: 参数解析错误
+ehr.common.query.not.found: 不存在该对象
+ehr.common.repeat.code: 代码重复
+
+#Application port, since 10100, 10 per step. Update max port if new application created. Current max: 10220
+ag-ehr-platform.server.port: 443
+ag-ehr-cloud.server.port: 10400
+ag-portal-cloud.server.port: 10280
+ag-admin.server.port: 10000
+svr-adaption.server.port: 10150
+svr-app.server.port: 10160
+svr-dict.server.port: 10050
+svr-esb.server.port: 10130
+svr-geography.server.port: 10090
+svr-health-profile.server.port: 9009
+svr-organization.server.port: 10070
+svr-pack-mgr.server.port: 10140
+svr-pack-resolve.server.port: 10170
+svr-patient.server.port: 10100
+svr-security.server.port: 10110
+svr-special-dict.server.port: 10180
+svr-standard.server.port: 10040
+svr-user.server.port: 10120
+svr-family.server.port: 10190
+svr-health-profile-search.server.port: 10200
+svr-workflow.server.port: 10210
+svr-resource.server.port: 10220
+svr-archive-security.server.port: 10230
+svr-profile-statistics.server.port: 10240
+svr-authentication.server.port: 10260
+svr-portal.server.port: 10250
+svr-file-resource.server.port: 10270
+svr-ehr-basic.server.port: 10300
+svr-redis.server.port: 10310
+svr-logCollection.server.port: 10320
+svr-quota.server.port: 10330
+#Application acuator
+endpoints:
+  restart:
+    enabled: true
+  shutdown:
+    enabled: true
+  health:
+    sensitive: false
+
+spring:
+  jmx:
+    enabled: false
+  
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL5Dialect
+    hibernate.dialect: org.hibernate.dialect.MySQL5Dialect
+    show-sql: false
+
+  #block the inet address of nic, virtual card and so on. Need spring version: Brixton M5
+  cloud:
+    inetutils:
+      ignoredInterfaces:
+        - docker0
+        - veth.*
+        - vmnet.*
+        - TAP-Win.*
+        - Software Loopback.*
+        - .*VPN.*
+        - .*Virtual.*
+        - .*Debug.*
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://${eureka-server-ip}/eureka/
 
 ---
 spring:
   profiles: dev
 
+#If true, each application use ip to register it in eureka, eureka host is defined in "eureka-server-ip".
+#else the server must have host map.
+eureka:
+  instance:
+    prefer-ip-address: false
+
+#eureka-server-ip: 127.0.0.1:8761
+eureka-server-ip: 192.168.1.221:8761
+#eureka-server-ip: 172.19.103.33:8761
+
+---
+spring:
+  profiles: alpha
+
+#If true, each application use ip to register it in eureka, eureka host is defined in "eureka-server-ip".
+#else the server must have host map.
+eureka:
+  instance:
+    prefer-ip-address: false
+
+eureka-server-ip: 192.168.1.221:8761
+
 ---
 spring:
   profiles: test
 
+#If true, each application use ip to register it in eureka, eureka host is defined in "eureka-server-ip".
+#else the server must have host map.
+eureka:
+  instance:
+    prefer-ip-address: false
+
+eureka-server-ip: 172.19.103.73:8761
+
 ---
 spring:
   profiles: prod
+
+#If true, each application use ip to register it in eureka, eureka host is defined in "eureka-server-ip".
+#else the server must have host map.
+eureka:
+  instance:
+    prefer-ip-address: false
+
+eureka-server-ip: 11.1.2.21:8761
+
+---
+spring:
+  profiles: prod_fz
+
+#If true, each application use ip to register it in eureka, eureka host is defined in "eureka-server-ip".
+#else the server must have host map.
+eureka:
+  instance:
+    prefer-ip-address: false
+
+eureka-server-ip: 192.168.135.29:8761

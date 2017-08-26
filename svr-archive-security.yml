@@ -1,11 +1,7 @@
 logging:
   level:
     com:
-      netflix: INFO
-    org:
-      springframework:
-        web: INFO
-      hibernate: ERROR
+      netflix: DEBUG
 
 spring:
   datasource:
@@ -16,20 +12,6 @@ spring:
     validation-query: SELECT 1
     test-on-borrow: true
 
-fast-dfs:
-  pool:
-    init-size: 5
-    max-size: 20
-    wait-time: 500
-  connect-timeout: 2
-  network-timeout: 30
-  charset: ISO8859-1
-
-  http:
-    tracker-http-port: 80
-    anti-steal-token: no
-    secret-key: FastDFS1234567890
-
 ---
 spring:
   profiles: dev
@@ -39,9 +21,8 @@ spring:
     username: ha
     password: ha
 
-fast-dfs:
-  tracker-server: 172.19.103.54:22122
-  public-server: http://172.19.103.54:22122
+  redis:
+    host: 192.168.1.220 # Redis server host.
 
 
 ---
@@ -53,10 +34,8 @@ spring:
     username: ha
     password: ha
 
-fast-dfs:
-  tracker-server: 172.19.103.54:22122
-  public-server: http://172.19.103.54:22122
-
+  redis:
+    host: 192.168.1.220 # Redis server host.
 
 ---
 spring:
@@ -66,11 +45,8 @@ spring:
     url: jdbc:mysql://172.19.103.38:3306/healtharchive?useUnicode=true&characterEncoding=UTF-8
     username: cloud
     password: cloud
-
-fast-dfs:
-  tracker-server: 172.19.103.13:22122
-  public-server: http://172.19.103.52:80
-
+  redis:
+    host: 172.19.103.47 # Redis server host.
 
 ---
 spring:
@@ -81,8 +57,5 @@ spring:
     username: ha
     password: jkzlxm
 
-fast-dfs:
-  tracker-server: 11.1.2.9:22122
-  public-server: http://ds.ehr.yihu.com:22122
-
-
+  redis:
+    host: 11.1.2.20 # Redis server host.

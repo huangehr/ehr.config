@@ -1,0 +1,104 @@
+logging:
+  level:
+    com:
+      netflix: INFO
+    org:
+      springframework:
+        web: INFO
+      hibernate: ERROR
+
+hadoop:
+  hbase-properties:
+    - hbase.zookeeper.property.clientPort: 2181
+    - zookeeper.znode.parent: /hbase-unsecure
+  user:
+    name: root
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    max-active: 20
+    max-idle: 8
+    min-idle: 8
+    validation-query: SELECT 1
+    test-on-borrow: true
+
+---
+spring:
+  profiles: dev
+  datasource:
+    url: jdbc:mysql://172.19.103.50:3306/healtharchive?useUnicode=true&characterEncoding=UTF-8
+    username: chenweishan
+    password: chenweishan
+  redis:
+    host: 172.19.103.47 # Redis server host.
+  data:
+    solr:
+      zk-host: node1.hde.h3c.com,node2.hde.h3c.com:2181/solr # ZooKeeper host address in the form HOST:PORT.
+hadoop:
+  hbase-properties:
+    - hbase.zookeeper.quorum: node1.hde.h3c.com,node2.hde.h3c.com,node3.hde.h3c.com
+---
+spring:
+  profiles: alpha
+  datasource:
+    url: jdbc:mysql://192.168.1.220:3306/healtharchive?useUnicode=true&characterEncoding=UTF-8
+    username: ha
+    password: ha
+  redis:
+    host: 192.168.1.220 # Redis server host.
+  data:
+    solr:
+      zk-host: node1.hde.h3c.com,node2.hde.h3c.com:2181/solr # ZooKeeper host address in the form HOST:PORT.
+hadoop:
+  hbase-properties:
+    - hbase.zookeeper.quorum: node1.hde.h3c.com,node2.hde.h3c.com,node3.hde.h3c.com
+---
+spring:
+  profiles: test
+  datasource:
+    url: jdbc:mysql://172.19.103.50:3306/healtharchive?useUnicode=true&characterEncoding=UTF-8
+    username: weifuwu
+    password: weifuwu
+  redis:
+    host: 172.19.103.47 # Redis server host.
+  data:
+    solr:
+      zk-host: node1.hde.h3c.com,node2.hde.h3c.com:2181/solr # ZooKeeper host address in the form HOST:PORT.
+hadoop:
+  hbase-properties:
+    - hbase.zookeeper.quorum: node1.hde.h3c.com,node2.hde.h3c.com,node3.hde.h3c.com
+---
+spring:
+  profiles: prod
+  datasource:
+    url: jdbc:mysql://11.1.2.5:3306/healtharchive?useUnicode=true&amp;characterEncoding=UTF-8
+    username: ha
+    password: jkzlxm
+  redis:
+    host: 11.1.2.20 # Redis server host.
+  data:
+    solr:
+      #zk-host: 11.1.2.51,11.1.2.52,11.1.2.53:2181/solr # ZooKeeper host address in the form HOST:PORT.
+      zk-host: node1.hde.jkzlehr.com,node2.hde.jkzlehr.com,node3.hde.jkzlehr.com:2181/solr
+hadoop:
+  hbase-properties:
+    - hbase.zookeeper.quorum: node2.jkzl.com,node3.jkzl.com,node1.jkzl.com
+
+
+---
+spring:
+  profiles: prod_fz
+  datasource:
+    url: jdbc:mysql://192.168.135.39:3306/healtharchive?useUnicode=true&amp;characterEncoding=UTF-8
+    username: sr_healtharchive
+    password: data!@)1
+  redis:
+    host: 192.168.135.40 # Redis server host.
+  data:
+    solr:
+      #zk-host: 11.1.2.51,11.1.2.52,11.1.2.53:2181/solr # ZooKeeper host address in the form HOST:PORT.
+      zk-host: node1.hde.jkzlehr.com,node2.hde.jkzlehr.com,node3.hde.jkzlehr.com:2181/solr
+hadoop:
+  hbase-properties:
+    - hbase.zookeeper.quorum: node2.jkzl.com,node3.jkzl.com,node1.jkzl.com

@@ -6,7 +6,7 @@ logging:
       springframework:
         web: INFO
       hibernate: ERROR
-
+      
 spring:
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
@@ -16,6 +16,10 @@ spring:
     validation-query: SELECT 1
     test-on-borrow: true
 
+multipart:
+  max-file-size: 100MB
+  max-request-size: 100MB
+
 fast-dfs:
   pool:
     init-size: 5
@@ -24,11 +28,12 @@ fast-dfs:
   connect-timeout: 2
   network-timeout: 30
   charset: ISO8859-1
-
   http:
     tracker-http-port: 80
     anti-steal-token: no
     secret-key: FastDFS1234567890
+
+
 
 ---
 spring:
@@ -43,7 +48,6 @@ fast-dfs:
   tracker-server: 172.19.103.54:22122
   public-server: http://172.19.103.54:22122
 
-
 ---
 spring:
   profiles: alpha
@@ -56,8 +60,7 @@ spring:
 fast-dfs:
   tracker-server: 172.19.103.54:22122
   public-server: http://172.19.103.54:22122
-
-
+  
 ---
 spring:
   profiles: test
@@ -70,8 +73,7 @@ spring:
 fast-dfs:
   tracker-server: 172.19.103.13:22122
   public-server: http://172.19.103.52:80
-
-
+  
 ---
 spring:
   profiles: prod
@@ -84,5 +86,3 @@ spring:
 fast-dfs:
   tracker-server: 11.1.2.9:22122
   public-server: http://ds.ehr.yihu.com:22122
-
-
