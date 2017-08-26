@@ -1,0 +1,98 @@
+logging:
+  level:
+    com:
+      netflix: DEBUG
+
+logging.level.root: INFO
+
+netflix:
+  metrics:
+    rest:
+      metricName: api
+
+# service routes
+zuul:
+  addProxyHeaders: false
+  ignoredServices: '*'
+  routes:
+    packages:
+      path: /api/v1.0/packages
+      serviceId: svr-pack-mgr
+    package_json:
+      path: /api/v1.0/json_package
+      serviceId: svr-pack-mgr
+    esb_log:
+      path: /api/v1.0/esb/uploadLog
+      serviceId: svr-esb
+    sanofi_support:
+      path: /api/v1.0/sanofi/physic_signs/**
+      serviceId: svr-health-profile
+      stripPrefix: false
+    health_profile:
+      path: /api/v1.0/health_profiles/**
+      serviceId: svr-health-profile
+      stripPrefix: false
+
+---
+spring:
+  profiles: dev
+
+  thymeleaf:
+    cache: false
+
+  metrics:
+    export:
+      statsd:
+        host: 192.168.1.221
+        port: 8125
+
+server:
+  ssl:
+    key-store: C:/Windows/tomcat.keystore
+    key-store-password: 123456
+    key-password: 123456
+
+---
+spring:
+  profiles: alpha
+
+  thymeleaf:
+    cache: false
+
+  metrics:
+    export:
+      statsd:
+        host: 192.168.1.221
+        port: 8125
+
+server:
+  ssl:
+    key-store: C:/Windows/tomcat.keystore
+    key-store-password: 123456
+    key-password: 123456
+
+---
+spring:
+  profiles: test
+  thymeleaf:
+    cache: false
+
+  metrics:
+    export:
+      statsd:
+        host: 192.168.1.221
+        port: 8125
+
+server:
+  ssl:
+    key-store-password: 123456
+    key-password: 123456
+
+---
+spring:
+  profiles: prod
+
+server:
+  ssl:
+    key-store-password: 123456
+    key-password: 123456
