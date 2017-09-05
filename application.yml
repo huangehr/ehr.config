@@ -152,6 +152,6 @@ spring:
 #else the server must have host map.
 eureka:
   instance:
-    prefer-ip-address: false
+    prefer-ip-address: true
 
 eureka-server-ip: 192.168.135.29:8761
