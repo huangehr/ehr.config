@@ -59,13 +59,12 @@ cda-document-type-options:
 ---
 spring:
   profiles: dev
-
-
   datasource:
     url: jdbc:mysql://172.19.103.50:3306/healtharchive?useUnicode=true&characterEncoding=UTF-8
     username: weifuwu
     password: weifuwu
-
+  application:
+    id: JKZL
 
 fast-dfs:
   tracker-server: 172.19.103.13:22122
@@ -79,6 +78,8 @@ spring:
     url: jdbc:mysql://192.168.1.220:3306/healtharchive?useUnicode=true&characterEncoding=UTF-8
     username: ha
     password: ha
+  application:
+    id: JKZL
 
 
 fast-dfs:
@@ -93,6 +94,8 @@ spring:
     url: jdbc:mysql://172.19.103.50:3306/healtharchive?useUnicode=true&characterEncoding=UTF-8
     username: weifuwu
     password: weifuwu
+  application:
+    id: JKZL
 
 fast-dfs:
   tracker-server: 172.19.103.13:22122
@@ -106,6 +109,8 @@ spring:
     url: jdbc:mysql://11.1.2.5:3306/healtharchive?useUnicode=true&amp;characterEncoding=UTF-8
     username: ha
     password: jkzlxm
+  application:
+    id: JKZL
 
 
 fast-dfs:
@@ -117,9 +122,11 @@ fast-dfs:
 spring:
   profiles: prod_fz
   datasource:
-    url: jdbc:mysql://192.168.135.39:3306/healtharchive?useUnicode=true&amp;characterEncoding=UTF-8
+    url: jdbc:mysql://192.168.135.39:3310/healtharchive?useUnicode=true&amp;characterEncoding=UTF-8
     username: sr_healtharchive
     password: data!@)1
+  application:
+    id: JKZL
 fast-dfs:
   tracker-server: 192.168.135.42:22122
   public-server: http://192.168.135.42:22122
