@@ -2,6 +2,12 @@ logging:
   level:
     root: INFO
 
+server:
+  port: ${svr-log-collection.server.port}
+
+management:
+  port: ${server.port}
+
 kafka:
   broker:
     address: node1.hde.h3c.com:6667,node2.hde.h3c.com:6667
