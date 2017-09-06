@@ -115,7 +115,7 @@ spring:
       zk-host: node1.jkzl.com,node2.jkzl.com,node3.jkzl.com:2181/solr
 hadoop:
   hbase-properties:
-    - hbase.zookeeper.quorum: node2.jkzl.com,node3.jkzl.com,node1.jkzl.com
+    - hbase.zookeeper.quorum: node1.jkzl.com,node2.jkzl.com,node3.jkzl.com
 
 fast-dfs:
   tracker-server: 192.168.135.42:22122
