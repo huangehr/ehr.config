@@ -69,4 +69,4 @@ spring:
 
   data:
     solr:
-      zk-host: node1.hde.h3c.com,node2.hde.h3c.com:2181/solr # ZooKeeper host address in the form HOST:PORT.
+      zk-host: node1.jkzl.com,node2.jkzl.com,node3.jkzl.com:2181/solr # ZooKeeper host address in the form HOST:PORT.

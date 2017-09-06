@@ -131,7 +131,7 @@ spring:
   redis:
     host: 192.168.135.40 # Redis server host.
     port: 6390
-    password: redis!'#'456 # Login password of the redis server.
+    password: redis!@#456 # Login password of the redis server.
 
 fast-dfs:
   tracker-server: 192.168.135.42:22122
