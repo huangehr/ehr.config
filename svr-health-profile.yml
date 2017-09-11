@@ -10,11 +10,12 @@ logging:
 
 spring:
   # REDIS
-   #redis:
-    #database: 0 # Database index used by the connection factory.
-    #port: 6379 # Redis server port.
-    #password: # Login password of the redis server.
-    #timeout: 0 # Connection timeout in milliseconds.
+  redis:
+    database: 0 # Database index used by the connection factory.
+    host: 172.19.103.47 # Redis server host.
+    port: 6379 # Redis server port.
+    password: # Login password of the redis server.
+    timeout: 0 # Connection timeout in milliseconds.
     #sentinel:
     #  master: # Name of Redis server.
     #  nodes: # Comma-separated list of host:port pairs.
