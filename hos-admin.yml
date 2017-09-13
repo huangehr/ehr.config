@@ -1,15 +1,7 @@
-server:
-  context-path: /
-  port: 7070
-  session:
-    timeout: 3600
 security:
   basic:
     enabled: false
 
-local:
-  server:
-    port: 7070
 hystrix:
   command:
     default:
