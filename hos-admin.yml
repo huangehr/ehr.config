@@ -1,0 +1,139 @@
+server:
+  context-path: /
+  port: 7070
+  session:
+    timeout: 3600
+security:
+  basic:
+    enabled: false
+
+local:
+  server:
+    port: 7070
+hystrix:
+  command:
+    default:
+      execution:
+#        timeout:
+#          enabled: false
+        isolation:
+          thread:
+            timeoutInMilliseconds: 30000
+
+---
+spring:
+  profiles: dev
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://172.19.103.57:8066/global_db?useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&transformedBitIsBoolean=true
+    username: hos
+    password: 123456
+    test-on-borrow: true
+    validation-query: SELECT 1
+    test-while-idle: true
+    max-total: 100
+    default-auto-commit: true
+    max-idle: 50
+    min-idle: 20
+    initial-size: 10
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL5Dialect
+    hibernate:
+      dialect: org.hibernate.dialect.MySQL5Dialect
+    format-sql: true
+    show-sql: false
+  data:
+    mongodb:
+      host: 172.19.103.57
+      port: 27017
+      username: esb
+      password: esb
+      authenticationDatabase: admin
+      gridFsDatabase: dfs
+      database: runtime
+  aop:
+    proxy-target-class: true
+hos:
+  administrators: jkzl #SAAS管理员账号,暂时配置在此处
+  clientId: 0e3DIdNaQ2
+  zbus:
+    url: 172.19.103.57:9020
+  filesystem:
+    url: http://172.19.103.57:9010/dfs/file
+  mysql:
+    filePath: e://learn.sql   #租户基础表 sql文件位置
+service-gateway:
+  portalUrl: http://192.168.1.221:10280/api/v1.0/portal
+  adminUrl: http://192.168.1.221:10000/api/v1.0/admin
+  oauth2authorize: http://192.168.131.106:10260/
+  oauth2RedictUrl: http://192.168.131.106:8083/ehr/login/signinReport
+  oauth2ReportClientId: 2YTOSRI0tw
+  url: http://172.19.103.37:9999/api
+  appService: http://127.0.0.1:10500
+
+# Logging configuration
+#logging:
+#  level:
+#    org.springframework:
+#      data: DEBUG
+#      security: DEBUG
+# JWT
+jwt:
+  header: Authorization
+  secret: mySecret
+  expiration: 604800
+  tokenHead: "Bearer "
+
+---
+spring:
+  profiles: test
+  jackson:
+    serialization:
+      INDENT_OUTPUT: true
+  datasource:
+      driverClassName: com.mysql.jdbc.Driver
+      url: jdbc:mysql://172.19.103.42:8066/global_db?useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&transformedBitIsBoolean=true
+      username: hos
+      password: 123456
+      test-on-borrow: true
+      validation-query: SELECT 1
+      test-while-idle: true
+      max-total: 100
+      default-auto-commit: true
+      max-idle: 50
+      min-idle: 20
+      initial-size: 10
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL5Dialect
+    hibernate:
+      dialect: org.hibernate.dialect.MySQL5Dialect
+    format-sql: true
+    show-sql: false
+  data:
+    mongodb:
+      host: 172.19.103.42
+      port: 27017
+      username: esb
+      password: esb
+      authenticationDatabase: admin
+      gridFsDatabase: dfs
+      database: runtime
+  aop:
+    proxy-target-class: true
+hos:
+  administrators: jkzl  #SAAS管理员账号,暂时配置在此处
+  clientId: 0e3DIdNaQ2
+  zbus:
+    url: 172.19.103.37:9020
+  filesystem:
+    url: http://172.19.103.37:9010/dfs/file
+  mysql:
+    filePath: /usr/local/esb/esb.sql   #租户基础表 sql文件位置
+service-gateway:
+  portalUrl: http://192.168.1.221:10280/api/v1.0/portal
+  adminUrl: http://192.168.1.221:10000/api/v1.0/admin
+  oauth2authorize: http://192.168.1.221:10260/
+  oauth2RedictUrl: http://192.168.1.221:8080/ehr/login/signinReport
+  oauth2ReportClientId: 2YTOSRI0tw
+  url: http://172.19.103.37:9999/api
+  appService: http://127.0.0.1:10500
