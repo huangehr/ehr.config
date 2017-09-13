@@ -57,7 +57,8 @@ spring:
     password: weifuwu
   redis:
     host: 172.19.103.47 # Redis server host.
-    password:  # Login password of the redis server.
+    port: 6379
+    password: redis!@456
 
 
 fast-dfs:
