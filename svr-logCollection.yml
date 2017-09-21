@@ -53,3 +53,16 @@ spring:
       password: ehr@#(2^
       authenticationDatabase: admin
       database: ehr
+
+
+---
+spring:
+  profiles: prod_sr
+  data:
+    mongodb:
+      host: 10.176.97.9
+      port: 29000
+      username: jkzlehr
+      password: GMLBq1LG
+      authenticationDatabase: admin
+      database: ehr
