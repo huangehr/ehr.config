@@ -46,7 +46,7 @@ spring:
   aop:
     proxy-target-class: true
 hos:
-  administrators: jkzl #SAAS管理员账号,暂时配置在此处
+  saasAdmin: jkzl #SAAS管理员账号,暂时配置在此处
 jwt:
   header: Authorization
   secret: mySecret
@@ -91,4 +91,4 @@ spring:
   aop:
     proxy-target-class: true
 hos:
-  administrators: jkzl  #SAAS管理员账号,暂时配置在此处
+  saasAdmin: jkzl  #SAAS管理员账号,暂时配置在此处
