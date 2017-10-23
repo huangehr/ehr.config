@@ -142,8 +142,8 @@ spring:
     port: 6390
     password: redis!@456
 fast-dfs:
-  tracker-server: 192.168.135.42:22122
-  public-server: http://192.168.135.42:22122
+  tracker-server: 192.168.135.25:22122
+  public-server: http://192.168.25.42:22122
 
 
 ---
