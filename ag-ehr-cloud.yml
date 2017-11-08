@@ -56,6 +56,9 @@ spring:
       statsd:
         host: 172.19.103.73
         port: 8125
+eip:
+  schema: hos1
+  tenant: ehr
 
 #server:
 #  ssl:
@@ -78,6 +81,9 @@ spring:
       statsd:
         host: 192.168.1.221
         port: 8125
+eip:
+  schema: hos1
+  tenant: ehr
 
 ---
 spring:
@@ -94,6 +100,9 @@ spring:
       statsd:
         host: 172.19.103.73
         port: 8125
+eip:
+  schema: hos1
+  tenant: ehr
 
 ---
 spring:
@@ -109,6 +118,9 @@ spring:
       statsd:
         host: 11.1.2.5
         port: 8125
+eip:
+  schema: hos1
+  tenant: ehr
 
 ---
 spring:
@@ -124,6 +136,9 @@ spring:
       statsd:
         host: 192.168.135.29
         port: 8125
+eip:
+  schema: hos1
+  tenant: ehr
 
 ---
 spring:
@@ -139,3 +154,6 @@ spring:
       statsd:
         host: 10.176.97.10
         port: 8125
+eip:
+  schema: hos1
+  tenant: ehr
