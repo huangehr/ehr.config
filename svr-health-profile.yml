@@ -74,6 +74,9 @@ spring:
 fast-dfs:
   tracker-server: 172.19.103.13:22122
   public-server: http://172.19.103.52:80
+eip:
+  schema: hos1
+  tenant: ehr
 
 ---
 spring:
@@ -90,6 +93,9 @@ spring:
 fast-dfs:
   tracker-server: 172.19.103.54:22122
   public-server: http://172.19.103.54:80
+eip:
+  schema: hos1
+  tenant: ehr
 
 ---
 spring:
@@ -105,6 +111,9 @@ spring:
 fast-dfs:
   tracker-server: 172.19.103.13:22122
   public-server: http://172.19.103.52:80
+eip:
+  schema: hos1
+  tenant: ehr
 
 ---
 spring:
@@ -121,6 +130,9 @@ spring:
 fast-dfs:
   tracker-server: 11.1.2.9:22122
   public-server: http://ds.ehr.yihu.com:22122
+eip:
+  schema: hos1
+  tenant: ehr
 
 
 ---
@@ -135,7 +147,9 @@ spring:
 fast-dfs:
   tracker-server: 192.168.135.42:22122
   public-server: http://192.168.135.42:22122
-
+eip:
+  schema: hos1
+  tenant: ehr
 
 ---
 spring:
@@ -154,3 +168,6 @@ spring:
 fast-dfs:
   tracker-server: 10.176.97.5:22122
   public-server: http://10.176.97.5:22122
+eip:
+  schema: hos1
+  tenant: ehr

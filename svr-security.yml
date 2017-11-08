@@ -24,6 +24,9 @@ spring:
     url: jdbc:mysql://192.168.1.220:3306/healtharchive?useUnicode=true&characterEncoding=UTF-8
     username: ha
     password: ha
+eip:
+  schema: hos1
+  tenant: ehr
 
 ---
 spring:
@@ -33,6 +36,9 @@ spring:
     url: jdbc:mysql://192.168.1.220:3306/healtharchive?useUnicode=true&characterEncoding=UTF-8
     username: ha
     password: ha
+eip:
+  schema: hos1
+  tenant: ehr
 
 ---
 spring:
@@ -42,6 +48,9 @@ spring:
     url: jdbc:mysql://172.19.103.38:3306/healtharchive?useUnicode=true&characterEncoding=UTF-8
     username: cloud
     password: cloud
+eip:
+  schema: hos1
+  tenant: ehr
 
 ---
 spring:
@@ -51,3 +60,6 @@ spring:
     url: jdbc:mysql://11.1.2.5:3306/healtharchive?useUnicode=true&amp;characterEncoding=UTF-8
     username: ha
     password: jkzlxm
+eip:
+  schema: hos1
+  tenant: ehr
