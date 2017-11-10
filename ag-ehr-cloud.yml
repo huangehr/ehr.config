@@ -57,8 +57,7 @@ spring:
         host: 172.19.103.73
         port: 8125
 eip:
-  schema: hos1
-  tenant: ehr
+  tenant: jkzl
 
 #server:
 #  ssl:
@@ -82,8 +81,7 @@ spring:
         host: 192.168.1.221
         port: 8125
 eip:
-  schema: hos1
-  tenant: ehr
+  tenant: jkzl
 
 ---
 spring:
@@ -101,8 +99,7 @@ spring:
         host: 172.19.103.73
         port: 8125
 eip:
-  schema: hos1
-  tenant: ehr
+  tenant: jkzl
 
 ---
 spring:
@@ -119,8 +116,7 @@ spring:
         host: 11.1.2.5
         port: 8125
 eip:
-  schema: hos1
-  tenant: ehr
+  tenant: jkzl
 
 ---
 spring:
@@ -137,8 +133,7 @@ spring:
         host: 192.168.135.29
         port: 8125
 eip:
-  schema: hos1
-  tenant: ehr
+  tenant: jkzl
 
 ---
 spring:
@@ -155,5 +150,4 @@ spring:
         host: 10.176.97.10
         port: 8125
 eip:
-  schema: hos1
-  tenant: ehr
+  tenant: jkzl
