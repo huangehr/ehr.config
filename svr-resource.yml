@@ -44,6 +44,9 @@ hadoop:
 fast-dfs:
   tracker-server: 172.19.103.13:22122
   public-server: http://172.19.103.52:80
+eip:
+  schema: hos1
+  tenant: ehr
 
 ---
 spring:
@@ -60,6 +63,10 @@ spring:
 hadoop:
   hbase-properties:
     - hbase.zookeeper.quorum: node1.hde.h3c.com,node2.hde.h3c.com,node3.hde.h3c.com
+eip:
+  schema: hos1
+  tenant: ehr
+
 ---
 spring:
   profiles: test
@@ -79,6 +86,10 @@ hadoop:
 fast-dfs:
   tracker-server: 172.19.103.13:22122
   public-server: http://172.19.103.52:80
+eip:
+  schema: hos1
+  tenant: ehr
+
 ---
 spring:
   profiles: prod
@@ -99,6 +110,9 @@ hadoop:
 fast-dfs:
   tracker-server: 172.19.103.13:22122
   public-server: http://172.19.103.52:80
+eip:
+  schema: hos1
+  tenant: ehr
 
 ---
 spring:
@@ -122,7 +136,9 @@ hadoop:
 fast-dfs:
   tracker-server: 192.168.135.42:22122
   public-server: http://192.168.135.42:22122
-
+eip:
+  schema: hos1
+  tenant: ehr
 
 ---
 spring:
@@ -146,3 +162,7 @@ hadoop:
 fast-dfs:
   tracker-server: 10.176.97.5:22122
   public-server: http://10.176.97.5:22122
+eip:
+  schema: hos1
+  tenant: ehr
+  
