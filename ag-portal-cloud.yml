@@ -35,40 +35,34 @@ spring:
 spring:
   profiles: dev
 eip:
-  schema: hos1
-  tenant: ehr
+  tenant: jkzl
 
 ---
 spring:
   profiles: alpha
 eip:
-  schema: hos1
-  tenant: ehr
+  tenant: jkzl
 
 ---
 spring:
   profiles: test
 eip:
-  schema: hos1
-  tenant: ehr
+  tenant: jkzl
 
 ---
 spring:
   profiles: prod
 eip:
-  schema: hos1
-  tenant: ehr
+  tenant: jkzl
 
 ---
 spring:
   profiles: prod_fz
 eip:
-  schema: hos1
-  tenant: ehr
+  tenant: jkzl
 
 ---
 spring:
   profiles: prod_sr
 eip:
-  schema: hos1
-  tenant: ehr
+  tenant: jkzl
