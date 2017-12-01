@@ -52,8 +52,6 @@ hos:
     url: 172.19.103.57:9020
   filesystem:
     url: http://172.19.103.57:9010/dfs/file
-  mysql:
-    filePath: e://learn.sql   #租户基础表 sql文件位置
 fast-dfs:
   tracker-server: 172.19.103.13:22122
   public-server: http://172.19.103.52:80
@@ -104,8 +102,6 @@ hos:
     url: 172.19.103.57:9020
   filesystem:
     url: http://172.19.103.57:9010/dfs/file
-  mysql:
-    filePath: e://learn.sql   #租户基础表 sql文件位置
 fast-dfs:
   tracker-server: 172.19.103.13:22122
   public-server: http://172.19.103.52:80
