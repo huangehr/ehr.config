@@ -38,7 +38,7 @@ hos:
     url: http://172.19.103.57:9010/dfs/file
   arbiter:
     enable: true
-    url: http://172.19.103.57:10135
+    url: http://192.168.131.106:10135
   rest:
     url: http://172.19.103.57:8088
   timer:
