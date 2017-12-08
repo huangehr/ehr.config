@@ -82,10 +82,10 @@ log:
   level: info
 hos:
   filesystem:
-    url: http://172.19.103.57:9010/dfs/file #文件服务器地址
+    url: http://172.19.103.37:9010/dfs/file #文件服务器地址
   arbiter:
     enable: true
-    url: http://172.19.103.57:10135  # arbiter 的连接地址
+    url: http://172.19.103.37:10135  # arbiter 的连接地址
   rest:
     url: http://172.19.103.57:8088  # 采集上传档案等服务连接地址
   timer:
