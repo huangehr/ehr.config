@@ -78,7 +78,7 @@ eureka:
     serviceUrl:
       defaultZone: http://172.19.103.58:8761/eureka/  # eureka发现服务中心地址
 log:
-  path: /usr/local/esb/logs/hos-broker  #日志输出地址
+  path: /data/logs/hos-broker  #日志输出地址
   level: info
 hos:
   filesystem:
