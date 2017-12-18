@@ -1,0 +1,95 @@
+logging:
+  level:
+    org:
+      springframework:
+        web: INFO
+      hibernate: ERROR
+
+server:
+  port: ${svr-dfs.server.port}
+
+management:
+  port: ${server.port}
+
+info:
+  app:
+    name: svr-dfs
+    description: Ehr Platform Distributed File System Service.
+    version: 1.0.0
+
+fast-dfs:
+  connect-timeout: 2
+  network-timeout: 30
+  charset: ISO8859-1
+  pool:
+    init-size: 5
+    max-size: 20
+    wait-time: 500
+  http:
+    tracker-http-port: 80
+    anti-steal-token: no
+    secret-key: FastDFS1234567890
+  server:
+    dict-code: FASTDFSWLDZ #外链地址系统字典拼音编码
+  index:
+    name: dfs #ES索引名称
+    type: info #ES索引类型
+
+elasticsearch:
+  pool:
+    init-size: 5
+    max-size: 10
+
+---
+spring:
+  profiles: dev
+elasticsearch:
+  cluster-name: elasticsearch
+  cluster-nodes: 172.17.110.17:9300
+fast-dfs:
+  tracker-server: 172.19.103.13:22122
+
+---
+spring:
+  profiles: alpha
+elasticsearch:
+  cluster-name: elasticsearch
+  cluster-nodes: 172.17.110.17:9300
+fast-dfs:
+  tracker-server: 172.19.103.54:22122
+
+---
+spring:
+  profiles: test
+elasticsearch:
+  cluster-name: elasticsearch
+  cluster-nodes: 172.17.110.17:9300
+fast-dfs:
+  tracker-server: 172.19.103.13:22122
+
+---
+spring:
+  profiles: prod
+elasticsearch:
+  cluster-name: elasticsearch
+  cluster-nodes: 172.17.110.17:9300
+fast-dfs:
+  tracker-server: 11.1.2.9:22122
+
+---
+spring:
+  profiles: prod_fz
+elasticsearch:
+  cluster-name: elasticsearch
+  cluster-nodes: 172.17.110.17:9300
+fast-dfs:
+  tracker-server: 11.1.2.9:22122
+
+---
+spring:
+  profiles: prod_sr
+elasticsearch:
+  cluster-name: elasticsearch
+  cluster-nodes: 172.17.110.17:9300
+fast-dfs:
+  tracker-server: 11.1.2.9:22122
