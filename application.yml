@@ -155,7 +155,7 @@ eureka:
   instance:
     prefer-ip-address: true
 
-eureka-server-ip: 192.168.135.29:8761
+eureka-server-ip: 11.1.2.1:8761
 
 
 ---
@@ -168,4 +168,5 @@ eureka:
   instance:
     prefer-ip-address: true
 
-eureka-server-ip: 10.176.97.10:8761
+#eureka-server-ip: 10.176.97.10:8761
+eureka-server-ip: 172.19.103.73:8761

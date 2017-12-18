@@ -61,7 +61,7 @@ cda-document-type-options:
 spring:
   profiles: dev
   datasource:
-    url: jdbc:mysql://172.19.103.50:3306/healtharchive?useUnicode=true&characterEncoding=UTF-8
+    url: jdbc:mysql://172.19.103.50:3306/healtharchive?useUnicode=true&characterEncoding=UTF-8&useSSL=false
     username: weifuwu
     password: weifuwu
   redis:
@@ -74,13 +74,15 @@ spring:
 fast-dfs:
   tracker-server: 172.19.103.13:22122
   public-server: http://172.19.103.52:80
+eip:
+  tenant: jkzl
 
 ---
 spring:
   profiles: alpha
 
   datasource:
-    url: jdbc:mysql://192.168.1.220:3306/healtharchive?useUnicode=true&characterEncoding=UTF-8
+    url: jdbc:mysql://192.168.1.220:3306/healtharchive?useUnicode=true&characterEncoding=UTF-8&useSSL=false
     username: ha
     password: ha
   application:
@@ -90,13 +92,15 @@ spring:
 fast-dfs:
   tracker-server: 172.19.103.54:22122
   public-server: http://172.19.103.54:80
+eip:
+  tenant: jkzl
 
 ---
 spring:
   profiles: test
 
   datasource:
-    url: jdbc:mysql://172.19.103.50:3306/healtharchive?useUnicode=true&characterEncoding=UTF-8
+    url: jdbc:mysql://172.19.103.50:3306/healtharchive?useUnicode=true&characterEncoding=UTF-8&useSSL=false
     username: weifuwu
     password: weifuwu
   application:
@@ -105,13 +109,15 @@ spring:
 fast-dfs:
   tracker-server: 172.19.103.13:22122
   public-server: http://172.19.103.52:80
+eip:
+  tenant: jkzl
 
 ---
 spring:
   profiles: prod
 
   datasource:
-    url: jdbc:mysql://11.1.2.5:3306/healtharchive?useUnicode=true&amp;characterEncoding=UTF-8
+    url: jdbc:mysql://11.1.2.5:3306/healtharchive?useUnicode=true&characterEncoding=UTF-8&useSSL=false
     username: ha
     password: jkzlxm
   application:
@@ -121,27 +127,34 @@ spring:
 fast-dfs:
   tracker-server: 11.1.2.9:22122
   public-server: http://ds.ehr.yihu.com:22122
+eip:
+  tenant: jkzl
 
 
 ---
 spring:
   profiles: prod_fz
   datasource:
-    url: jdbc:mysql://192.168.135.39:3310/healtharchive?useUnicode=true&amp;characterEncoding=UTF-8
-    username: sr_healtharchive
-    password: data!@)1
+    url: jdbc:mysql://11.1.2.5:3306/healtharchive?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+    username: healthcloud
+    password: GP8Qz4qU
+  redis:
+    host: 11.1.2.22 # Redis server host.
+    port: 6390
+    password: Kb6wKDQP1W4
   application:
     id: JKZL
 fast-dfs:
-  tracker-server: 192.168.135.42:22122
-  public-server: http://192.168.135.42:22122
-
+  tracker-server: 11.1.2.9:22122
+  public-server: http://11.1.2.9:80
+eip:
+  tenant: jkzl
 
 ---
 spring:
   profiles: prod_sr
   datasource:
-    url: jdbc:mysql://10.176.97.9:3310/healtharchive?useUnicode=true&amp;characterEncoding=UTF-8
+    url: jdbc:mysql://10.176.97.9:3310/healtharchive?useUnicode=true&characterEncoding=UTF-8&useSSL=false
     username: healthcloud
     password: GP8Qz4qU
   redis:
@@ -153,4 +166,6 @@ spring:
     id: JKZL
 fast-dfs:
   tracker-server: 10.176.97.5:22122
-  public-server: http://10.176.97.5:22122
+  public-server: http://10.176.97.5:8888
+eip:
+  tenant: jkzl

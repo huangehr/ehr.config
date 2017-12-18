@@ -52,7 +52,7 @@ spring:
   profiles: dev
 
   datasource:
-    url: jdbc:mysql://172.19.103.50:3306/healtharchive?useUnicode=true&characterEncoding=UTF-8
+    url: jdbc:mysql://172.19.103.50:3306/healtharchive?useUnicode=true&characterEncoding=UTF-8&useSSL=false
     username: weifuwu
     password: weifuwu
   redis:
@@ -60,18 +60,35 @@ spring:
     port: 6379
     password: redis!@456
 
-
 fast-dfs:
   tracker-server: 172.19.103.13:22122
   public-server: http://172.19.103.52:80
   password: ha
+
+ehr-redis:
+  mq:
+    pubsub:
+      publisherAppId: svr-redis
+      responseTimeChannel: redis.cache.reponse-time
+  cache:
+    memory:
+      rdbFilePath: /usr/local/bin/dump.rdb
+      outFilePath: /usr/local/ehr/redisReport/memory.csv
+# 由于生产环境服务器维护通过堡垒机管理，不允许代码直接通过SSH访问远程服务器。
+# 暂时注释，寻求别的方法再去掉。
+#  server:
+#    host: 172.19.103.47
+#    username: root
+#    password: jkzl
+#    ssh-port: 22
+
 
 ---
 spring:
   profiles: alpha
 
   datasource:
-    url: jdbc:mysql://192.168.1.220:3306/healtharchive?useUnicode=true&characterEncoding=UTF-8
+    url: jdbc:mysql://192.168.1.220:3306/healtharchive?useUnicode=true&characterEncoding=UTF-8&useSSL=false
     username: ha
     password: ha
 
@@ -83,6 +100,20 @@ fast-dfs:
   tracker-server: 172.19.103.54:22122
   public-server: http://172.19.103.54:22122
 
+ehr-redis:
+  mq:
+    pubsub:
+      publisherAppId: svr-redis
+      responseTimeChannel: redis.cache.reponse-time
+  cache:
+    memory:
+      rdbFilePath: /usr/local/bin/dump.rdb
+      outFilePath: /usr/local/ehr/redisReport/memory.csv
+#  server:
+#    host: 172.19.103.47
+#    username: root
+#    password: jkzl
+#    ssh-port: 22
 
 
 ---
@@ -90,7 +121,7 @@ spring:
   profiles: test
 
   datasource:
-    url: jdbc:mysql://172.19.103.50:3306/healtharchive?useUnicode=true&characterEncoding=UTF-8
+    url: jdbc:mysql://172.19.103.50:3306/healtharchive?useUnicode=true&characterEncoding=UTF-8&useSSL=false
     username: weifuwu
     password: weifuwu
 
@@ -102,6 +133,20 @@ fast-dfs:
   tracker-server: 172.19.103.13:22122
   public-server: http://172.19.103.52:80
 
+ehr-redis:
+  mq:
+    pubsub:
+      publisherAppId: svr-redis
+      responseTimeChannel: redis.cache.reponse-time
+  cache:
+    memory:
+      rdbFilePath: /usr/local/bin/dump.rdb
+      outFilePath: /usr/local/ehr/redisReport/memory.csv
+#  server:
+#    host: 172.19.103.47
+#    username: root
+#    password: jkzl
+#    ssh-port: 22
 
 
 ---
@@ -112,7 +157,7 @@ spring:
     host: 11.1.2.20 # Redis server host.
     password:  # Login password of the redis server.
   datasource:
-    url: jdbc:mysql://11.1.2.5:3306/healtharchive?useUnicode=true&amp;characterEncoding=UTF-8
+    url: jdbc:mysql://11.1.2.5:3306/healtharchive?useUnicode=true&characterEncoding=UTF-8&useSSL=false
     username: ha
     password: jkzlxm
 
@@ -120,30 +165,59 @@ fast-dfs:
   tracker-server: 11.1.2.9:22122
   public-server: http://ds.ehr.yihu.com:22122
 
+ehr-redis:
+  mq:
+    pubsub:
+      publisherAppId: svr-redis
+      responseTimeChannel: redis.cache.reponse-time
+  cache:
+    memory:
+      rdbFilePath: /usr/local/bin/dump.rdb
+      outFilePath: /usr/local/ehr/redisReport/memory.csv
+#  server:
+#    host: 172.19.103.47
+#    username: root
+#    password: jkzl
+#    ssh-port: 22
+
 
 ---
 spring:
   profiles: prod_fz
   datasource:
-    url: jdbc:mysql://192.168.135.39:3310/healtharchive?useUnicode=true&amp;characterEncoding=UTF-8
-    username: sr_healtharchive
-    password: data!@)1
+    url: jdbc:mysql://11.1.2.5:3306/healtharchive?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+    username: healthcloud
+    password: GP8Qz4qU
 
   redis:
-    host: 192.168.135.40 # Redis server host.
+    host: 11.1.2.22 # Redis server host.
     port: 6390
-    # Login password of the redis server.
-    password: redis!@456
+    password: Kb6wKDQP1W4
 fast-dfs:
-  tracker-server: 192.168.135.42:22122
-  public-server: http://192.168.135.42:22122
+  tracker-server: 11.1.2.9:22122
+  public-server: http://11.1.2.9:80
+
+ehr-redis:
+  mq:
+    pubsub:
+      publisherAppId: svr-redis
+      responseTimeChannel: redis.cache.reponse-time
+  cache:
+    memory:
+      rdbFilePath: /usr/local/bin/dump.rdb
+      outFilePath: /usr/local/ehr/redisReport/memory.csv
+#  server:
+#    host: 172.19.103.47
+#    username: root
+#    password: jkzl
+#    ssh-port: 22
 
 
 ---
 spring:
   profiles: prod_sr
   datasource:
-    url: jdbc:mysql://10.176.97.9:3310/healtharchive?useUnicode=true&amp;characterEncoding=UTF-8
+    url: jdbc:mysql://10.176.97.9:3310/healtharchive?useUnicode=true&characterEncoding=UTF-8&useSSL=false
     username: healthcloud
     password: GP8Qz4qU
 
@@ -153,4 +227,19 @@ spring:
     password: q4YaQemf
 fast-dfs:
   tracker-server: 10.176.97.5:22122
-  public-server: http://10.176.97.5:22122
+  public-server: http://10.176.97.5:8888
+
+ehr-redis:
+  mq:
+    pubsub:
+      publisherAppId: svr-redis
+      responseTimeChannel: redis.cache.reponse-time
+  cache:
+    memory:
+      rdbFilePath: /usr/local/bin/dump.rdb
+      outFilePath: /usr/local/ehr/redisReport/memory.csv
+#  server:
+#    host: 172.19.103.47
+#    username: root
+#    password: jkzl
+#    ssh-port: 22
