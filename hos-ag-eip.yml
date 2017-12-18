@@ -1,6 +1,7 @@
 security:
   basic:
     enabled: false
+
 hystrix:
   command:
     default:
@@ -10,7 +11,6 @@ hystrix:
         isolation:
           thread:
             timeoutInMilliseconds: 30000
-
 
 ---
 spring:
@@ -45,13 +45,6 @@ spring:
       database: runtime
   aop:
     proxy-target-class: true
-hos:
-  saasAdmin: jkzl #SAAS管理员账号,暂时配置在此处
-jwt:
-  header: Authorization
-  secret: mySecret
-  expiration: 604800
-  tokenHead: "Bearer "
 
 
 ---
@@ -62,7 +55,7 @@ spring:
       INDENT_OUTPUT: true
   datasource:
       driverClassName: com.mysql.jdbc.Driver
-      url: jdbc:mysql://172.19.103.57:8066/global_db?useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&transformedBitIsBoolean=true
+      url: jdbc:mysql://172.19.103.42:8066/global_db?useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&transformedBitIsBoolean=true
       username: hos
       password: 123456
       test-on-borrow: true
@@ -90,10 +83,3 @@ spring:
       database: runtime
   aop:
     proxy-target-class: true
-hos:
-  saasAdmin: jkzl  #SAAS管理员账号,暂时配置在此处
-jwt:
-  header: Authorization
-  secret: mySecret
-  expiration: 604800
-  tokenHead: "Bearer "

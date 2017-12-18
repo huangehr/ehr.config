@@ -45,7 +45,7 @@ zuul:
 spring:
   profiles: dev
   datasource:
-    url: jdbc:mysql://172.19.103.50:3306/healtharchive?useUnicode=true&characterEncoding=UTF-8
+    url: jdbc:mysql://172.19.103.50:3306/healtharchive?useUnicode=true&characterEncoding=UTF-8&useSSL=false
     username: weifuwu
     password: weifuwu
   thymeleaf:
@@ -56,6 +56,8 @@ spring:
       statsd:
         host: 172.19.103.73
         port: 8125
+eip:
+  tenant: jkzl
 
 #server:
 #  ssl:
@@ -66,7 +68,7 @@ spring:
 spring:
   profiles: alpha
   datasource:
-    url: jdbc:mysql://192.168.1.220:3306/healtharchive?useUnicode=true&characterEncoding=UTF-8
+    url: jdbc:mysql://192.168.1.220:3306/healtharchive?useUnicode=true&characterEncoding=UTF-8&useSSL=false
     username: ha
     password: ha
 
@@ -78,12 +80,14 @@ spring:
       statsd:
         host: 192.168.1.221
         port: 8125
+eip:
+  tenant: jkzl
 
 ---
 spring:
   profiles: test
   datasource:
-    url: jdbc:mysql://172.19.103.50:3306/healtharchive?useUnicode=true&characterEncoding=UTF-8
+    url: jdbc:mysql://172.19.103.50:3306/healtharchive?useUnicode=true&characterEncoding=UTF-8&useSSL=false
     username: weifuwu
     password: weifuwu
   thymeleaf:
@@ -94,12 +98,14 @@ spring:
       statsd:
         host: 172.19.103.73
         port: 8125
+eip:
+  tenant: jkzl
 
 ---
 spring:
   profiles: prod
   datasource:
-    url: jdbc:mysql://11.1.2.5:3306/healtharchive?useUnicode=true&amp;characterEncoding=UTF-8
+    url: jdbc:mysql://11.1.2.5:3306/healtharchive?useUnicode=true&characterEncoding=UTF-8&useSSL=false
     username: ha
     password: jkzlxm
   thymeleaf:
@@ -109,27 +115,31 @@ spring:
       statsd:
         host: 11.1.2.5
         port: 8125
+eip:
+  tenant: jkzl
 
 ---
 spring:
   profiles: prod_fz
   datasource:
-    url: jdbc:mysql://192.168.135.39:3310/healtharchive?useUnicode=true&amp;characterEncoding=UTF-8
-    username: sr_healtharchive
-    password: data!@)1
+    url: jdbc:mysql://11.1.2.5:3306/healtharchive?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+    username: healthcloud
+    password: GP8Qz4qU
   thymeleaf:
     cache: false
   metrics:
     export:
       statsd:
-        host: 192.168.135.29
+        host: 11.1.2.5
         port: 8125
+eip:
+  tenant: jkzl
 
 ---
 spring:
   profiles: prod_sr
   datasource:
-    url: jdbc:mysql://10.176.97.9:3310/healtharchive?useUnicode=true&amp;characterEncoding=UTF-8
+    url: jdbc:mysql://10.176.97.9:3310/healtharchive?useUnicode=true&characterEncoding=UTF-8&useSSL=false
     username: healthcloud
     password: GP8Qz4qU
   thymeleaf:
@@ -139,3 +149,5 @@ spring:
       statsd:
         host: 10.176.97.10
         port: 8125
+eip:
+  tenant: jkzl
