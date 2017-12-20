@@ -47,13 +47,12 @@ spring:
   profiles: prod_fz
   data:
     mongodb:
-      host: 192.168.135.41
+      host: 10.176.97.9
       port: 29000
-      username: sr_ehr
-      password: ehr@#(2^
+      username: jkzlehr
+      password: GMLBq1LG
       authenticationDatabase: admin
       database: ehr
-
 
 ---
 spring:

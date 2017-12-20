@@ -57,6 +57,7 @@ svr-ehr-basic.server.port: 10300
 svr-redis.server.port: 10310
 svr-log-collection.server.port: 10320
 svr-quota.server.port: 10330
+svr-dfs.server.port: 10770
 #Application acuator
 endpoints:
   restart:
@@ -154,7 +155,7 @@ eureka:
   instance:
     prefer-ip-address: true
 
-eureka-server-ip: 192.168.135.29:8761
+eureka-server-ip: 11.1.2.1:8761
 
 
 ---
