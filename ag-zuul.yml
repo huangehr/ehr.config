@@ -1,95 +1,65 @@
-logging:
-  level:
-    org:
-      springframework:
-        web: INFO
-      hibernate: ERROR
-
 server:
-  port: ${svr-dfs.server.port}
+  port: ${ag-zuul.server.port}
 
 management:
   port: ${server.port}
 
 info:
   app:
-    name: svr-dfs
-    description: Ehr Platform Distributed File System Service.
+    name: Ag-Zuul
+    description:  EHR Platform Zuul Service.
     version: 1.0.0
 
-fast-dfs:
-  connect-timeout: 2
-  network-timeout: 30
-  charset: ISO8859-1
-  pool:
-    init-size: 5
-    max-size: 20
-    wait-time: 500
-  http:
-    tracker-http-port: 80
-    anti-steal-token: no
-    secret-key: FastDFS1234567890
-  server:
-    dict-code: FASTDFSWLDZ #外链地址系统字典拼音编码
-  index:
-    name: dfs #ES索引名称
-    type: info #ES索引类型
-
-elasticsearch:
-  pool:
-    init-size: 5
-    max-size: 10
+zuul:
+  routes:
+    svr-dfs:
+      path: /svr-dfs/**
+      serviceId: svr-dfs
+    svr-ehr-basic:
+      path: /svr-ehr-basic/**
+      serviceId: svr-ehr-basic
+    svr-health-profile:
+      path: /svr-health-profile/**
+      serviceId: svr-health-profile
+    svr-pack-mgr:
+      path: /svr-pack-mgr/**
+      serviceId: svr-pack-mgr
+    svr-pack-resolv:
+      path: /svr-pack-resolve/**
+      serviceId: svr-pack-resolve
+    svr-quota:
+      path: /svr-quota/**
+      serviceId: svr-quota
+    svr-redis:
+      path: /svr-redis/**
+      serivceId: svr-redis
+    svr-resource:
+      path: /svr-resource/**
+      serviceId: svr-resource
+    svr-standard:
+      path: /svr-standard/**
+      serviceId: svr-standard
 
 ---
 spring:
   profiles: dev
-elasticsearch:
-  cluster-name: elasticsearch
-  cluster-nodes: 172.17.110.17:9300
-fast-dfs:
-  tracker-server: 172.19.103.13:22122
 
 ---
 spring:
   profiles: alpha
-elasticsearch:
-  cluster-name: elasticsearch
-  cluster-nodes: 172.17.110.17:9300
-fast-dfs:
-  tracker-server: 172.19.103.54:22122
 
 ---
 spring:
   profiles: test
-elasticsearch:
-  cluster-name: elasticsearch
-  cluster-nodes: 172.17.110.17:9300
-fast-dfs:
-  tracker-server: 172.19.103.13:22122
 
 ---
 spring:
   profiles: prod
-elasticsearch:
-  cluster-name: elasticsearch
-  cluster-nodes: 172.17.110.17:9300
-fast-dfs:
-  tracker-server: 11.1.2.9:22122
 
 ---
 spring:
   profiles: prod_fz
-elasticsearch:
-  cluster-name: elasticsearch
-  cluster-nodes: 172.17.110.17:9300
-fast-dfs:
-  tracker-server: 11.1.2.9:22122
 
 ---
 spring:
   profiles: prod_sr
-elasticsearch:
-  cluster-name: elasticsearch
-  cluster-nodes: 172.17.110.17:9300
-fast-dfs:
-  tracker-server: 11.1.2.9:22122
