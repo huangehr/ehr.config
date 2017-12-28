@@ -168,4 +168,4 @@ eureka:
     prefer-ip-address: true
 
 eureka-server-ip: 10.176.97.10:8761
-#eureka-server-ip: 172.19.103.73:8761
+#eureka-server-ip: 171.35.109.46:8761
