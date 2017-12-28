@@ -30,6 +30,7 @@ ag-ehr-platform.server.port: 443
 ag-ehr-cloud.server.port: 10400
 ag-portal-cloud.server.port: 10280
 ag-admin.server.port: 10000
+ag-zuul.server.port: 10001
 svr-adaption.server.port: 10150
 svr-app.server.port: 10160
 svr-dict.server.port: 10050
