@@ -56,6 +56,7 @@ svr-portal.server.port: 10250
 svr-file-resource.server.port: 10270
 svr-ehr-basic.server.port: 10300
 svr-redis.server.port: 10310
+svr-redis-memory.server.port: 10311
 svr-log-collection.server.port: 10320
 svr-quota.server.port: 10330
 svr-dfs.server.port: 10770
