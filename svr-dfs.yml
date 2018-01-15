@@ -57,8 +57,8 @@ spring:
   profiles: dev
   datasource:
     url: jdbc:mysql://172.19.103.50:3306/healtharchive?useUnicode=true&characterEncoding=UTF-8&useSSL=false
-    username: chenweishan
-    password: chenweishan
+    username: weifuwu
+    password: weifuwu
 elasticsearch:
   cluster-name: elasticsearch
   cluster-nodes: 172.17.110.17:9300
