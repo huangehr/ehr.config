@@ -40,7 +40,7 @@ svr-health-profile.server.port: 9009
 svr-organization.server.port: 10070
 svr-pack-mgr.server.port: 10140
 svr-pack-resolve.server.port: 10170
-svr-pack-analyzer.server.port:10180
+svr-pack-analyzer.server.port: 10340
 svr-patient.server.port: 10100
 svr-security.server.port: 10110
 svr-special-dict.server.port: 10180
