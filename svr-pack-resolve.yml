@@ -3,6 +3,7 @@ server:
 
 management:
   port: ${server.port}
+
 logging:
   level:
     com:
