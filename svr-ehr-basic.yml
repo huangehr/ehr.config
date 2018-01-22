@@ -57,6 +57,12 @@ spring:
     url: jdbc:mysql://172.19.103.50:3306/healtharchive?useUnicode=true&characterEncoding=UTF-8&useSSL=false
     username: weifuwu
     password: weifuwu
+  ldap:
+    host: 172.19.103.87
+    port: 389
+    bindDn: cn=admin,dc=ehr,dc=jkzl
+    password: jkzl
+    root: dc=ehr,dc=jkzl
   data:
     mongodb:
       host: 192.168.1.220
@@ -65,12 +71,19 @@ spring:
       password: admin
       authenticationDatabase: admin
       database: ehr
-
 fast-dfs:
   tracker-server: 172.19.103.13:22122
   public-server: http://172.19.103.52:80
 eip:
   tenant: jkzl
+
+es:
+  index: wlyy_quota_test
+  type: wlyy_quota_test
+  host:  http://172.19.103.68:9200
+  tHost: 172.19.103.68:9300
+  clusterName: jkzl
+
 
 ---
 spring:
@@ -79,12 +92,28 @@ spring:
     url: jdbc:mysql://192.168.1.220:3306/healtharchive?useUnicode=true&characterEncoding=UTF-8&useSSL=false
     username: ha
     password: ha
-
+  data:
+    mongodb:
+      host: 192.168.1.220
+      port: 27017
+      username: admin
+      password: admin
+      authenticationDatabase: admin
+      database: ehr
 fast-dfs:
   tracker-server: 172.19.103.54:22122
   public-server: http://172.19.103.54
 eip:
   tenant: jkzl
+
+es:
+  index: wlyy_quota_test
+  type: wlyy_quota_test
+  host:  http://172.19.103.68:9200
+  tHost: 172.19.103.68:9300
+  clusterName: jkzl
+
+
 ---
 spring:
   profiles: test
@@ -106,6 +135,14 @@ fast-dfs:
 eip:
   tenant: jkzl
 
+es:
+  index: wlyy_quota_test
+  type: wlyy_quota_test
+  host:  http://172.19.103.68:9200
+  tHost: 172.19.103.68:9300
+  clusterName: jkzl
+
+
 ---
 spring:
   profiles: prod
@@ -113,12 +150,33 @@ spring:
     url: jdbc:mysql://11.1.2.5:3306/healtharchive?useUnicode=true&characterEncoding=UTF-8&useSSL=false
     username: ha
     password: jkzlxm
-
+  ldap:
+    host: 172.19.103.87
+    port: 389
+    bindDn: cn=admin,dc=ehr,dc=jkzl
+    password: jkzl
+    root: dc=ehr,dc=jkzl
+  data:
+    mongodb:
+      host: 192.168.1.220
+      port: 27017
+      username: admin
+      password: admin
+      authenticationDatabase: admin
+      database: ehr
 fast-dfs:
   tracker-server: 11.1.2.9:22122
   public-server: http://ds.ehr.yihu.com:22122
 eip:
-  tenant: jkzl
+  tenant: ehr
+
+es:
+  index: wlyy_quota_test
+  type: wlyy_quota_test
+  host:  http://172.19.103.68:9200
+  tHost: 172.19.103.68:9300
+  clusterName: jkzl
+
 
 ---
 spring:
@@ -135,12 +193,19 @@ spring:
       password: GMLBq1LG
       authenticationDatabase: admin
       database: ehr
+  ldap:
+    host: 172.19.103.87
+    port: 389
+    bindDn: cn=admin,dc=ehr,dc=jkzl
+    password: jkzl
+    root: dc=ehr,dc=jkzl
 
 fast-dfs:
   tracker-server: 11.1.2.9:22122
   public-server: http://11.1.2.9:80
 eip:
-  tenant: jkzl
+  tenant: ehr
+
 
 ---
 spring:
@@ -149,6 +214,12 @@ spring:
     url: jdbc:mysql://10.176.97.9:3310/healtharchive?useUnicode=true&characterEncoding=UTF-8&useSSL=false
     username: healthcloud
     password: GP8Qz4qU
+  ldap:
+    host: 172.19.103.87
+    port: 389
+    bindDn: cn=admin,dc=ehr,dc=jkzl
+    password: jkzl
+    root: dc=ehr,dc=jkzl
   data:
     mongodb:
       host: 10.176.97.9
@@ -157,9 +228,8 @@ spring:
       password: GMLBq1LG
       authenticationDatabase: admin
       database: ehr
-
 fast-dfs:
   tracker-server: 10.176.97.5:22122
   public-server: http://10.176.97.5:8888
 eip:
-  tenant: jkzl
+  tenant: ehr
