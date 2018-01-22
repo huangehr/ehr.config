@@ -13,7 +13,6 @@ spring:
   redis:
     database: 0 # Database index used by the connection factory.
     port: 6379 # Redis server port.
-    #password:  # Login password of the redis server.
     timeout: 0 # Connection timeout in milliseconds.
     #sentinel:
     #  master: # Name of Redis server.
@@ -34,43 +33,25 @@ spring:
     test-on-borrow: true
 
 
-fast-dfs:
-  pool:
-    init-size: 5
-    max-size: 20
-    wait-time: 500
-  connect-timeout: 2
-  network-timeout: 30
-  charset: ISO8859-1
-  http:
-    tracker-http-port: 80
-    anti-steal-token: no
-    secret-key: FastDFS1234567890
-
 ---
 spring:
   profiles: dev
 
   datasource:
     url: jdbc:mysql://172.19.103.50:3306/healtharchive?useUnicode=true&characterEncoding=UTF-8&useSSL=false
-    username: weifuwu
-    password: weifuwu
+    username: chenweishan
+    password: chenweishan
+
   redis:
-    host: 172.19.103.47 # Redis server host.
+    host: 172.19.103.47
     port: 6379
     password: redis!@456
 
-fast-dfs:
-  tracker-server: 172.19.103.13:22122
-  public-server: http://172.19.103.52:80
-  password: ha
-
 ehr-redis:
-  mq:
-    pubsub:
-      publisherAppId: svr-redis
-      responseTimeChannel: redis.cache.reponse-time
-
+  cache:
+    memory:
+      rdbFilePath: /usr/local/bin/dump.rdb
+      outFilePath: /home/ehr/redisReport/memory.csv
 
 ---
 spring:
@@ -83,17 +64,12 @@ spring:
 
   redis:
     host: 192.168.1.220 # Redis server host.
-    password:  # Login password of the redis server.
-
-fast-dfs:
-  tracker-server: 172.19.103.54:22122
-  public-server: http://172.19.103.54:22122
 
 ehr-redis:
-  mq:
-    pubsub:
-      publisherAppId: svr-redis
-      responseTimeChannel: redis.cache.reponse-time
+  cache:
+    memory:
+      rdbFilePath: /usr/local/bin/dump.rdb
+      outFilePath: /home/ehr/redisReport/memory.csv
 
 
 ---
@@ -107,18 +83,12 @@ spring:
 
   redis:
     host: 172.19.103.47 # Redis server host.
-    port: 6379
-    password: redis!@456
-
-fast-dfs:
-  tracker-server: 172.19.103.13:22122
-  public-server: http://172.19.103.52:80
 
 ehr-redis:
-  mq:
-    pubsub:
-      publisherAppId: svr-redis
-      responseTimeChannel: redis.cache.reponse-time
+  cache:
+    memory:
+      rdbFilePath: /usr/local/bin/dump.rdb
+      outFilePath: /home/ehr/redisReport/memory.csv
 
 
 ---
@@ -127,22 +97,17 @@ spring:
 
   redis:
     host: 11.1.2.20 # Redis server host.
-    password:  # Login password of the redis server.
+
   datasource:
     url: jdbc:mysql://11.1.2.5:3306/healtharchive?useUnicode=true&characterEncoding=UTF-8&useSSL=false
     username: ha
     password: jkzlxm
 
-fast-dfs:
-  tracker-server: 11.1.2.9:22122
-  public-server: http://ds.ehr.yihu.com:22122
-
 ehr-redis:
-  mq:
-    pubsub:
-      publisherAppId: svr-redis
-      responseTimeChannel: redis.cache.reponse-time
-
+  cache:
+    memory:
+      rdbFilePath: /usr/local/bin/dump.rdb
+      outFilePath: /home/ehr/redisReport/memory.csv
 
 ---
 spring:
@@ -153,38 +118,33 @@ spring:
     password: GP8Qz4qU
 
   redis:
-    host: 11.1.2.22 # Redis server host.
+    host: 11.1.2.22
     port: 6390
     password: Kb6wKDQP1W4
-fast-dfs:
-  tracker-server: 11.1.2.9:22122
-  public-server: http://11.1.2.9:80
 
 ehr-redis:
-  mq:
-    pubsub:
-      publisherAppId: svr-redis
-      responseTimeChannel: redis.cache.reponse-time
+  cache:
+    memory:
+      rdbFilePath: /usr/local/bin/dump.rdb
+      outFilePath: /home/ehr/redisReport/memory.csv
 
 
 ---
 spring:
   profiles: prod_sr
+
+  redis:
+    host: 10.176.97.5
+    port: 6390
+    password: q4YaQemf
+
   datasource:
     url: jdbc:mysql://10.176.97.9:3310/healtharchive?useUnicode=true&characterEncoding=UTF-8&useSSL=false
     username: healthcloud
     password: GP8Qz4qU
 
-  redis:
-    host: 10.176.97.5 # Redis server host.
-    port: 6390
-    password: q4YaQemf
-fast-dfs:
-  tracker-server: 10.176.97.5:22122
-  public-server: http://10.176.97.5:8888
-
 ehr-redis:
-  mq:
-    pubsub:
-      publisherAppId: svr-redis
-      responseTimeChannel: redis.cache.reponse-time
+  cache:
+    memory:
+      rdbFilePath: /usr/local/bin/dump.rdb
+      outFilePath: /home/ehr/redisReport/memory.csv

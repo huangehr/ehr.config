@@ -30,6 +30,7 @@ ag-ehr-platform.server.port: 443
 ag-ehr-cloud.server.port: 10400
 ag-portal-cloud.server.port: 10280
 ag-admin.server.port: 10000
+ag-zuul.server.port: 10001
 svr-adaption.server.port: 10150
 svr-app.server.port: 10160
 svr-dict.server.port: 10050
@@ -39,6 +40,7 @@ svr-health-profile.server.port: 9009
 svr-organization.server.port: 10070
 svr-pack-mgr.server.port: 10140
 svr-pack-resolve.server.port: 10170
+svr-pack-analyzer.server.port: 10340
 svr-patient.server.port: 10100
 svr-security.server.port: 10110
 svr-special-dict.server.port: 10180
@@ -55,8 +57,10 @@ svr-portal.server.port: 10250
 svr-file-resource.server.port: 10270
 svr-ehr-basic.server.port: 10300
 svr-redis.server.port: 10310
+svr-redis-memory.server.port: 10311
 svr-log-collection.server.port: 10320
 svr-quota.server.port: 10330
+svr-dfs.server.port: 10770
 #Application acuator
 endpoints:
   restart:
@@ -155,7 +159,7 @@ eureka:
   instance:
     prefer-ip-address: true
 
-eureka-server-ip: 192.168.135.29:8761
+eureka-server-ip: 11.1.2.1:8761
 
 
 ---
@@ -169,4 +173,4 @@ eureka:
     prefer-ip-address: true
 
 #eureka-server-ip: 10.176.97.10:8761
-eureka-server-ip: 172.19.103.73:8761
+eureka-server-ip: 171.35.109.46:8761
