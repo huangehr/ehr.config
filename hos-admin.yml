@@ -17,7 +17,7 @@ spring:
   profiles: dev
   datasource:
     driverClassName: com.mysql.jdbc.Driver
-    url: jdbc:mysql://172.19.103.57:8066/global_db?useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&transformedBitIsBoolean=true
+    url: jdbc:mysql://172.19.103.57:8066/hos1?useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&transformedBitIsBoolean=true
     username: hos
     password: 123456
     test-on-borrow: true
@@ -52,6 +52,8 @@ jwt:
   secret: mySecret
   expiration: 604800
   tokenHead: "Bearer "
+eip:
+  manageAddress: http://localhost:8080 #配置跨域
 
 
 ---
@@ -62,7 +64,7 @@ spring:
       INDENT_OUTPUT: true
   datasource:
       driverClassName: com.mysql.jdbc.Driver
-      url: jdbc:mysql://172.19.103.57:8066/global_db?useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&transformedBitIsBoolean=true
+      url: jdbc:mysql://172.19.103.57:8066/hos1?useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&transformedBitIsBoolean=true
       username: hos
       password: 123456
       test-on-borrow: true
@@ -97,3 +99,5 @@ jwt:
   secret: mySecret
   expiration: 604800
   tokenHead: "Bearer "
+eip:
+  manageAddress: http://172.19.103.57:8080 #配置跨域
