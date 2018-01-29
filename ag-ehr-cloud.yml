@@ -151,3 +151,20 @@ spring:
         port: 8125
 eip:
   tenant: jkzl
+
+---
+spring:
+  profiles: prod_fzzy
+  datasource:
+    url: jdbc:mysql://100.100.1.159:3310/healtharchive?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+    username: healthcloud
+    password: GP8Qz4qU
+  thymeleaf:
+    cache: false
+  metrics:
+    export:
+      statsd:
+        host: 100.100.1.162
+        port: 8125
+eip:
+  tenant: jkzl
