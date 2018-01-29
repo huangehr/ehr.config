@@ -65,3 +65,15 @@ spring:
       password: GMLBq1LG
       authenticationDatabase: admin
       database: ehr
+
+---
+spring:
+  profiles: prod_fzzy
+  data:
+    mongodb:
+      host: 100.100.1.157
+      port: 29000
+      username: jkzlehr
+      password: GMLBq1LG
+      authenticationDatabase: admin
+      database: ehr

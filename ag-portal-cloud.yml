@@ -66,3 +66,9 @@ spring:
   profiles: prod_sr
 eip:
   tenant: jkzl
+
+---
+spring:
+  profiles: prod_fzzy
+eip:
+  tenant: jkzl
