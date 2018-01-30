@@ -73,7 +73,7 @@ endpoints:
 spring:
   jmx:
     enabled: false
-  
+
   jpa:
     database-platform: org.hibernate.dialect.MySQL5Dialect
     hibernate.dialect: org.hibernate.dialect.MySQL5Dialect
