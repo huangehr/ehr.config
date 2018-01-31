@@ -175,7 +175,7 @@ jwt:
 
 ---
 spring:
-  profiles: prod_sr
+  profiles: prod
   datasource:
     driverClassName: com.mysql.jdbc.Driver
     url: jdbc:mysql://10.176.97.9:3310/tenant_central?useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&transformedBitIsBoolean=true
