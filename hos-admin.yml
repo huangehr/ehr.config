@@ -235,7 +235,7 @@ jwt:
   header: Authorization
   secret: mySecret
   expiration: 604800
-  tokenHead: "Bearer "<<<<<<< .mine
+  tokenHead: "Bearer "
 # REDIS
   redis:
     host: 10.176.97.5 # Redis server host.
