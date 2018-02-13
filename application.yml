@@ -79,6 +79,9 @@ spring:
     hibernate.dialect: org.hibernate.dialect.MySQL5Dialect
     show-sql: false
 
+  session:
+    store-type: none
+
   #block the inet address of nic, virtual card and so on. Need spring version: Brixton M5
   cloud:
     inetutils:
