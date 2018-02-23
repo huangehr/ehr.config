@@ -60,8 +60,8 @@ fast-dfs:
 
 hadoop:
   hbase-properties:
-    - hbase.zookeeper.property.clientPort: 2181
-    - zookeeper.znode.parent: /hbase-unsecure
+    hbase.zookeeper.property.clientPort: 2181
+    zookeeper.znode.parent: /hbase-unsecure
   user:
     name: root
 
@@ -98,7 +98,7 @@ elasticsearch:
   cluster-nodes: 172.17.110.17:9300
 hadoop:
   hbase-properties:
-    - hbase.zookeeper.quorum: node1.hde.h3c.com,node2.hde.h3c.com,node3.hde.h3c.com
+    hbase.zookeeper.quorum: node1.hde.h3c.com,node2.hde.h3c.com,node3.hde.h3c.com
 
 ---
 spring:
@@ -126,7 +126,7 @@ elasticsearch:
   cluster-nodes: 172.17.110.17:9300
 hadoop:
   hbase-properties:
-    - hbase.zookeeper.quorum: node1.hde.h3c.com,node2.hde.h3c.com,node3.hde.h3c.com
+    hbase.zookeeper.quorum: node1.hde.h3c.com,node2.hde.h3c.com,node3.hde.h3c.com
 
 ---
 spring:
@@ -153,7 +153,7 @@ elasticsearch:
   cluster-nodes: 172.17.110.17:9300
 hadoop:
   hbase-properties:
-    - hbase.zookeeper.quorum: node1.hde.h3c.com,node2.hde.h3c.com,node3.hde.h3c.com
+    hbase.zookeeper.quorum: node1.hde.h3c.com,node2.hde.h3c.com,node3.hde.h3c.com
 
 ---
 spring:
@@ -183,7 +183,7 @@ elasticsearch:
 hadoop:
   hbase-properties:
     #- hbase.zookeeper.quorum: node2.jkzl.com,node3.jkzl.com,node1.jkzl.com
-    - hbase.zookeeper.quorum: node1,node2,node3
+    hbase.zookeeper.quorum: node1,node2,node3
 
 ---
 spring:
@@ -212,7 +212,7 @@ elasticsearch:
   cluster-nodes: 172.17.110.17:9300
 hadoop:
   hbase-properties:
-    - hbase.zookeeper.quorum: node1.ehr.h3c.com,node2.ehr.h3c.com,node3.ehr.h3c.com
+    hbase.zookeeper.quorum: node1.ehr.h3c.com,node2.ehr.h3c.com,node3.ehr.h3c.com
 
 ---
 spring:
@@ -244,4 +244,4 @@ elasticsearch:
 hadoop:
   hbase-properties:
     #- hbase.zookeeper.quorum: node2.jkzl.com,node3.jkzl.com,node1.jkzl.com
-    - hbase.zookeeper.quorum: node1,node2,node3
+    hbase.zookeeper.quorum: node1,node2,node3
