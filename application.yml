@@ -1,3 +1,10 @@
+#log level
+logging:
+  level:
+    org:
+      apache:
+        zookeeper: WARN
+
 #set max http header size
 server:
   tomcat:
