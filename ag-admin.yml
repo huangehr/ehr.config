@@ -33,19 +33,7 @@ service-gateway:
 
 ---
 spring:
-  profiles: alpha
-eip:
-  tenant: jkzl
-
----
-spring:
   profiles: test
-eip:
-  tenant: jkzl
-
----
-spring:
-  profiles: prod
 eip:
   tenant: jkzl
 
