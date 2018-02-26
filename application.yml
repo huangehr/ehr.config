@@ -25,13 +25,18 @@ management:
     enabled: false
 
 #Hystrix
-#hystrix:
-#  command:
-#    default:
-#      execution:
-#        isolation:
-#          thread:
-#            timeoutInMilliseconds: 30000
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 300000
+
+#Ribbon
+ribbon:
+  ReadTimeout: 300000
+  ConnectTimeout: 5000
 
 #Application error definition, this file define common errors,
 #if the error is used only in your application, please define it in your application configuration file.
