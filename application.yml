@@ -1,7 +1,9 @@
+#log level
 logging:
   level:
     org:
-      apache: WARN
+      apache:
+        zookeeper: WARN
 
 #set max http header size
 server:
