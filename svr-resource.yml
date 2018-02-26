@@ -1,12 +1,3 @@
-logging:
-  level:
-    com:
-      netflix: INFO
-    org:
-      springframework:
-        web: INFO
-      hibernate: ERROR
-
 hadoop:
   hbase-properties:
     hbase.zookeeper.property.clientPort: 2181
@@ -15,6 +6,15 @@ hadoop:
     name: root
 
 spring:
+  # REDIS
+  redis:
+    database: 0 # Database index used by the connection factory.
+    timeout: 0 # Connection timeout in milliseconds.
+    pool:
+      max-active: 8 # Max number of connections that can be allocated by the pool at a given time. Use a negative value for no limit.
+      max-idle: 8 # Max number of "idle" connections in the pool. Use a negative value to indicate an unlimited number of idle connections.
+      max-wait: -1 # Maximum amount of time (in milliseconds) a connection allocation should block before throwing an exception when the pool is exhausted. Use a negative value to block indefinitely.
+      min-idle: 1 # Target for the minimum number of idle connections to maintain in the pool. This setting only has an effect if it is positive.
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
     max-active: 20
@@ -22,6 +22,9 @@ spring:
     min-idle: 8
     validation-query: SELECT 1
     test-on-borrow: true
+
+eip:
+  tenant: jkzl
 
 ---
 spring:
@@ -44,26 +47,6 @@ hadoop:
 fast-dfs:
   tracker-server: 172.19.103.13:22122
   public-server: http://172.19.103.52:80
-eip:
-  tenant: jkzl
-
----
-spring:
-  profiles: alpha
-  datasource:
-    url: jdbc:mysql://192.168.1.220:3306/healtharchive?useUnicode=true&characterEncoding=UTF-8&useSSL=false
-    username: ha
-    password: ha
-  redis:
-    host: 192.168.1.220 # Redis server host.
-  data:
-    solr:
-      zk-host: node1.hde.h3c.com,node2.hde.h3c.com:2181/solr # ZooKeeper host address in the form HOST:PORT.
-hadoop:
-  hbase-properties:
-    hbase.zookeeper.quorum: node1.hde.h3c.com,node2.hde.h3c.com,node3.hde.h3c.com
-eip:
-  tenant: jkzl
 
 ---
 spring:
@@ -86,31 +69,6 @@ hadoop:
 fast-dfs:
   tracker-server: 172.19.103.13:22122
   public-server: http://172.19.103.52:80
-eip:
-  tenant: jkzl
-
----
-spring:
-  profiles: prod
-  datasource:
-    url: jdbc:mysql://11.1.2.5:3306/healtharchive?useUnicode=true&characterEncoding=UTF-8&useSSL=false
-    username: ha
-    password: jkzlxm
-  redis:
-    host: 11.1.2.20 # Redis server host.
-  data:
-    solr:
-      #zk-host: 11.1.2.51,11.1.2.52,11.1.2.53:2181/solr # ZooKeeper host address in the form HOST:PORT.
-      zk-host: node1.hde.jkzlehr.com,node2.hde.jkzlehr.com,node3.hde.jkzlehr.com:2181/solr
-hadoop:
-  hbase-properties:
-    hbase.zookeeper.quorum: node2.jkzl.com,node3.jkzl.com,node1.jkzl.com
-
-fast-dfs:
-  tracker-server: 172.19.103.13:22122
-  public-server: http://172.19.103.52:80
-eip:
-  tenant: jkzl
 
 ---
 spring:
@@ -134,8 +92,6 @@ hadoop:
 fast-dfs:
   tracker-server: 11.1.2.9:22122
   public-server: http://11.1.2.9:80
-eip:
-  tenant: jkzl
 
 ---
 spring:
@@ -159,9 +115,6 @@ hadoop:
 fast-dfs:
   tracker-server: 10.176.97.5:22122
   public-server: http://10.176.97.5:8888
-eip:
-  tenant: jkzl
-
 
 ---
 spring:
@@ -185,5 +138,3 @@ hadoop:
 fast-dfs:
   tracker-server: 100.100.1.157:22122
   public-server: http://100.100.1.157:8888
-eip:
-  tenant: jkzl

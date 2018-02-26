@@ -1,3 +1,8 @@
+logging:
+  level:
+    org:
+      apache: WARN
+
 #set max http header size
 server:
   tomcat:
@@ -11,13 +16,19 @@ deploy:
 default:
   password: 123456
 
+#Actuator
+management:
+  security:
+    enabled: false
+
+#Hystrix
 hystrix:
   command:
     default:
       execution:
         isolation:
           thread:
-            timeoutInMilliseconds: 3000000
+            timeoutInMilliseconds: 30000
 
 #Application error definition, this file define common errors,
 #if the error is used only in your application, please define it in your application configuration file.
