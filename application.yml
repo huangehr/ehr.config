@@ -4,6 +4,7 @@ logging:
     org:
       apache:
         zookeeper: WARN
+      hibernate: ERROR
 
 #set max http header size
 server:
