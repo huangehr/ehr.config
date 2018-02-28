@@ -19,12 +19,12 @@ zuul:
     updateHosEsbMiniRelease:
       path: /api/v1.0/esb/updateHosEsbMiniRelease
       serviceId: svr-esb
+eip:
+  tenant: jkzl
 
 ---
 spring:
   profiles: dev
-eip:
-  tenant: jkzl
 #总部统一网关接口参数配置
 service-gateway:
   url: http://service.yihu.com:8085/WSGW/rest
@@ -35,20 +35,14 @@ service-gateway:
 ---
 spring:
   profiles: test
-eip:
-  tenant: jkzl
 
 ---
 spring:
   profiles: prod_fz
-eip:
-  tenant: jkzl
 
 ---
 spring:
   profiles: prod_sr
-eip:
-  tenant: jkzl
 #总部统一网关接口参数配置
 service-gateway:
   url: http://service.yihu.com:8080/WSGW/rest
@@ -59,5 +53,3 @@ service-gateway:
 ---
 spring:
   profiles: prod_fzzy
-eip:
-  tenant: jkzl
