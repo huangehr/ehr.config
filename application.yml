@@ -4,6 +4,8 @@ logging:
     org:
       apache:
         zookeeper: WARN
+        hadoop: WARN
+      hibernate: ERROR
 
 #set max http header size
 server:
@@ -30,7 +32,12 @@ hystrix:
       execution:
         isolation:
           thread:
-            timeoutInMilliseconds: 30000
+            timeoutInMilliseconds: 300000
+
+#Ribbon
+ribbon:
+  ReadTimeout: 300000
+  ConnectTimeout: 5000
 
 #Application error definition, this file define common errors,
 #if the error is used only in your application, please define it in your application configuration file.
@@ -113,7 +120,7 @@ eureka:
     serviceUrl:
       defaultZone: http://${eureka-server-ip}/eureka/
     healthcheck:
-      enabled: true
+      enabled: false
 
 ---
 spring:
