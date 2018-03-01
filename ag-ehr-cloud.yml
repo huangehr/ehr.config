@@ -40,6 +40,8 @@ zuul:
       path: /api/v1.0/health_profiles/**
       serviceId: svr-health-profile
       stripPrefix: false
+eip:
+  tenant: jkzl
 
 ---
 spring:
@@ -56,9 +58,6 @@ spring:
       statsd:
         host: 172.19.103.73
         port: 8125
-eip:
-  tenant: jkzl
-
 #server:
 #  ssl:
 #    key-store-password: 123456
@@ -80,8 +79,6 @@ spring:
       statsd:
         host: 192.168.1.221
         port: 8125
-eip:
-  tenant: jkzl
 
 ---
 spring:
@@ -98,8 +95,6 @@ spring:
       statsd:
         host: 172.19.103.73
         port: 8125
-eip:
-  tenant: jkzl
 
 ---
 spring:
@@ -115,8 +110,6 @@ spring:
       statsd:
         host: 11.1.2.5
         port: 8125
-eip:
-  tenant: jkzl
 
 ---
 spring:
@@ -132,8 +125,6 @@ spring:
       statsd:
         host: 11.1.2.5
         port: 8125
-eip:
-  tenant: jkzl
 
 ---
 spring:
@@ -149,8 +140,6 @@ spring:
       statsd:
         host: 10.176.97.10
         port: 8125
-eip:
-  tenant: jkzl
 
 ---
 spring:
@@ -166,5 +155,3 @@ spring:
       statsd:
         host: 100.100.1.162
         port: 8125
-eip:
-  tenant: jkzl

@@ -31,44 +31,34 @@ spring:
   ignoreUrls:
     /api/v1.0/portal/oauth/login;/api/v1.0/portal/oauth/accessToken;/api/v1.0/portal/oauth/refreshToken;/api/v1.0/portal/oauth/validToken;/api/v1.0/portal/portalResourcesTop;/api/v1.0/portal/portalResources
 
+eip:
+  tenant: jkzl
+
 ---
 spring:
   profiles: dev
-eip:
-  tenant: jkzl
 
 ---
 spring:
   profiles: alpha
-eip:
-  tenant: jkzl
 
 ---
 spring:
   profiles: test
-eip:
-  tenant: jkzl
 
 ---
 spring:
   profiles: prod
-eip:
-  tenant: jkzl
 
 ---
 spring:
   profiles: prod_fz
-eip:
-  tenant: jkzl
 
 ---
 spring:
   profiles: prod_sr
-eip:
-  tenant: jkzl
 
 ---
 spring:
   profiles: prod_fzzy
-eip:
-  tenant: jkzl
+

@@ -1,18 +1,5 @@
-logging:
-  level:
-    com:
-      netflix: INFO
-    org:
-      springframework:
-        web: INFO
-      hibernate: ERROR
-
-server:
-  port: ${svr-ehr-basic.server.port}
-
 management:
   port: ${server.port}
-
 
 fast-dfs:
   pool:
@@ -49,7 +36,8 @@ spring:
       max-idle: 8 # Max number of "idle" connections in the pool. Use a negative value to indicate an unlimited number of idle connections.
       max-wait: -1 # Maximum amount of time (in milliseconds) a connection allocation should block before throwing an exception when the pool is exhausted. Use a negative value to block indefinitely.
       min-idle: 1 # Target for the minimum number of idle connections to maintain in the pool. This setting only has an effect if it is positive.
-
+eip:
+  tenant: jkzl
 ---
 spring:
   profiles: dev
@@ -65,26 +53,20 @@ spring:
       password: admin
       authenticationDatabase: admin
       database: ehr
-
+  elasticsearch:
+    jest:
+      uris: http://172.19.103.68:9200
 fast-dfs:
   tracker-server: 172.19.103.13:22122
   public-server: http://172.19.103.52:80
-eip:
-  tenant: jkzl
 
----
-spring:
-  profiles: alpha
-  datasource:
-    url: jdbc:mysql://192.168.1.220:3306/healtharchive?useUnicode=true&characterEncoding=UTF-8&useSSL=false
-    username: ha
-    password: ha
+es:
+  index: wlyy_quota_test
+  type: wlyy_quota_test
+  host: http://172.19.103.68:9200
+  tHost: 172.19.103.68:9300
+  clusterName: jkzl
 
-fast-dfs:
-  tracker-server: 172.19.103.54:22122
-  public-server: http://172.19.103.54
-eip:
-  tenant: jkzl
 ---
 spring:
   profiles: test
@@ -100,25 +82,19 @@ spring:
       password: admin
       authenticationDatabase: admin
       database: ehr
+  elasticsearch:
+    jest:
+      uris: http://172.19.103.68:9200
 fast-dfs:
   tracker-server: 172.19.103.13:22122
   public-server: http://172.19.103.52:80
-eip:
-  tenant: jkzl
 
----
-spring:
-  profiles: prod
-  datasource:
-    url: jdbc:mysql://11.1.2.5:3306/healtharchive?useUnicode=true&characterEncoding=UTF-8&useSSL=false
-    username: ha
-    password: jkzlxm
-
-fast-dfs:
-  tracker-server: 11.1.2.9:22122
-  public-server: http://ds.ehr.yihu.com:22122
-eip:
-  tenant: jkzl
+es:
+  index: wlyy_quota_test
+  type: wlyy_quota_test
+  host: http://172.19.103.68:9200
+  tHost: 172.19.103.68:9300
+  clusterName: jkzl
 
 ---
 spring:
@@ -135,12 +111,19 @@ spring:
       password: GMLBq1LG
       authenticationDatabase: admin
       database: ehr
-
+  elasticsearch:
+    jest:
+      uris: http://172.19.103.68:9200
 fast-dfs:
   tracker-server: 11.1.2.9:22122
   public-server: http://11.1.2.9:80
-eip:
-  tenant: jkzl
+
+es:
+  index: wlyy_quota_test
+  type: wlyy_quota_test
+  host: http://172.19.103.68:9200
+  tHost: 172.19.103.68:9300
+  clusterName: jkzl
 
 ---
 spring:
@@ -157,12 +140,19 @@ spring:
       password: GMLBq1LG
       authenticationDatabase: admin
       database: ehr
-
+  elasticsearch:
+    jest:
+      uris: http://10.176.97.7:9200
 fast-dfs:
   tracker-server: 10.176.97.5:22122
   public-server: http://10.176.97.5:8888
-eip:
-  tenant: jkzl
+
+es:
+  index: wlyy_quota_test
+  type: wlyy_quota_test
+  host: http://10.176.97.7:9200
+  tHost: 10.176.97.7:9300
+  clusterName: jkzl
 
 ---
 spring:
@@ -179,9 +169,16 @@ spring:
       password: GMLBq1LG
       authenticationDatabase: admin
       database: ehr
-
+  elasticsearch:
+    jest:
+      uris: http://100.100.1.158:9200
 fast-dfs:
   tracker-server: 100.100.1.157:22122
   public-server: http://100.100.1.157:8888
-eip:
-  tenant: jkzl
+
+es:
+  index: wlyy_quota_test
+  type: wlyy_quota_test
+  host: http://100.100.1.158:9200
+  tHost: 100.100.1.158:9300
+  clusterName: jkzl
