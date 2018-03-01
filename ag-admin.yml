@@ -1,7 +1,3 @@
-ribbon:
-  ReadTimeout: 30000
-  ConnectTimeout: 10000
-
 zuul:
   routes:
     adapterDataSet:
@@ -25,7 +21,6 @@ eip:
 ---
 spring:
   profiles: dev
-#总部统一网关接口参数配置
 service-gateway:
   url: http://service.yihu.com:8085/WSGW/rest
   handlerId: 50871
@@ -39,7 +34,6 @@ spring:
 ---
 spring:
   profiles: prod_fz
-#总部统一网关接口参数配置
 service-gateway:
   url: http://service.yihu.com:8085/WSGW/rest
   handlerId: 50871
@@ -48,7 +42,6 @@ service-gateway:
 ---
 spring:
   profiles: prod_sr
-#总部统一网关接口参数配置
 service-gateway:
   url: http://service.yihu.com:8080/WSGW/rest
   handlerId: 50641
