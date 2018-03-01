@@ -64,6 +64,11 @@ spring:
   profiles: prod_fz
 eip:
   tenant: jkzl
+#总部统一网关接口参数配置
+service-gateway:
+  url: http://service.yihu.com:8085/WSGW/rest
+  handlerId: 50871
+  clientId: 9000401
 
 ---
 spring:
