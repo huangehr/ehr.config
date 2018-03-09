@@ -32,11 +32,11 @@ hystrix:
       execution:
         isolation:
           thread:
-            timeoutInMilliseconds: 300000
+            timeoutInMilliseconds: 500000
 
 #Ribbon
 ribbon:
-  ReadTimeout: 305000
+  ReadTimeout: 500000
   ConnectTimeout: 5000
 
 #Application error definition, this file define common errors,
