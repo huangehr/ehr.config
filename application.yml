@@ -36,7 +36,7 @@ hystrix:
 
 #Ribbon
 ribbon:
-  ReadTimeout: 300000
+  ReadTimeout: 305000
   ConnectTimeout: 5000
 
 #Application error definition, this file define common errors,
