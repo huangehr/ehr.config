@@ -32,7 +32,7 @@ hystrix:
       execution:
         isolation:
           thread:
-            timeoutInMilliseconds: 300000
+            timeoutInMilliseconds: 305000
 
 #Ribbon
 ribbon:
