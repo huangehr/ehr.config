@@ -69,6 +69,11 @@ es:
 h5:
   secret: 8E29YVP2UZ1QNSIN33NZJXEG1KSLVXFL6YI59C5SC5D
   appId: 9000401
+#福州总部网关参数配置
+fz-gateway:
+  url: http://service.yihu.com:8085/WSGW/rest
+  clientId: 9000401
+  clientVersion: 1.0
 
 ---
 spring:
@@ -101,6 +106,11 @@ es:
 h5:
   secret: 8E29YVP2UZ1QNSIN33NZJXEG1KSLVXFL6YI59C5SC5D
   appId: 9000401
+#福州总部网关参数配置
+fz-gateway:
+  url: http://service.yihu.com:8080/WSGW/rest
+  clientId: 9000401
+  clientVersion: 1.0
 
 ---
 spring:
@@ -133,6 +143,11 @@ es:
 h5:
   secret: 8E29YVP2UZ1QNSIN33NZJXEG1KSLVXFL6YI59C5SC5D
   appId: 9000401
+#福州总部网关参数配置
+fz-gateway:
+  url: http://service.yihu.com:8080/WSGW/rest
+  clientId: 9000401
+  clientVersion: 1.0
 
 ---
 spring:
@@ -171,6 +186,11 @@ es:
 h5:
   secret: 8E29YVP2UZ1QNSIN33NZJXEG1KSLVXFL6YI59C5SC5D
   appId: 9000401
+#福州总部网关参数配置
+fz-gateway:
+  url: http://service.yihu.com:8080/WSGW/rest
+  clientId: 9000401
+  clientVersion: 1.0
 
 ---
 spring:
@@ -209,3 +229,8 @@ es:
 h5:
   secret: 8E29YVP2UZ1QNSIN33NZJXEG1KSLVXFL6YI59C5SC5D
   appId: 9000401
+#福州总部网关参数配置
+fz-gateway:
+  url: http://service.yihu.com:8080/WSGW/rest
+  clientId: 9000401
+  clientVersion: 1.0
