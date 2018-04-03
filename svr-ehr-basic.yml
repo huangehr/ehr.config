@@ -108,7 +108,7 @@ h5:
   appId: 9000401
 #福州总部网关参数配置
 fz-gateway:
-  url: http://service.yihu.com:8080/WSGW/rest
+  url: http://service.yihu.com:8085/WSGW/rest
   clientId: 9000401
   clientVersion: 1.0
 
