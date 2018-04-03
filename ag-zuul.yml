@@ -82,6 +82,11 @@ spring:
     host: 172.19.103.47
     port: 6379
     password: redis!@456
+zuul:
+  routes:
+    jkzl-server:
+      path: /jkzl/**
+      url: http://ssotest.yihu.cn/OpenPlatform/cgiBin/1.0/
 
 ---
 spring:
@@ -94,6 +99,11 @@ spring:
     host: 172.19.103.47
     port: 6379
     password: redis!@456
+zuul:
+  routes:
+    jkzl-server:
+      path: /jkzl/**
+      url: http://ssotest.yihu.cn/OpenPlatform/cgiBin/1.0/
 
 ---
 spring:
@@ -106,6 +116,11 @@ spring:
     host: 11.1.2.22 # Redis server host.
     port: 6390
     password: Kb6wKDQP1W4
+zuul:
+  routes:
+    jkzl-server:
+      path: /jkzl/**
+      url: http://apitest.yihu.com.cn/OpenPlatform/cgiBin/1.0/
 
 ---
 spring:
@@ -118,6 +133,11 @@ spring:
     host: 10.176.97.5
     port: 6390
     password: q4YaQemf
+zuul:
+  routes:
+    jkzl-server:
+      path: /jkzl/**
+      url: http://apitest.yihu.com.cn/OpenPlatform/cgiBin/1.0/
 
 
 ---
@@ -131,3 +151,8 @@ spring:
     host: 100.100.1.161
     port: 6390
     password: q4YaQemf
+zuul:
+  routes:
+    jkzl-server:
+      path: /jkzl/**
+      url: http://apitest.yihu.com.cn/OpenPlatform/cgiBin/1.0/
