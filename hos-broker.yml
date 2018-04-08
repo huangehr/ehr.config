@@ -137,3 +137,45 @@ hos:
   https:
     enable: false
 
+---
+spring:
+  profiles: prod_fz
+  activemq:
+    broker-url: tcp://10.176.97.5:61616  #todo cyx
+    user: admin
+    password: admin
+  data:
+    mongodb:
+      host: 11.1.2.3
+      port: 20000
+      username: jkzlesb
+      password: fgu$^ezl
+      authenticationDatabase: admin
+      database: log
+      gridFsDatabase: dfs
+log:
+  path: /usr/local/esb/logs/hos-broker
+  level: info
+hos:
+  filesystem:
+    url: http://11.1.2.13:9010/dfs/file
+  arbiter:
+    enable: true
+    url: http://11.1.2.13:10135
+  rest:
+    url: http://11.1.2.13:8088
+  timer:
+      period: 10000
+  tenant:
+    name: jkzl
+  mycat:
+    path: /usr/local/mycat/   ##mycat的安装目录
+  #jcraft shell操作
+  jcraft:
+    host: 10.176.97.14
+    port: 22
+    user: root
+    password: ceshi
+  https:
+    enable: false
+
