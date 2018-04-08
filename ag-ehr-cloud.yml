@@ -155,3 +155,18 @@ spring:
       statsd:
         host: 100.100.1.162
         port: 8125
+
+---
+spring:
+  profiles: prod_srformal
+  datasource:
+    url: jdbc:mysql://192.168.40.34:3310/healtharchive?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+    username: healthcloud
+    password: GP8Qz4qU
+  thymeleaf:
+    cache: false
+  metrics:
+    export:
+      statsd:
+        host: 192.168.220.84
+        port: 8125

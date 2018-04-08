@@ -47,17 +47,14 @@ eip:
 ---
 spring:
   profiles: dev
-
   datasource:
     url: jdbc:mysql://172.19.103.50:3306/healtharchive?useUnicode=true&characterEncoding=UTF-8&useSSL=false
     username: weifuwu
     password: weifuwu
-
   redis:
     host: 172.19.103.47 # Redis server host.
     port: 6379
     password: redis!@456
-
 fast-dfs:
   tracker-server: 172.19.103.13:22122
   public-server: http://172.19.103.52:80
@@ -65,17 +62,14 @@ fast-dfs:
 ---
 spring:
   profiles: test
-
   datasource:
     url: jdbc:mysql://172.19.103.50:3306/healtharchive?useUnicode=true&characterEncoding=UTF-8&useSSL=false
     username: weifuwu
     password: weifuwu
-
   redis:
     host: 172.19.103.47 # Redis server host.
     port: 6379
     password: redis!@456
-
 fast-dfs:
   tracker-server: 172.19.103.13:22122
   public-server: http://172.19.103.52:80
@@ -124,3 +118,18 @@ spring:
 fast-dfs:
   tracker-server: 100.100.1.157:22122
   public-server: http://100.100.1.157:8888
+
+---
+spring:
+  profiles: prod_srformal
+  datasource:
+    url: jdbc:mysql://192.168.40.34:3310/healtharchive?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+    username: healthcloud
+    password: GP8Qz4qU
+  redis:
+    host: 192.168.50.82 # Redis server host.
+    port: 6379
+    password: q4YaQemf
+fast-dfs:
+  tracker-server: 192.168.50.116:22122,192.168.50.119:22122
+  public-server: http://192.168.50.37:8888
