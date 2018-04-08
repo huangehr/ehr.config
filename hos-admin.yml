@@ -88,7 +88,7 @@ hos:
   saasAdmin: jkzl #SAAS管理员账号,暂时配置在此处
   clientId: 0e3DIdNaQ2
   zbus:
-    url: 127.0.0.1:9020
+    url: 127.0.0.1:9020,172.19.103.57:9020,172.17.110.199:9020
   filesystem:
     url: http://172.19.103.57:9010/dfs/file
 fast-dfs:
