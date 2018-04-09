@@ -292,3 +292,68 @@ jwt:
   expiration: 604800
   tokenHead: "Bearer "
 
+---
+spring:
+  profiles: prod_fzzy
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://100.100.1.159:3310/tenant_jkzl?useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&transformedBitIsBoolean=true
+    username: jkzlesb
+    password: Ajch6o@Y
+    test-on-borrow: true
+    validation-query: SELECT 1
+    test-while-idle: true
+    max-total: 100
+    default-auto-commit: true
+    max-idle: 50
+    min-idle: 20
+    initial-size: 10
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL5Dialect
+    hibernate:
+      dialect: org.hibernate.dialect.MySQL5Dialect
+    format-sql: true
+    show-sql: false
+# REDIS
+  redis:
+    host: 100.100.1.161 # Redis server host.
+    port: 6390
+    password: q4YaQemf
+    database: 0 # Database index used by the connection factory.
+    timeout: 0 # Connection timeout in milliseconds.
+    #sentinel:
+    #  master: # Name of Redis server.
+    #  nodes: # Comma-separated list of host:port pairs.
+    pool:
+      max-active: 8 # Max number of connections that can be allocated by the pool at a given time. Use a negative value for no limit.
+      max-idle: 8 # Max number of "idle" connections in the pool. Use a negative value to indicate an unlimited number of idle connections.
+      max-wait: -1 # Maximum amount of time (in milliseconds) a connection allocation should block before throwing an exception when the pool is exhausted. Use a negative value to block indefinitely.
+      min-idle: 1 # Target for the minimum number of idle connections to maintain in the pool. This setting only has an effect if it is positive.
+  data:
+    mongodb:
+      host: 100.100.1.157
+      port: 29000
+      username: jkzlesb
+      password: fgu$^ezl
+      authenticationDatabase: admin
+      gridFsDatabase: dfs
+      database: runtime
+  aop:
+    proxy-target-class: true
+hos:
+  administrators: jkzl  #SAAS管理员账号,暂时配置在此处
+  clientId: 0e3DIdNaQ2
+  zbus:
+    url: 100.100.1.165:9020
+  filesystem:
+    url: http://100.100.1.165:9010/dfs/file
+fast-dfs:
+  tracker-server: 100.100.1.157:22122
+  public-server: http://100.100.1.157:8888
+jwt:
+  header: Authorization
+  secret: mySecret
+  expiration: 604800
+  tokenHead: "Bearer "
+
+
