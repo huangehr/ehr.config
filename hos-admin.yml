@@ -154,10 +154,10 @@ hos:
   zbus:
     url: 192.168.200.62:9020
   filesystem:
-    url: http://10.176.97.14:9010/dfs/file
+    url: http://192.168.200.62:9010/dfs/file
 fast-dfs:
-  tracker-server: 10.176.97.5:22122
-  public-server: http://10.176.97.5:8888
+  tracker-server: 192.168.50.116:22122
+  public-server: http://192.168.50.37:8888
 jwt:
   header: Authorization
   secret: mySecret
