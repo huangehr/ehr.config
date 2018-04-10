@@ -104,8 +104,8 @@ spring:
     password: admin
   data:
     mongodb:
-      host: 10.176.97.9
-      port: 29000
+      host: 192.168.50.26
+      port: 20000
       username: jkzlesb
       password: fgu$^ezl
       authenticationDatabase: admin
@@ -116,12 +116,12 @@ log:
   level: info
 hos:
   filesystem:
-    url: http://10.176.97.14:9010/dfs/file
+    url: http://192.168.200.62:9010/dfs/file
   arbiter:
     enable: true
-    url: http://10.176.97.14:10135
+    url: http://192.168.200.62:10135
   rest:
-    url: http://10.176.97.14:8088
+    url: http://192.168.200.62:8088
   timer:
       period: 10000
   tenant:
@@ -130,7 +130,7 @@ hos:
     path: /usr/local/mycat/   ##mycat的安装目录
   #jcraft shell操作
   jcraft:
-    host: 10.176.97.14
+    host: 192.168.200.62
     port: 22
     user: root
     password: ceshi
