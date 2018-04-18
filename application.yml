@@ -38,6 +38,15 @@ hystrix:
 ribbon:
   ReadTimeout: 300000
   ConnectTimeout: 5000
+  
+#Zuul
+zuul:
+  #max:
+  #  host:
+  #    connections: 500
+  host:
+    socket-timeout-millis: 300000
+    connect-timeout-millis: 300000
 
 #Application error definition, this file define common errors,
 #if the error is used only in your application, please define it in your application configuration file.
