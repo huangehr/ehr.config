@@ -83,7 +83,7 @@ hos:
   timer:
       period: 10000
   tenant:
-    name: jkzl
+    name: yichang
   mycat:
     path: /usr/local/mycat/   ##mycat的安装目录
   #jcraft shell操作，连接终端服务器的后门信息
