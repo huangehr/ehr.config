@@ -31,12 +31,12 @@ log:
   level: info
 hos:
   filesystem:
-    url: http://172.19.103.57:9010/dfs/file
+    url: http://172.19.103.58:9010/dfs/file
   arbiter:
     enable: true
     url: http://172.19.103.58:10135
   rest:
-    url: http://172.19.103.57:8088
+    url: http://172.19.103.58:8088
   timer:
       period: 10000
   tenant:
