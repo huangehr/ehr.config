@@ -27,7 +27,7 @@ spring:
       gridFsDatabase: dfs
 
 log:
-  path: D://logs/logback/dev
+  path: /usr/local/logs/hos-broker/dev
   level: info
 hos:
   filesystem:
@@ -70,7 +70,7 @@ spring:
       database: log
       gridFsDatabase: dfs
 log:
-  path: /data/logs/hos-broker  #日志输出地址
+  path: /usr/local/logs/hos-broker/dev  #日志输出地址
   level: info
 hos:
   filesystem:
