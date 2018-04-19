@@ -60,12 +60,6 @@ fast-dfs:
   tracker-server: 172.19.103.13:22122
   public-server: http://172.19.103.52:80
 
-es:
-  index: wlyy_quota_test
-  type: wlyy_quota_test
-  host: http://172.19.103.68:9200
-  tHost: 172.19.103.68:9300
-  clusterName: jkzl
 h5:
   secret: 8E29YVP2UZ1QNSIN33NZJXEG1KSLVXFL6YI59C5SC5D
   appId: 9000401
@@ -97,12 +91,6 @@ fast-dfs:
   tracker-server: 172.19.103.13:22122
   public-server: http://172.19.103.52:80
 
-es:
-  index: wlyy_quota_test
-  type: wlyy_quota_test
-  host: http://172.19.103.68:9200
-  tHost: 172.19.103.68:9300
-  clusterName: jkzl
 h5:
   secret: 8E29YVP2UZ1QNSIN33NZJXEG1KSLVXFL6YI59C5SC5D
   appId: 9000401
@@ -133,13 +121,6 @@ spring:
 fast-dfs:
   tracker-server: 11.1.2.9:22122
   public-server: http://11.1.2.9:80
-
-es:
-  index: wlyy_quota_test
-  type: wlyy_quota_test
-  host: http://172.19.103.68:9200
-  tHost: 172.19.103.68:9300
-  clusterName: jkzl
 h5:
   secret: 8E29YVP2UZ1QNSIN33NZJXEG1KSLVXFL6YI59C5SC5D
   appId: 9000401
@@ -176,21 +157,19 @@ spring:
 fast-dfs:
   tracker-server: 10.176.97.5:22122
   public-server: http://10.176.97.5:8888
-
-es:
-  index: wlyy_quota_test
-  type: wlyy_quota_test
-  host: http://10.176.97.7:9200
-  tHost: 10.176.97.7:9300
-  clusterName: jkzl
 h5:
-  secret: 8E29YVP2UZ1QNSIN33NZJXEG1KSLVXFL6YI59C5SC5D
+  secret: 9U6PBF2JM3PE1IHRJ7GEITMJHNMEHOFZQ2XUCKD9TO2
   appId: 9000401
-#绂忓窞鎬婚儴缃戝叧鍙傛暟閰嶇疆
+  clientId: WYo0l73F8e
+#福州总部网关参数配置
 fz-gateway:
   url: http://service.yihu.com:8080/WSGW/rest
   clientId: 9000401
   clientVersion: 1.0
+  secret: 9U6PBF2JM3PE1IHRJ7GEITMJHNMEHOFZQ2XUCKD9TO2
+hadoop:
+  user:
+    name: root
 
 ---
 spring:
@@ -219,21 +198,19 @@ spring:
 fast-dfs:
   tracker-server: 100.100.1.157:22122
   public-server: http://100.100.1.157:8888
-
-es:
-  index: wlyy_quota_test
-  type: wlyy_quota_test
-  host: http://100.100.1.158:9200
-  tHost: 100.100.1.158:9300
-  clusterName: jkzl
 h5:
-  secret: 8E29YVP2UZ1QNSIN33NZJXEG1KSLVXFL6YI59C5SC5D
+  secret: 9U6PBF2JM3PE1IHRJ7GEITMJHNMEHOFZQ2XUCKD9TO2
   appId: 9000401
-#绂忓窞鎬婚儴缃戝叧鍙傛暟閰嶇疆
+  clientId: WYo0l73F8e
+#福州总部网关参数配置
 fz-gateway:
   url: http://service.yihu.com:8080/WSGW/rest
   clientId: 9000401
   clientVersion: 1.0
+  secret: 9U6PBF2JM3PE1IHRJ7GEITMJHNMEHOFZQ2XUCKD9TO2
+hadoop:
+  user:
+    name: root
 
 ---
 spring:
@@ -262,17 +239,16 @@ spring:
 fast-dfs:
   tracker-server: 192.168.50.116:22122,192.168.50.119:22122
   public-server: http://192.168.50.37:8888
-es:
-  index: wlyy_quota_test
-  type: wlyy_quota_test
-  host: http://172.10.10.2:9200
-  tHost: 172.10.10.2:9300
-  clusterName: jkzl
 h5:
-  secret: 8E29YVP2UZ1QNSIN33NZJXEG1KSLVXFL6YI59C5SC5D
+  secret: 9U6PBF2JM3PE1IHRJ7GEITMJHNMEHOFZQ2XUCKD9TO2
   appId: 9000401
-#绂忓窞鎬婚儴缃戝叧鍙傛暟閰嶇疆
+  clientId: WYo0l73F8e
+#福州总部网关参数配置
 fz-gateway:
   url: http://service.yihu.com:8080/WSGW/rest
   clientId: 9000401
   clientVersion: 1.0
+  secret: 9U6PBF2JM3PE1IHRJ7GEITMJHNMEHOFZQ2XUCKD9TO2
+hadoop:
+  user:
+    name: root
