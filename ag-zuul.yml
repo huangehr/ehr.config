@@ -137,7 +137,7 @@ zuul:
   routes:
     jkzl-server:
       path: /jkzl/**
-      url: http://apitest.yihu.com.cn/OpenPlatform/cgiBin/1.0/
+      url: https://api.yihu.com/OpenPlatform/cgiBin/1.0/
 
 
 ---
@@ -155,7 +155,7 @@ zuul:
   routes:
     jkzl-server:
       path: /jkzl/**
-      url: http://apitest.yihu.com.cn/OpenPlatform/cgiBin/1.0/
+      url: https://api.yihu.com/OpenPlatform/cgiBin/1.0/
 
 ---
 spring:
@@ -172,4 +172,4 @@ zuul:
   routes:
     jkzl-server:
       path: /jkzl/**
-      url: http://apitest.yihu.com.cn/OpenPlatform/cgiBin/1.0/
+      url: https://api.yihu.com/OpenPlatform/cgiBin/1.0/
