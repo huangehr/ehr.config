@@ -47,7 +47,7 @@ ehr.common.repeat.code: 代码重复
 
 #Application port, since 10100, 10 per step. Update max port if new application created. Current max: 10220
 ag-ehr-platform.server.port: 443
-ag-ehr-cloud.server.port: 10400
+ag-cloud.server.port: 10400
 ag-portal-cloud.server.port: 10280
 ag-admin.server.port: 10000
 ag-zuul.server.port: 10001
@@ -75,7 +75,7 @@ svr-profile-statistics.server.port: 10240
 svr-authentication.server.port: 10260
 svr-portal.server.port: 10250
 svr-file-resource.server.port: 10270
-svr-ehr-basic.server.port: 10300
+svr-basic.server.port: 10300
 svr-redis.server.port: 10310
 svr-redis-memory.server.port: 10311
 svr-log-collection.server.port: 10320
