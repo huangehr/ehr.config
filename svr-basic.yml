@@ -63,7 +63,6 @@ fast-dfs:
 h5:
   secret: 8E29YVP2UZ1QNSIN33NZJXEG1KSLVXFL6YI59C5SC5D
   appId: 9000401
-#绂忓窞鎬婚儴缃戝叧鍙傛暟閰嶇疆
 fz-gateway:
   url: http://service.yihu.com:8085/WSGW/rest
   clientId: 9000401
@@ -94,7 +93,6 @@ fast-dfs:
 h5:
   secret: 8E29YVP2UZ1QNSIN33NZJXEG1KSLVXFL6YI59C5SC5D
   appId: 9000401
-#绂忓窞鎬婚儴缃戝叧鍙傛暟閰嶇疆
 fz-gateway:
   url: http://service.yihu.com:8085/WSGW/rest
   clientId: 9000401
@@ -124,7 +122,6 @@ fast-dfs:
 h5:
   secret: 8E29YVP2UZ1QNSIN33NZJXEG1KSLVXFL6YI59C5SC5D
   appId: 9000401
-#绂忓窞鎬婚儴缃戝叧鍙傛暟閰嶇疆
 fz-gateway:
   url: http://service.yihu.com:8080/WSGW/rest
   clientId: 9000401
@@ -161,7 +158,6 @@ h5:
   secret: 9U6PBF2JM3PE1IHRJ7GEITMJHNMEHOFZQ2XUCKD9TO2
   appId: 9000401
   clientId: WYo0l73F8e
-#福州总部网关参数配置
 fz-gateway:
   url: http://service.yihu.com:8080/WSGW/rest
   clientId: 9000401
@@ -202,7 +198,6 @@ h5:
   secret: 9U6PBF2JM3PE1IHRJ7GEITMJHNMEHOFZQ2XUCKD9TO2
   appId: 9000401
   clientId: WYo0l73F8e
-#福州总部网关参数配置
 fz-gateway:
   url: http://service.yihu.com:8080/WSGW/rest
   clientId: 9000401
@@ -243,7 +238,6 @@ h5:
   secret: 9U6PBF2JM3PE1IHRJ7GEITMJHNMEHOFZQ2XUCKD9TO2
   appId: 9000401
   clientId: WYo0l73F8e
-#福州总部网关参数配置
 fz-gateway:
   url: http://service.yihu.com:8080/WSGW/rest
   clientId: 9000401
