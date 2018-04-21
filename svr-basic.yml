@@ -45,6 +45,10 @@ spring:
     url: jdbc:mysql://172.19.103.50:3306/healtharchive?useUnicode=true&characterEncoding=UTF-8&useSSL=false
     username: weifuwu
     password: weifuwu
+  redis:
+    host: 172.19.103.47 # Redis server host.
+    port: 6379
+    password: redis!@456
   data:
     mongodb:
       host: 192.168.1.220
@@ -53,6 +57,8 @@ spring:
       password: admin
       authenticationDatabase: admin
       database: ehr
+    solr:
+      zk-host: node1.hde.h3c.com,node2.hde.h3c.com:2181/solr
   elasticsearch:
     jest:
       uris: http://172.19.103.68:9200
@@ -67,6 +73,9 @@ fz-gateway:
   url: http://service.yihu.com:8085/WSGW/rest
   clientId: 9000401
   clientVersion: 1.0
+hadoop:
+  user:
+    name: root
 
 ---
 spring:
@@ -75,6 +84,10 @@ spring:
     url: jdbc:mysql://172.19.103.50:3306/healtharchive?useUnicode=true&characterEncoding=UTF-8&useSSL=false
     username: weifuwu
     password: weifuwu
+  redis:
+    host: 172.19.103.47 # Redis server host.
+    port: 6379
+    password: redis!@456
   data:
     mongodb:
       host: 192.168.1.220
@@ -83,6 +96,8 @@ spring:
       password: admin
       authenticationDatabase: admin
       database: ehr
+    solr:
+      zk-host: node1.hde.h3c.com,node2.hde.h3c.com:2181/solr
   elasticsearch:
     jest:
       uris: http://172.19.103.68:9200
@@ -97,6 +112,9 @@ fz-gateway:
   url: http://service.yihu.com:8085/WSGW/rest
   clientId: 9000401
   clientVersion: 1.0
+hadoop:
+  user:
+    name: root
 
 ---
 spring:
@@ -105,6 +123,10 @@ spring:
     url: jdbc:mysql://11.1.2.5:3306/healtharchive?useUnicode=true&characterEncoding=UTF-8&useSSL=false
     username: healthcloud
     password: GP8Qz4qU
+  redis:
+    host: 11.1.2.22 # Redis server host.
+    port: 6390
+    password: Kb6wKDQP1W4
   data:
     mongodb:
       host: 11.1.2.19
@@ -113,6 +135,8 @@ spring:
       password: GMLBq1LG
       authenticationDatabase: admin
       database: ehr
+    solr:
+      zk-host: node1.hde.h3c.com,node2.hde.h3c.com:2181/solr
   elasticsearch:
     jest:
       uris: http://172.19.103.68:9200
@@ -126,6 +150,9 @@ fz-gateway:
   url: http://service.yihu.com:8080/WSGW/rest
   clientId: 9000401
   clientVersion: 1.0
+hadoop:
+  user:
+    name: root
 
 ---
 spring:
@@ -134,6 +161,10 @@ spring:
     url: jdbc:mysql://10.176.97.9:3310/healtharchive?useUnicode=true&characterEncoding=UTF-8&useSSL=false
     username: healthcloud
     password: GP8Qz4qU
+  redis:
+    host: 10.176.97.5 # Redis server host.
+    port: 6390
+    password: q4YaQemf
   ldap:
     host: 172.19.103.87
     port: 389
@@ -148,6 +179,8 @@ spring:
       password: GMLBq1LG
       authenticationDatabase: admin
       database: ehr
+    solr:
+      zk-host: node1.hde.h3c.com,node2.hde.h3c.com:2181/solr
   elasticsearch:
     jest:
       uris: http://10.176.97.7:9200
@@ -174,6 +207,10 @@ spring:
     url: jdbc:mysql://100.100.1.159:3310/healtharchive?useUnicode=true&characterEncoding=UTF-8&useSSL=false
     username: healthcloud
     password: GP8Qz4qU
+  redis:
+    host: 100.100.1.161 # Redis server host.
+    port: 6390
+    password: q4YaQemf
   ldap:
     host: 172.19.103.87
     port: 389
@@ -188,6 +225,8 @@ spring:
       password: GMLBq1LG
       authenticationDatabase: admin
       database: ehr
+    solr:
+      zk-host: node1.hde.h3c.com,node2.hde.h3c.com:2181/solr
   elasticsearch:
     jest:
       uris: http://100.100.1.158:9200
@@ -214,6 +253,10 @@ spring:
     url: jdbc:mysql://192.168.40.34:3310/healtharchive?useUnicode=true&characterEncoding=UTF-8&useSSL=false
     username: healthcloud
     password: GP8Qz4qU
+  redis:
+    host: 192.168.50.82 # Redis server host.
+    port: 6379
+    password: q4YaQemf
   ldap:
     host: 192.168.40.34
     port: 389
@@ -228,6 +271,8 @@ spring:
       password: GMLBq1LG
       authenticationDatabase: admin
       database: ehr
+    solr:
+      zk-host: node1.hde.h3c.com,node2.hde.h3c.com:2181/solr
   elasticsearch:
     jest:
       uris: http://172.10.10.2:9200
