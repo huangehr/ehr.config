@@ -1,51 +1,11 @@
 server:
   port: ${ag-zuul.server.port}
 
-management:
-  port: ${server.port}
-
 info:
   app:
     name: Ag-Zuul
     description:  EHR Platform Zuul Service.
     version: 1.0.0
-
-zuul:
-  ignored-services: '*'
-  routes:
-    svr-dfs:
-      path: /dfs/**
-      serviceId: svr-dfs
-    svr-basic:
-      path: /basic/**
-      serviceId: svr-basic
-    svr-quota:
-      path: /quota/**
-      serviceId: svr-quota
-    svr-redis:
-      path: /redis/**
-      serivceId: svr-redis
-    svr-resource:
-      path: /resource/**
-      serviceId: svr-resource
-    svr-standard:
-      path: /standard/**
-      serviceId: svr-standard
-    svr-authentication:
-      path: /authentication/**
-      serviceId: svr-authentication
-    svr-health-profile:
-      path: /profile/**
-      serviceId: svr-health-profile
-    svr-pack-analyzer:
-      path: /pack-analyzer/**
-      serviceId: svr-pack-analyzer
-    svr-pack-mgr:
-      path: /pack-mgr/**
-      serviceId: svr-pack-mgr
-    svr-pack-resolv:
-      path: /pack-resolve/**
-      serviceId: svr-pack-resolve
 
 spring:
   redis:
