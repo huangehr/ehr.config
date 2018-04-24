@@ -39,9 +39,9 @@ hos:
   saasAdmin: jkzl #SAAS管理员账号,暂时配置在此处
   clientId: 0e3DIdNaQ2
   zbus:
-    url: 172.19.103.57:9020
+    url: 172.19.103.58:9020
   filesystem:
-    url: http://172.19.103.57:9010/dfs/file
+    url: http://172.19.103.58:9010/dfs/file
 fast-dfs:
   tracker-server: 172.19.103.13:22122
   public-server: http://172.19.103.52:80
@@ -90,7 +90,7 @@ hos:
   zbus:
     url: 172.19.103.58:9020
   filesystem:
-    url: http://172.19.103.57:9010/dfs/file
+    url: http://172.19.103.58:9010/dfs/file
 fast-dfs:
   tracker-server: 172.19.103.13:22122
   public-server: http://172.19.103.52:80
@@ -156,8 +156,8 @@ hos:
   filesystem:
     url: http://192.168.200.62:9010/dfs/file
 fast-dfs:
-  tracker-server: 10.176.97.5:22122
-  public-server: http://10.176.97.5:8888
+  tracker-server: 192.168.50.116:22122
+  public-server: http://192.168.50.37:8888
 jwt:
   header: Authorization
   secret: mySecret
@@ -355,3 +355,5 @@ jwt:
   secret: mySecret
   expiration: 604800
   tokenHead: "Bearer "
+
+
