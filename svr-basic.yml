@@ -25,7 +25,7 @@ fast-dfs:
   network-timeout: 60
   charset: ISO8859-1
   pool:
-    init-size: 5
+    init-size: 1
     max-size: 20
     wait-time: 500
   http:
@@ -37,14 +37,6 @@ eip:
   #健康上饶app-卫计委机构编码--用于居民注册设置默认权限
 jksr-app:
   orgcode: PDY026797
-
-
-hadoop:
-  hbase-properties:
-    hbase.zookeeper.property.clientPort: 2181
-    zookeeper.znode.parent: /hbase-unsecure
-  user:
-    name: root
 
 ---
 spring:
@@ -73,8 +65,6 @@ spring:
       password: admin
       authenticationDatabase: admin
       database: ehr
-    solr:
-      zk-host: node1.hde.h3c.com,node2.hde.h3c.com:2181/solr
   elasticsearch:
     jest:
       uris: http://172.19.103.68:9200
@@ -97,9 +87,6 @@ fz-gateway:
   clientId: 9000401
   clientVersion: 1.0
   secret: KU5XTORDKZI3O86YAT3ABCNJW2XTL1DJYF3GKU3ICXL
-hadoop:
-  hbase-properties:
-    hbase.zookeeper.quorum: node1.hde.h3c.com,node2.hde.h3c.com,node3.hde.h3c.com
 
 ---
 spring:
@@ -128,8 +115,6 @@ spring:
       password: admin
       authenticationDatabase: admin
       database: ehr
-    solr:
-      zk-host: node1.hde.h3c.com,node2.hde.h3c.com:2181/solr
   elasticsearch:
     jest:
       uris: http://172.19.103.68:9200
@@ -152,9 +137,6 @@ fz-gateway:
   clientId: 9000401
   clientVersion: 1.0
   secret: KU5XTORDKZI3O86YAT3ABCNJW2XTL1DJYF3GKU3ICXL
-hadoop:
-  hbase-properties:
-    hbase.zookeeper.quorum: node1.hde.h3c.com,node2.hde.h3c.com,node3.hde.h3c.com
 
 ---
 spring:
@@ -184,8 +166,6 @@ spring:
       password: GMLBq1LG
       authenticationDatabase: admin
       database: ehr
-    solr:
-      zk-host: node1.hde.h3c.com,node2.hde.h3c.com:2181/solr
   elasticsearch:
     jest:
       uris: http://172.19.103.68:9200
@@ -208,9 +188,6 @@ fz-gateway:
   clientId: 9000401
   clientVersion: 1.0
   secret: 9U6PBF2JM3PE1IHRJ7GEITMJHNMEHOFZQ2XUCKD9TO2
-hadoop:
-  hbase-properties:
-    hbase.zookeeper.quorum: node1.ehr.h3c.com,node2.ehr.h3c.com,node3.ehr.h3c.com
 
 ---
 spring:
@@ -239,8 +216,6 @@ spring:
       password: GMLBq1LG
       authenticationDatabase: admin
       database: ehr
-    solr:
-      zk-host: node1.hde.h3c.com,node2.hde.h3c.com:2181/solr
   elasticsearch:
     jest:
       uris: http://10.176.97.7:9200
@@ -263,9 +238,6 @@ fz-gateway:
   clientId: 9000401
   clientVersion: 1.0
   secret: 9U6PBF2JM3PE1IHRJ7GEITMJHNMEHOFZQ2XUCKD9TO2
-hadoop:
-  hbase-properties:
-    hbase.zookeeper.quorum: node1.jkzl.com,node2.jkzl.com,node3.jkzl.com
 
 ---
 spring:
@@ -294,8 +266,6 @@ spring:
       password: GMLBq1LG
       authenticationDatabase: admin
       database: ehr
-    solr:
-      zk-host: node1.hde.h3c.com,node2.hde.h3c.com:2181/solr
   elasticsearch:
     jest:
       uris: http://100.100.1.158:9200
@@ -318,9 +288,6 @@ fz-gateway:
   clientId: 9000401
   clientVersion: 1.0
   secret: 9U6PBF2JM3PE1IHRJ7GEITMJHNMEHOFZQ2XUCKD9TO2
-hadoop:
-  hbase-properties:
-    hbase.zookeeper.quorum: node1.hde.h3c.com,node2.hde.h3c.com,node3.hde.h3c.com,node4.hde.h3c.com
 
 ---
 spring:
@@ -349,8 +316,6 @@ spring:
       password: GMLBq1LG
       authenticationDatabase: admin
       database: ehr
-    solr:
-      zk-host: node1.jkzl.com,node2.jkzl.com,node4.jkzl.com:2181/solr
   elasticsearch:
     jest:
       uris: http://172.10.10.2:9200
@@ -373,6 +338,3 @@ fz-gateway:
   clientId: 9000401
   clientVersion: 1.0
   secret: 9U6PBF2JM3PE1IHRJ7GEITMJHNMEHOFZQ2XUCKD9TO2
-hadoop:
-  hbase-properties:
-    hbase.zookeeper.quorum: node1.jkzl.com,node2.jkzl.com,node4.jkzl.com
