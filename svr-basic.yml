@@ -39,13 +39,6 @@ jksr-app:
   orgcode: PDY026797
 
 
-hadoop:
-  hbase-properties:
-    hbase.zookeeper.property.clientPort: 2181
-    zookeeper.znode.parent: /hbase-unsecure
-  user:
-    name: root
-
 ---
 spring:
   profiles: dev
@@ -73,8 +66,6 @@ spring:
       password: admin
       authenticationDatabase: admin
       database: ehr
-    solr:
-      zk-host: node1.hde.h3c.com,node2.hde.h3c.com:2181/solr
   elasticsearch:
     jest:
       uris: http://172.19.103.68:9200
@@ -93,7 +84,7 @@ h5:
   clientId: WYo0l73F8e
 #福州总部网关参数配置
 fz-gateway:
-  url: http://service.yihu.com:8085/WSGW/rest
+  url: http://172.19.103.73:10001/fzGateway/WSGW/rest
   clientId: 9000401
   clientVersion: 1.0
   secret: KU5XTORDKZI3O86YAT3ABCNJW2XTL1DJYF3GKU3ICXL
@@ -129,8 +120,6 @@ spring:
       password: admin
       authenticationDatabase: admin
       database: ehr
-    solr:
-      zk-host: node1.hde.h3c.com,node2.hde.h3c.com:2181/solr
   elasticsearch:
     jest:
       uris: http://172.19.103.68:9200
@@ -149,7 +138,7 @@ h5:
   clientId: WYo0l73F8e
 #福州总部网关参数配置
 fz-gateway:
-  url: http://service.yihu.com:8085/WSGW/rest
+  url: http://172.19.103.73:10001/fzGateway/WSGW/rest
   clientId: 9000401
   clientVersion: 1.0
   secret: KU5XTORDKZI3O86YAT3ABCNJW2XTL1DJYF3GKU3ICXL
@@ -186,8 +175,6 @@ spring:
       password: GMLBq1LG
       authenticationDatabase: admin
       database: ehr
-    solr:
-      zk-host: node1.hde.h3c.com,node2.hde.h3c.com:2181/solr
   elasticsearch:
     jest:
       uris: http://172.19.103.68:9200
@@ -206,7 +193,7 @@ h5:
   clientId: WYo0l73F8e
 #福州总部网关参数配置
 fz-gateway:
-  url: http://service.yihu.com:8080/WSGW/rest
+  url: http://11.1.2.13:10001/fzGateway/WSGW/rest
   clientId: 9000401
   clientVersion: 1.0
   secret: 9U6PBF2JM3PE1IHRJ7GEITMJHNMEHOFZQ2XUCKD9TO2
@@ -242,8 +229,6 @@ spring:
       password: GMLBq1LG
       authenticationDatabase: admin
       database: ehr
-    solr:
-      zk-host: node1.hde.h3c.com,node2.hde.h3c.com:2181/solr
   elasticsearch:
     jest:
       uris: http://10.176.97.7:9200
@@ -263,7 +248,7 @@ h5:
   handlerId: 50871
 #福州总部网关参数配置
 fz-gateway:
-  url: http://service.yihu.com:8080/WSGW/rest
+  url: http://10.176.97.10:10001/fzGateway/WSGW/rest
   clientId: 9000401
   clientVersion: 1.0
   secret: 9U6PBF2JM3PE1IHRJ7GEITMJHNMEHOFZQ2XUCKD9TO2
@@ -299,8 +284,6 @@ spring:
       password: GMLBq1LG
       authenticationDatabase: admin
       database: ehr
-    solr:
-      zk-host: node1.hde.h3c.com,node2.hde.h3c.com:2181/solr
   elasticsearch:
     jest:
       uris: http://100.100.1.158:9200
@@ -319,7 +302,7 @@ h5:
   clientId: WYo0l73F8e
 #福州总部网关参数配置
 fz-gateway:
-  url: http://service.yihu.com:8080/WSGW/rest
+  url: http://100.100.1.162:10001/fzGateway/WSGW/rest
   clientId: 9000401
   clientVersion: 1.0
   secret: 9U6PBF2JM3PE1IHRJ7GEITMJHNMEHOFZQ2XUCKD9TO2
@@ -355,8 +338,6 @@ spring:
       password: GMLBq1LG
       authenticationDatabase: admin
       database: ehr
-    solr:
-      zk-host: node1.jkzl.com,node2.jkzl.com,node4.jkzl.com:2181/solr
   elasticsearch:
     jest:
       uris: http://172.10.10.2:9200
@@ -375,7 +356,7 @@ h5:
   clientId: WYo0l73F8e
 #福州总部网关参数配置
 fz-gateway:
-  url: http://service.yihu.com:8080/WSGW/rest
+  url: http://192.168.220.84:10001/fzGateway/WSGW/rest
   clientId: 9000401
   clientVersion: 1.0
   secret: 9U6PBF2JM3PE1IHRJ7GEITMJHNMEHOFZQ2XUCKD9TO2
