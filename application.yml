@@ -144,7 +144,7 @@ spring:
 #else the server must have host map.
 eureka:
   instance:
-    prefer-ip-address: true
+    prefer-ip-address: false
 
 eureka-server-ip: 11.1.2.1:8761
 
@@ -156,7 +156,7 @@ spring:
 #else the server must have host map.
 eureka:
   instance:
-    prefer-ip-address: true
+    prefer-ip-address: false
 
 eureka-server-ip: 10.176.97.10:8761
 #eureka-server-ip: 171.35.109.46:8761
@@ -170,7 +170,7 @@ spring:
 #else the server must have host map.
 eureka:
   instance:
-    prefer-ip-address: true
+    prefer-ip-address: false
 
 eureka-server-ip: 100.100.1.162:8761
 
@@ -179,6 +179,6 @@ spring:
   profiles: prod_srformal
 eureka:
   instance:
-    prefer-ip-address: true
+    prefer-ip-address: false
 
 eureka-server-ip: 192.168.200.61:8761
