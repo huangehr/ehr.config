@@ -143,7 +143,7 @@ spring:
       zk-host: node1.jkzl.com,node2.jkzl.com,node4.jkzl.com:2181/solr
   elasticsearch:
     jest:
-      uris: http://172.10.10.2:9200
+      uris: http://172.10.10.5:9200
 elasticsearch:
   cluster-name: elasticsearch
   cluster-nodes: 172.10.10.5:9300
