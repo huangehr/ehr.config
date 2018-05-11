@@ -48,6 +48,11 @@ hadoop:
 elasticsearch:
   cluster-name: elasticsearch
   cluster-nodes: 172.19.103.9:9300
+ftp:
+  address: 172.19.103.58
+  username: pacs
+  password: pacssr2018
+  port: 21
 
 ---
 spring:
@@ -69,6 +74,11 @@ hadoop:
 elasticsearch:
   cluster-name: elasticsearch
   cluster-nodes: 172.19.103.9:9300
+ftp:
+  address: 172.19.103.58
+  username: pacs
+  password: pacssr2018
+  port: 21
 
 ---
 spring:
@@ -90,6 +100,11 @@ hadoop:
 elasticsearch:
   cluster-name: elasticsearch
   cluster-nodes: 11.1.2.7:9300
+ftp:      #----------------------------------todo 待配置
+  address: 172.19.103.58
+  username: pacs
+  password: pacssr2018
+  port: 21    #----------------------------------todo 待配置
 
 ---
 spring:
@@ -111,6 +126,11 @@ hadoop:
 elasticsearch:
   cluster-name: elasticsearch
   cluster-nodes: 10.176.97.7:9300
+ftp:      #----------------------------------todo 待配置
+  address: 172.19.103.58
+  username: pacs
+  password: pacssr2018
+  port: 21    #----------------------------------todo 待配置
 
 ---
 spring:
@@ -128,10 +148,15 @@ fast-dfs:
   public-server: http://100.100.1.157:8888
 hadoop:
   hbase-properties:
-    hbase.zookeeper.quorum: node1.hde.h3c.com,node2.hde.h3c.com,node3.hde.h3c.com,node4.hde.h3c.com
+    hbase.zookeeper.quorum: node1.hde.h3c.com,node2.hde.h3c.com,node3.hde.h3c.com
 elasticsearch:
   cluster-name: elasticsearch
   cluster-nodes: 100.100.1.158:9300
+ftp:      #----------------------------------todo 待配置
+  address: 172.19.103.58
+  username: pacs
+  password: pacssr2018
+  port: 21    #----------------------------------todo 待配置
 
 ---
 spring:
@@ -152,4 +177,9 @@ hadoop:
     hbase.zookeeper.quorum: node1.jkzl.com,node2.jkzl.com,node4.jkzl.com
 elasticsearch:
   cluster-name: elasticsearch
-  cluster-nodes: 172.10.10.2:9300,172.10.10.5:9300
+  cluster-nodes: 172.10.10.5:9300
+ftp:      #----------------------------------todo 待配置
+  address: 172.19.103.58
+  username: pacs
+  password: pacssr2018
+  port: 21    #----------------------------------todo 待配置

@@ -36,6 +36,11 @@ fast-dfs:
     anti-steal-token: no
     secret-key: FastDFS1234567890
 
+elasticsearch:
+  pool:
+    init-size: 1
+    max-size: 5
+
 eip:
   tenant: jkzl
 h5:
@@ -183,4 +188,4 @@ fast-dfs:
   public-server: http://192.168.50.37:8888
 elasticsearch:
   cluster-name: elasticsearch
-  cluster-nodes: 172.10.10.2:9300,172.10.10.5:9300
+  cluster-nodes: 172.10.10.5:9300

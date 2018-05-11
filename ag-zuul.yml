@@ -30,9 +30,17 @@ zuul:
     jkzl-server:
       path: /jkzl/**
       url: http://ssotest.yihu.cn/OpenPlatform/cgiBin/1.0/
+    # 福州总部网关
+    fz-gateway:
+      path: /fzGateway/**
+      url: http://service.yihu.com:8085/
     fastdfs-server:
       path: /file/**
       url: http://172.19.103.52:80/
+    # 卫计委官网
+    gov-server:
+      path: /open/govServer/**
+      url: http://www.srswjw.gov.cn:8080/
 
 ---
 spring:
@@ -47,9 +55,17 @@ zuul:
     jkzl-server:
       path: /jkzl/**
       url: http://ssotest.yihu.cn/OpenPlatform/cgiBin/1.0/
+    # 福州总部网关
+    fz-gateway:
+      path: /fzGateway/**
+      url: http://service.yihu.com:8085/
     fastdfs-server:
       path: /file/**
       url: http://172.19.103.52:80/
+    # 卫计委官网
+    gov-server:
+      path: /open/govServer/**
+      url: http://www.srswjw.gov.cn:8080/
 
 ---
 spring:
@@ -63,9 +79,17 @@ zuul:
     jkzl-server:
       path: /jkzl/**
       url: https://api.yihu.com/OpenPlatform/cgiBin/1.0/
+    # 福州总部网关
+    fz-gateway:
+      path: /fzGateway/**
+      url: http://service.yihu.com:8085/
     fastdfs-server:
       path: /file/**
       url: http://11.1.2.9:80/
+    # 卫计委官网
+    gov-server:
+      path: /open/govServer/**
+      url: http://www.srswjw.gov.cn:8080/
 
 ---
 spring:
@@ -80,9 +104,17 @@ zuul:
     jkzl-server:
       path: /jkzl/**
       url: https://api.yihu.com/OpenPlatform/cgiBin/1.0/
+    # 福州总部网关
+    fz-gateway:
+      path: /fzGateway/**
+      url: http://service.yihu.com:8080/
     fastdfs-server:
       path: /file/**
       url: http://10.176.97.5:8888/
+    # 卫计委官网
+    gov-server:
+      path: /open/govServer/**
+      url: http://www.srswjw.gov.cn:8080/
 
 ---
 spring:
@@ -97,9 +129,17 @@ zuul:
     jkzl-server:
       path: /jkzl/**
       url: https://api.yihu.com/OpenPlatform/cgiBin/1.0/
+    # 福州总部网关
+    fz-gateway:
+      path: /fzGateway/**
+      url: http://service.yihu.com:8080/
     fastdfs-server:
       path: /file/**
       url: http://100.100.1.157:8888/
+    # 卫计委官网
+    gov-server:
+      path: /open/govServer/**
+      url: http://www.srswjw.gov.cn:8080/
 
 ---
 spring:
@@ -114,6 +154,14 @@ zuul:
     jkzl-server:
       path: /jkzl/**
       url: https://api.yihu.com/OpenPlatform/cgiBin/1.0/
+    # 福州总部网关
+    fz-gateway:
+      path: /fzGateway/**
+      url: http://service.yihu.com:8080/
     fastdfs-server:
       path: /file/**
       url: http://192.168.50.37:8888/
+    # 卫计委官网
+    gov-server:
+      path: /open/govServer/**
+      url: http://www.srswjw.gov.cn:8080/

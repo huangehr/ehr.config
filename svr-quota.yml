@@ -119,7 +119,7 @@ spring:
     password: q4YaQemf
   data:
     solr:
-      zk-host: node1.hde.h3c.com,node2.hde.h3c.com,node3.hde.h3c.com,node4.hde.h3c.com:2181/solr
+      zk-host: node1.hde.h3c.com,node2.hde.h3c.com,node3.hde.h3c.com:2181/solr
   elasticsearch:
     jest:
       uris: http://100.100.1.158:9200
@@ -143,7 +143,7 @@ spring:
       zk-host: node1.jkzl.com,node2.jkzl.com,node4.jkzl.com:2181/solr
   elasticsearch:
     jest:
-      uris: http://172.10.10.2:9200
+      uris: http://172.10.10.5:9200
 elasticsearch:
   cluster-name: elasticsearch
-  cluster-nodes: 172.10.10.2:9300,172.10.10.5:9300
+  cluster-nodes: 172.10.10.5:9300
