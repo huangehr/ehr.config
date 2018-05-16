@@ -7,7 +7,7 @@ spring:
   profiles: dev
   datasource:
     driverClassName: com.mysql.jdbc.Driver
-    url: jdbc:mysql://172.19.103.57:8066/global_db?useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&transformedBitIsBoolean=true
+    url: jdbc:mysql://172.19.103.57:8066/global_db?useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&transformedBitIsBoolean=true&autoReconnect=true
     username: hos
     password: 123456
     test-on-borrow: true
@@ -18,6 +18,21 @@ spring:
     max-idle: 50
     min-idle: 20
     initial-size: 10
+# REDIS
+  redis:
+    host: 172.19.103.47 # Redis server host.
+    port: 6379
+    password: redis!@456
+    database: 0 # Database index used by the connection factory.
+    timeout: 0 # Connection timeout in milliseconds. 生产线出现过超时,先配置10000ms
+    #sentinel:
+    #  master: # Name of Redis server.
+    #  nodes: # Comma-separated list of host:port pairs.
+    pool:
+      max-active: 8 # Max number of connections that can be allocated by the pool at a given time. Use a negative value for no limit.
+      max-idle: 8 # Max number of "idle" connections in the pool. Use a negative value to indicate an unlimited number of idle connections.
+      max-wait: -1 # Maximum amount of time (in milliseconds) a connection allocation should block before throwing an exception when the pool is exhausted. Use a negative value to block indefinitely.
+      min-idle: 1 # Target for the minimum number of idle connections to maintain in the pool. This setting only has an effect if it is positive.
   jpa:
     database-platform: org.hibernate.dialect.MySQL5Dialect
     hibernate:
@@ -42,6 +57,7 @@ hos:
     url: 172.19.103.58:9020
   filesystem:
     url: http://172.19.103.58:9010/dfs/file
+  adminOutUrl: http://172.19.103.57:7070
 fast-dfs:
   tracker-server: 172.19.103.13:22122
   public-server: http://172.19.103.52:80
@@ -56,7 +72,7 @@ spring:
   profiles: test
   datasource:
     driverClassName: com.mysql.jdbc.Driver
-    url: jdbc:mysql://172.19.103.57:8066/global_db?useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&transformedBitIsBoolean=true
+    url: jdbc:mysql://172.19.103.57:8066/global_db?useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&transformedBitIsBoolean=true&autoReconnect=true
     username: hos
     password: 123456
     test-on-borrow: true
@@ -67,6 +83,21 @@ spring:
     max-idle: 50
     min-idle: 20
     initial-size: 10
+# REDIS
+  redis:
+    host: 172.19.103.47 # Redis server host.
+    port: 6379
+    password: redis!@456
+    database: 0 # Database index used by the connection factory.
+    timeout: 0 # Connection timeout in milliseconds. 生产线出现过超时,先配置10000ms
+    #sentinel:
+    #  master: # Name of Redis server.
+    #  nodes: # Comma-separated list of host:port pairs.
+    pool:
+      max-active: 8 # Max number of connections that can be allocated by the pool at a given time. Use a negative value for no limit.
+      max-idle: 8 # Max number of "idle" connections in the pool. Use a negative value to indicate an unlimited number of idle connections.
+      max-wait: -1 # Maximum amount of time (in milliseconds) a connection allocation should block before throwing an exception when the pool is exhausted. Use a negative value to block indefinitely.
+      min-idle: 1 # Target for the minimum number of idle connections to maintain in the pool. This setting only has an effect if it is positive.
   jpa:
     database-platform: org.hibernate.dialect.MySQL5Dialect
     hibernate:
@@ -91,6 +122,7 @@ hos:
     url: 172.19.103.58:9020
   filesystem:
     url: http://172.19.103.58:9010/dfs/file
+  adminOutUrl: http://172.19.103.57:7070
 fast-dfs:
   tracker-server: 172.19.103.13:22122
   public-server: http://172.19.103.52:80
@@ -122,7 +154,7 @@ spring:
     port: 6379
     password: q4YaQemf
     database: 0 # Database index used by the connection factory.
-    timeout: 0 # Connection timeout in milliseconds.
+    timeout: 0 # Connection timeout in milliseconds. 生产线出现过超时,先配置10000ms
     #sentinel:
     #  master: # Name of Redis server.
     #  nodes: # Comma-separated list of host:port pairs.
@@ -155,6 +187,7 @@ hos:
     url: 192.168.200.62:9020
   filesystem:
     url: http://192.168.200.62:9010/dfs/file
+  adminOutUrl: http://172.19.103.57:7070  # todo 改成hos-admin微服务外网地址,待确认外网地址  用于采集时,发送消息,将标准相关缓存到mongodb,目前暂时没用
 fast-dfs:
   tracker-server: 192.168.50.116:22122
   public-server: http://192.168.50.37:8888
@@ -186,7 +219,7 @@ spring:
     port: 6390
     password: q4YaQemf
     database: 0 # Database index used by the connection factory.
-    timeout: 0 # Connection timeout in milliseconds.
+    timeout: 0 # Connection timeout in milliseconds. 生产线出现过超时,先配置10000ms
     #sentinel:
     #  master: # Name of Redis server.
     #  nodes: # Comma-separated list of host:port pairs.
@@ -219,6 +252,7 @@ hos:
     url: 10.176.97.14:9020
   filesystem:
     url: http://10.176.97.14:9010/dfs/file
+  adminOutUrl: http://171.35.109.35:81
 fast-dfs:
   tracker-server: 172.19.103.13:22122
   public-server: http://172.19.103.52:80
@@ -250,7 +284,7 @@ spring:
     port: 6390
     password: Kb6wKDQP1W4
     database: 0 # Database index used by the connection factory.
-    timeout: 0 # Connection timeout in milliseconds.
+    timeout: 0 # Connection timeout in milliseconds. 生产线出现过超时,先配置10000ms
     #sentinel:
     #  master: # Name of Redis server.
     #  nodes: # Comma-separated list of host:port pairs.
@@ -283,6 +317,7 @@ hos:
     url: 11.1.2.13:9020
   filesystem:
     url: http://11.1.2.13:9010/dfs/file
+  adminOutUrl: http://172.19.103.57:7070  # todo 改成hos-admin微服务外网地址,待确认外网地址  用于采集时,发送消息,将标准相关缓存到mongodb,目前暂时没用
 fast-dfs:
   tracker-server: 11.1.2.9:22122
   public-server: http://11.1.2.9:80
@@ -297,7 +332,7 @@ spring:
   profiles: prod_fzzy
   datasource:
     driverClassName: com.mysql.jdbc.Driver
-    url: jdbc:mysql://100.100.1.159:3310/tenant_jkzl?useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&transformedBitIsBoolean=true
+    url: jdbc:mysql://100.100.1.159:3310/tenant_jkzl?useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&transformedBitIsBoolean=true&useSSL=false
     username: jkzlesb
     password: Ajch6o@Y
     test-on-borrow: true
@@ -320,7 +355,7 @@ spring:
     port: 6390
     password: q4YaQemf
     database: 0 # Database index used by the connection factory.
-    timeout: 0 # Connection timeout in milliseconds.
+    timeout: 0 # Connection timeout in milliseconds. 生产线出现过超时,先配置10000ms
     #sentinel:
     #  master: # Name of Redis server.
     #  nodes: # Comma-separated list of host:port pairs.
@@ -347,6 +382,7 @@ hos:
     url: 100.100.1.165:9020
   filesystem:
     url: http://100.100.1.165:9010/dfs/file
+  adminOutUrl: http://172.19.103.57:7070  # todo 改成hos-admin微服务外网地址,待确认外网地址  用于采集时,发送消息,将标准相关缓存到mongodb,目前暂时没用
 fast-dfs:
   tracker-server: 100.100.1.157:22122
   public-server: http://100.100.1.157:8888
