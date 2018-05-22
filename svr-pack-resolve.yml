@@ -27,6 +27,8 @@ hadoop:
     zookeeper.znode.parent: /hbase-unsecure
   user:
     name: root
+eip:
+  schemaVersion: 5a6951bff0bb
 
 ---
 spring:
