@@ -1,0 +1,205 @@
+security:
+  basic:
+    enabled: false
+    
+---
+spring:
+  profiles: dev
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/prod_sr?useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&transformedBitIsBoolean=true&autoReconnect=true&useSSL=false
+    username: root
+    password: 1234
+    test-on-borrow: true
+    validation-query: SELECT 1
+    test-while-idle: true
+    max-total: 100
+    default-auto-commit: true
+    max-idle: 200
+    min-idle: 50
+    initial-size: 10
+    max-active: 200
+    max-wait: 50
+    minEvictableIdleTimeMillis: 3600000 #连接池中连接，在时间段内一直空闲，被逐出连接池的时间(1000*60*60)，以毫秒为单位
+    timeBetweenEvictionRunsMillis: 300000 #在空闲连接回收器线程运行期间休眠的时间值,以毫秒为单位，一般比minEvictableIdleTimeMillis小
+    testOnBorrow: true #指明是否在从池中取出连接前进行检验， 如果检验失败， 则从池中去除连接并尝试取出另一个。注意： 设置为true 后如果要生效，validationQuery 参数必须设置为非空字符串
+    testOnReturn: true #指明是否在归还到池中前进行检验 注意： 设置为true 后如果要生效validationQuery 参数必须设置为非空字符串
+    testWhileIdle: true #指明连接是否被空闲连接回收器(如果有)进行检验，如果检测失败，则连接将被从池中去除
+    poolPreparedStatements: true # 打开PSCache，并且指定每个连接上PSCache的大小
+    maxPoolPreparedStatementPerConnectionSize: 50
+    removeAbandoned: false #超过时间限制是否回收
+    removeAbandonedTimeout: 7200 #超时时间；单位为秒。180秒=3分钟
+    logAbandoned: false #关闭abanded连接时输出错误日志
+    filters: stat,wall #配置监控统计拦截的filters，去掉后监控界面sql将无法统计,'wall'用于防火墙
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL5Dialect
+    hibernate:
+      dialect: org.hibernate.dialect.MySQL5Dialect
+    format-sql: true
+    show-sql: false
+  aop:
+      proxy-target-class: false
+crawler:
+  upload:
+    ip: localhost
+    port: 8088
+    api: crawler/patient
+  storage:
+    ip: localhost
+    port: 8088
+    api: crawler/datapush
+elasticsearch:
+  cluster-name: elasticsearch
+  cluster-nodes: 172.19.103.9:9300
+service-gateway:
+  url:
+  ehrMgrUrl: http://172.19.103.74:10220/api/v1.0
+  ehrCouldUrl: http://172.19.103.73:10400/api/v1.0
+  ehrAdminUrl: http://172.19.103.73:10000/api/v1.0
+  sslKeystore: D://tomcat.keystore
+  sslPassword: 123456
+  clientId: zkGuSIm2Fg
+  clientKey: emtHdVNJbTJGZzpnUGR2VFJBWVVoc2tjaHht
+#  中间库连接地址信息
+temp:
+  datasource:
+    driverClassName: oracle.jdbc.driver.OracleDriver
+    url: jdbc:oracle:thin:@219.139.128.22:1521/orcl
+    username: yongxing
+    password: yongxing
+    validation-query: select 1 from dual
+
+---
+spring:
+  profiles: prod_sr
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://192.168.210.3:3310/tenant_central?useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&transformedBitIsBoolean=true
+    username: jkzlesb
+    password: Ajch6o@Y
+    test-on-borrow: true
+    validation-query: SELECT 1
+    test-while-idle: true
+    max-total: 100
+    default-auto-commit: true
+    max-idle: 200
+    min-idle: 50
+    initial-size: 10
+    max-active: 200
+    max-wait: 50
+    minEvictableIdleTimeMillis: 3600000 #连接池中连接，在时间段内一直空闲，被逐出连接池的时间(1000*60*60)，以毫秒为单位
+    timeBetweenEvictionRunsMillis: 300000 #在空闲连接回收器线程运行期间休眠的时间值,以毫秒为单位，一般比minEvictableIdleTimeMillis小
+    testOnBorrow: true #指明是否在从池中取出连接前进行检验， 如果检验失败， 则从池中去除连接并尝试取出另一个。注意： 设置为true 后如果要生效，validationQuery 参数必须设置为非空字符串
+    testOnReturn: true #指明是否在归还到池中前进行检验 注意： 设置为true 后如果要生效validationQuery 参数必须设置为非空字符串
+    testWhileIdle: true #指明连接是否被空闲连接回收器(如果有)进行检验，如果检测失败，则连接将被从池中去除
+    poolPreparedStatements: true # 打开PSCache，并且指定每个连接上PSCache的大小
+    maxPoolPreparedStatementPerConnectionSize: 50
+    removeAbandoned: false #超过时间限制是否回收
+    removeAbandonedTimeout: 7200 #超时时间；单位为秒。180秒=3分钟
+    logAbandoned: false #关闭abanded连接时输出错误日志
+    filters: stat,wall #配置监控统计拦截的filters，去掉后监控界面sql将无法统计,'wall'用于防火墙
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL5Dialect
+    hibernate:
+      dialect: org.hibernate.dialect.MySQL5Dialect
+    format-sql: true
+    show-sql: false
+  aop:
+      proxy-target-class: false
+crawler:
+  upload:
+    ip: localhost
+    port: 8088
+    api: crawler/patient
+  storage:
+    ip: localhost
+    port: 8088
+    api: crawler/datapush
+elasticsearch:
+  cluster-name: elasticsearch
+  cluster-nodes: 172.10.10.5:9300
+service-gateway:
+  url:
+  ehrMgrUrl: http://192.168.200.76:10220/api/v1.0
+  ehrCouldUrl: http://192.168.200.67:10400/api/v1.0
+  ehrAdminUrl: http://192.168.220.84:10000/api/v1.0
+  sslKeystore: /root/jkzl/tomcat.keystore
+  sslPassword: 123456
+  clientId: zkGuSIm2Fg
+  clientKey: emtHdVNJbTJGZzpnUGR2VFJBWVVoc2tjaHht
+#  中间库连接地址信息
+temp:
+  datasource:
+    driverClassName: oracle.jdbc.driver.OracleDriver
+    url: jdbc:oracle:thin:@10.16.11.9:1522/sjpt_p4
+    username: shangrao
+    password: shangrao_2017
+    validation-query: select 1 from dual
+
+
+---
+spring:
+  profiles: test
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://171.35.109.39:3310/tenant_a?useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&transformedBitIsBoolean=true&autoReconnect=true&useSSL=false
+    username: chenweishan
+    password: GP8Qz4qU
+    test-on-borrow: true
+    validation-query: SELECT 1
+    test-while-idle: true
+    max-total: 100
+    default-auto-commit: true
+    max-idle: 200
+    min-idle: 50
+    initial-size: 10
+    max-active: 200
+    max-wait: 50
+    minEvictableIdleTimeMillis: 3600000 #连接池中连接，在时间段内一直空闲，被逐出连接池的时间(1000*60*60)，以毫秒为单位
+    timeBetweenEvictionRunsMillis: 300000 #在空闲连接回收器线程运行期间休眠的时间值,以毫秒为单位，一般比minEvictableIdleTimeMillis小
+    testOnBorrow: true #指明是否在从池中取出连接前进行检验， 如果检验失败， 则从池中去除连接并尝试取出另一个。注意： 设置为true 后如果要生效，validationQuery 参数必须设置为非空字符串
+    testOnReturn: true #指明是否在归还到池中前进行检验 注意： 设置为true 后如果要生效validationQuery 参数必须设置为非空字符串
+    testWhileIdle: true #指明连接是否被空闲连接回收器(如果有)进行检验，如果检测失败，则连接将被从池中去除
+    poolPreparedStatements: true # 打开PSCache，并且指定每个连接上PSCache的大小
+    maxPoolPreparedStatementPerConnectionSize: 50
+    removeAbandoned: false #超过时间限制是否回收
+    removeAbandonedTimeout: 7200 #超时时间；单位为秒。180秒=3分钟
+    logAbandoned: false #关闭abanded连接时输出错误日志
+    filters: stat,wall #配置监控统计拦截的filters，去掉后监控界面sql将无法统计,'wall'用于防火墙
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL5Dialect
+    hibernate:
+      dialect: org.hibernate.dialect.MySQL5Dialect
+    format-sql: true
+    show-sql: false
+  aop:
+      proxy-target-class: false
+crawler:
+  upload:
+    ip: localhost
+    port: 8088
+    api: crawler/patient
+  storage:
+    ip: localhost
+    port: 8088
+    api: crawler/datapush
+elasticsearch:
+  cluster-name: elasticsearch
+  cluster-nodes: 172.19.103.9:9300
+service-gateway:
+  url:
+  ehrMgrUrl: http://171.35.109.42:10220/api/v1.0
+  ehrCouldUrl: http://171.35.109.42:10400/api/v1.0
+  ehrAdminUrl: http://171.35.109.40:10000/api/v1.0
+  sslKeystore: D://tomcat.keystore
+  sslPassword: 123456
+  clientId: zkGuSIm2Fg
+  clientKey: emtHdVNJbTJGZzpnUGR2VFJBWVVoc2tjaHht
+#  中间库连接地址信息
+temp:
+  datasource:
+    driverClassName: oracle.jdbc.driver.OracleDriver
+    url: jdbc:oracle:thin:@192.168.0.105:1521/orcl
+    username: jkzl
+    password: jkzl
+    validation-query: select 1 from dual
