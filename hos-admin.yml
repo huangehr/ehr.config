@@ -24,7 +24,7 @@ spring:
     port: 6379
     password: redis!@456
     database: 0 # Database index used by the connection factory.
-    timeout: 0 # Connection timeout in milliseconds. 生产线出现过超时,先配置10000ms
+    timeout: 0
     #sentinel:
     #  master: # Name of Redis server.
     #  nodes: # Comma-separated list of host:port pairs.
@@ -89,7 +89,7 @@ spring:
     port: 6379
     password: redis!@456
     database: 0 # Database index used by the connection factory.
-    timeout: 0 # Connection timeout in milliseconds. 生产线出现过超时,先配置10000ms
+    timeout: 0 #
     #sentinel:
     #  master: # Name of Redis server.
     #  nodes: # Comma-separated list of host:port pairs.
@@ -154,7 +154,7 @@ spring:
     port: 6379
     password: q4YaQemf
     database: 0 # Database index used by the connection factory.
-    timeout: 0 # Connection timeout in milliseconds. 生产线出现过超时,先配置10000ms
+    timeout: 0 #
     #sentinel:
     #  master: # Name of Redis server.
     #  nodes: # Comma-separated list of host:port pairs.
@@ -189,8 +189,8 @@ hos:
     url: http://192.168.200.62:9010/dfs/file
   adminOutUrl: http://172.19.103.57:7070  # todo 改成hos-admin微服务外网地址,待确认外网地址  用于采集时,发送消息,将标准相关缓存到mongodb,目前暂时没用
 fast-dfs:
-  tracker-server: 192.168.50.116:22122
-  public-server: http://192.168.50.37:8888
+  tracker-server: 192.168.50.116:22122,192.168.50.119:22122,192.168.50.116:22123
+  public-server: http://192.168.50.37:8888,http://192.168.50.38:8888,http://192.168.50.37:10000
 jwt:
   header: Authorization
   secret: mySecret
@@ -284,7 +284,7 @@ spring:
     port: 6390
     password: Kb6wKDQP1W4
     database: 0 # Database index used by the connection factory.
-    timeout: 0 # Connection timeout in milliseconds. 生产线出现过超时,先配置10000ms
+    timeout: 0 # Connection timeout in milliseconds.
     #sentinel:
     #  master: # Name of Redis server.
     #  nodes: # Comma-separated list of host:port pairs.
@@ -355,7 +355,7 @@ spring:
     port: 6390
     password: q4YaQemf
     database: 0 # Database index used by the connection factory.
-    timeout: 0 # Connection timeout in milliseconds. 生产线出现过超时,先配置10000ms
+    timeout: 0 # Connection timeout in milliseconds.
     #sentinel:
     #  master: # Name of Redis server.
     #  nodes: # Comma-separated list of host:port pairs.
