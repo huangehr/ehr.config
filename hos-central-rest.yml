@@ -7,9 +7,9 @@ spring:
   profiles: dev
   datasource:
     driverClassName: com.mysql.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3306/prod_sr?useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&transformedBitIsBoolean=true&autoReconnect=true&useSSL=false
-    username: root
-    password: 1234
+    url: jdbc:mysql://172.19.103.57:8066/hos1?useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&transformedBitIsBoolean=true&autoReconnect=true
+    username: hos
+    password: 123456
     test-on-borrow: true
     validation-query: SELECT 1
     test-while-idle: true
@@ -72,7 +72,7 @@ service-gateway:
   ehrMgrUrl: http://172.19.103.74:10220/api/v1.0
   ehrCouldUrl: http://172.19.103.73:10400/api/v1.0
   ehrAdminUrl: http://172.19.103.73:10000/api/v1.0
-  sslKeystore: D://tomcat.keystore
+  sslKeystore: /usr/local/esb/tomcat.keystore
   sslPassword: 123456
   clientId: zkGuSIm2Fg
   clientKey: emtHdVNJbTJGZzpnUGR2VFJBWVVoc2tjaHht
@@ -84,6 +84,7 @@ temp:
     username: test
     password: test
     validation-query: select 1 from dual
+
 
 ---
 spring:
