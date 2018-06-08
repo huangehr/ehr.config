@@ -31,6 +31,22 @@ spring:
     removeAbandonedTimeout: 7200 #超时时间；单位为秒。180秒=3分钟
     logAbandoned: false #关闭abanded连接时输出错误日志
     filters: stat,wall #配置监控统计拦截的filters，去掉后监控界面sql将无法统计,'wall'用于防火墙
+# REDIS
+  redis:
+    host: 172.19.103.47 # Redis server host.
+    port: 6379
+    password: redis!@456
+    database: 0 # Database index used by the connection factory.
+    timeout: 0
+    #sentinel:
+    #  master: # Name of Redis server.
+    #  nodes: # Comma-separated list of host:port pairs.
+    pool:
+      max-active: 8 # Max number of connections that can be allocated by the pool at a given time. Use a negative value for no limit.
+      max-idle: 8 # Max number of "idle" connections in the pool. Use a negative value to indicate an unlimited number of idle connections.
+      max-wait: -1 # Maximum amount of time (in milliseconds) a connection allocation should block before throwing an exception when the pool is exhausted. Use a negative value to block indefinitely.
+      min-idle: 1 # Target for the minimum number of idle connections to maintain in the pool. This setting only has an effect if it is positive.
+
   jpa:
     database-platform: org.hibernate.dialect.MySQL5Dialect
     hibernate:
@@ -64,9 +80,9 @@ service-gateway:
 temp:
   datasource:
     driverClassName: oracle.jdbc.driver.OracleDriver
-    url: jdbc:oracle:thin:@219.139.128.22:1521/orcl
-    username: yongxing
-    password: yongxing
+    url: jdbc:oracle:thin:@172.19.103.76:1521/orcl.123.125.237
+    username: test
+    password: test
     validation-query: select 1 from dual
 
 ---
@@ -142,9 +158,9 @@ spring:
   profiles: test
   datasource:
     driverClassName: com.mysql.jdbc.Driver
-    url: jdbc:mysql://171.35.109.39:3310/tenant_a?useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&transformedBitIsBoolean=true&autoReconnect=true&useSSL=false
-    username: chenweishan
-    password: GP8Qz4qU
+    url: jdbc:mysql://172.19.103.57:3306/db1?useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&transformedBitIsBoolean=true&autoReconnect=true&useSSL=false
+    username: root
+    password: xmjkzl
     test-on-borrow: true
     validation-query: SELECT 1
     test-while-idle: true
@@ -166,6 +182,22 @@ spring:
     removeAbandonedTimeout: 7200 #超时时间；单位为秒。180秒=3分钟
     logAbandoned: false #关闭abanded连接时输出错误日志
     filters: stat,wall #配置监控统计拦截的filters，去掉后监控界面sql将无法统计,'wall'用于防火墙
+# REDIS
+  redis:
+    host: 172.19.103.47 # Redis server host.
+    port: 6379
+    password: redis!@456
+    database: 0 # Database index used by the connection factory.
+    timeout: 0
+    #sentinel:
+    #  master: # Name of Redis server.
+    #  nodes: # Comma-separated list of host:port pairs.
+    pool:
+      max-active: 8 # Max number of connections that can be allocated by the pool at a given time. Use a negative value for no limit.
+      max-idle: 8 # Max number of "idle" connections in the pool. Use a negative value to indicate an unlimited number of idle connections.
+      max-wait: -1 # Maximum amount of time (in milliseconds) a connection allocation should block before throwing an exception when the pool is exhausted. Use a negative value to block indefinitely.
+      min-idle: 1 # Target for the minimum number of idle connections to maintain in the pool. This setting only has an effect if it is positive.
+
   jpa:
     database-platform: org.hibernate.dialect.MySQL5Dialect
     hibernate:
@@ -188,9 +220,9 @@ elasticsearch:
   cluster-nodes: 172.19.103.9:9300
 service-gateway:
   url:
-  ehrMgrUrl: http://171.35.109.42:10220/api/v1.0
-  ehrCouldUrl: http://171.35.109.42:10400/api/v1.0
-  ehrAdminUrl: http://171.35.109.40:10000/api/v1.0
+  ehrMgrUrl: http://172.19.103.74:10220/api/v1.0
+  ehrCouldUrl: http://172.19.103.73:10400/api/v1.0
+  ehrAdminUrl: http://172.19.103.73:10000/api/v1.0
   sslKeystore: D://tomcat.keystore
   sslPassword: 123456
   clientId: zkGuSIm2Fg
@@ -199,7 +231,8 @@ service-gateway:
 temp:
   datasource:
     driverClassName: oracle.jdbc.driver.OracleDriver
-    url: jdbc:oracle:thin:@192.168.0.105:1521/orcl
-    username: jkzl
-    password: jkzl
+    url: jdbc:oracle:thin:@172.19.103.76:1521/orcl.123.125.237
+    username: test
+    password: test
     validation-query: select 1 from dual
+
