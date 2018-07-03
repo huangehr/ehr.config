@@ -57,7 +57,7 @@ hzy:
 spring:
   profiles: test
   activemq:
-      broker-url: tcp://172.19.103.58:61616 # activeMq地址
+      broker-url: tcp://172.19.103.57:61616 # activeMq地址
       user: admin
       password: admin
   data:
@@ -88,7 +88,7 @@ hos:
     path: /usr/local/mycat/   ##mycat的安装目录
   #jcraft shell操作，连接终端服务器的后门信息
   jcraft:
-    host: 172.19.103.37
+    host: 172.19.103.57
     port: 22
     user: root
     password: ceshi
