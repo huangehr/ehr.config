@@ -185,7 +185,7 @@ hadoop:
     hbase.zookeeper.quorum: node1.jkzl.com,node2.jkzl.com,node4.jkzl.com
 fast-dfs:
   tracker-server: 192.168.50.116:22122,192.168.50.119:22122
-  public-server: http://192.168.220.62:23000
+  public-server: http://192.168.220.66:23000
 elasticsearch:
   cluster-name: elasticsearch
   cluster-nodes: 172.10.10.5:9300
