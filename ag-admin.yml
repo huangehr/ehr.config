@@ -1,21 +1,9 @@
-zuul:
-  ignored-services: '*'
-  routes:
-    adapterDataSet:
-      path: /api/v1.0/adapter/plan/adapterDataSet
-      serviceId: svr-standard
-    saveDataSetRelationships:
-      path: /api/v1.0/std/documents/data_set_relationships
-      serviceId: svr-standard
-    uploadTemplateFile:
-      path: /api/v1.0/templates/{id}/content
-      serviceId: svr-health-profile
-    createHosEsbMiniRelease:
-      path: /api/v1.0/esb/createHosEsbMiniRelease
-      serviceId: svr-esb
-    updateHosEsbMiniRelease:
-      path: /api/v1.0/esb/updateHosEsbMiniRelease
-      serviceId: svr-esb
+info:
+  app:
+    name: AgAdminService
+    description: EHR platform json app service.
+    version: 1.0.0
+  component: Zuul Server
 
 eip:
   tenant: jkzl
@@ -23,53 +11,29 @@ eip:
 ---
 spring:
   profiles: dev
+#总部统一网关接口参数配置
 service-gateway:
   url: http://service.yihu.com:8085/WSGW/rest
   handlerId: 50871
   clientId: 9000401
   clientVersion: 1.0
+zuul:
+  routes:
+    fastdfs-server:
+      path: /file/**
+      url: http://172.19.103.52:80/
 
 ---
 spring:
-  profiles: test
+  profiles: prod
+#总部统一网关接口参数配置
 service-gateway:
   url: http://service.yihu.com:8085/WSGW/rest
   handlerId: 50871
   clientId: 9000401
   clientVersion: 1.0
-
----
-spring:
-  profiles: prod_fz
-service-gateway:
-  url: http://service.yihu.com:8085/WSGW/rest
-  handlerId: 50871
-  clientId: 9000401
-  clientVersion: 1.0
-
----
-spring:
-  profiles: prod_sr
-service-gateway:
-  url: http://service.yihu.com:8080/WSGW/rest
-  handlerId: 50641
-  clientId: 9000401
-  clientVersion: 1.0
-
----
-spring:
-  profiles: prod_fzzy
-service-gateway:
-  url: http://service.yihu.com:8080/WSGW/rest
-  handlerId: 50641
-  clientId: 9000401
-  clientVersion: 1.0
-
----
-spring:
-  profiles: prod_srformal
-service-gateway:
-  url: http://service.yihu.com:8080/WSGW/rest
-  handlerId: 50641
-  clientId: 9000401
-  clientVersion: 1.0
+zuul:
+  routes:
+    fastdfs-server:
+      path: /file/**
+      url: http://172.19.103.52:80/

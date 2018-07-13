@@ -1,3 +1,9 @@
+info:
+  app:
+    name: JsonPackageService
+    description: EHR platform package service.
+    version: 1.2.0
+
 spring:
   http:
     multipart:
@@ -23,6 +29,24 @@ spring:
     validation-query: SELECT 1
     test-on-borrow: true
 
+fast-dfs:
+  connect-timeout: 20
+  network-timeout: 60
+  charset: ISO8859-1
+  pool:
+    init-size: 15
+    max-size: 30
+    wait-time: 500
+  http:
+    tracker-http-port: 80
+    anti-steal-token: no
+    secret-key: FastDFS1234567890
+
+elasticsearch:
+  pool:
+    init-size: 10
+    max-size: 30
+
 eip:
   tenant: jkzl
 
@@ -31,8 +55,8 @@ spring:
   profiles: dev
   datasource:
     url: jdbc:mysql://172.19.103.50:3306/healtharchive?useUnicode=true&characterEncoding=UTF-8&useSSL=false
-    username: weifuwu
-    password: weifuwu
+    username: chenweishan
+    password: chenweishan
   redis:
     host: 172.19.103.47
     port: 6379
@@ -46,11 +70,11 @@ elasticsearch:
 
 ---
 spring:
-  profiles: test
+  profiles: prod
   datasource:
     url: jdbc:mysql://172.19.103.50:3306/healtharchive?useUnicode=true&characterEncoding=UTF-8&useSSL=false
-    username: weifuwu
-    password: weifuwu
+    username: chenweishan
+    password: chenweishan
   redis:
     host: 172.19.103.47
     port: 6379
@@ -61,75 +85,3 @@ fast-dfs:
 elasticsearch:
   cluster-name: elasticsearch
   cluster-nodes: 172.19.103.9:9300
-
----
-spring:
-  profiles: prod_fz
-  datasource:
-    url: jdbc:mysql://11.1.2.5:3306/healtharchive?useUnicode=true&characterEncoding=UTF-8&useSSL=false
-    username: healthcloud
-    password: GP8Qz4qU
-  redis:
-    host: 11.1.2.22
-    port: 6390
-    password: Kb6wKDQP1W4
-fast-dfs:
-  tracker-server: 11.1.2.9:22122
-  public-server: http://11.1.2.9:80
-elasticsearch:
-  cluster-name: elasticsearch
-  cluster-nodes: 11.1.2.7:9300
-
----
-spring:
-  profiles: prod_sr
-  datasource:
-    url: jdbc:mysql://10.176.97.9:3310/healtharchive?useUnicode=true&characterEncoding=UTF-8&useSSL=false
-    username: healthcloud
-    password: GP8Qz4qU
-  redis:
-    host: 10.176.97.5
-    port: 6390
-    password: q4YaQemf
-fast-dfs:
-  tracker-server: 10.176.97.5:22122
-  public-server: http://10.176.97.5:8888
-elasticsearch:
-  cluster-name: elasticsearch
-  cluster-nodes: 10.176.97.7:9300
-
----
-spring:
-  profiles: prod_fzzy
-  datasource:
-    url: jdbc:mysql://100.100.1.159:3310/healtharchive?useUnicode=true&characterEncoding=UTF-8&useSSL=false
-    username: healthcloud
-    password: GP8Qz4qU
-  redis:
-    host: 100.100.1.161
-    port: 6390
-    password: q4YaQemf
-fast-dfs:
-  tracker-server: 100.100.1.157:22122
-  public-server: http://100.100.1.157:8888
-elasticsearch:
-  cluster-name: elasticsearch
-  cluster-nodes: 100.100.1.158:9300
-
----
-spring:
-  profiles: prod_srformal
-  datasource:
-    url: jdbc:mysql://192.168.210.3:3310/healtharchive?useUnicode=true&characterEncoding=UTF-8&useSSL=false
-    username: healthcloud
-    password: GP8Qz4qU
-  redis:
-    host: 192.168.50.82
-    port: 6379
-    password: q4YaQemf
-fast-dfs:
-  tracker-server: 192.168.50.116:22122,192.168.50.119:22122
-  public-server: http://192.168.220.66:23000
-elasticsearch:
-  cluster-name: elasticsearch
-  cluster-nodes: 172.10.10.5:9300
