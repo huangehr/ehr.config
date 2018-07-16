@@ -1,3 +1,9 @@
+info:
+  app:
+    name: SVR-PACK-ANALYZER
+    description: EHR Platform Microservice.
+    version: 1.0.0
+
 spring:
   datasource:
     driver-class-name: com.mysql.jdbc.Driver

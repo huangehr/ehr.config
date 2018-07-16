@@ -1,7 +1,7 @@
 info:
   app:
-    name: ResourceServiceApp
-    description: Resource service.
+    name: SVR-RESOURCE
+    description: EHR Platform Microservice.
     version: 1.0.0
 
 spring:
@@ -49,6 +49,7 @@ elasticsearch:
 
 eip:
   tenant: jkzl
+
 h5:
   clientId: WYo0l73F8e
 
