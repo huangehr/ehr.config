@@ -97,7 +97,7 @@ hzy:
 
 ---
 spring:
-  profiles: prod_sr
+  profiles: prod
   activemq:
     broker-url: tcp://192.168.200.60:61616
     user: admin
@@ -137,92 +137,5 @@ hos:
   https:
     enable: false
 
----
-spring:
-  profiles: prod_fz
-  activemq:
-    broker-url: tcp://11.1.2.8:61616
-    user: admin
-    password: admin
-  data:
-    mongodb:
-      host: 11.1.2.3
-      port: 20000
-      username: jkzlesb
-      password: fgu$^ezl
-      authenticationDatabase: admin
-      database: log
-      gridFsDatabase: dfs
-log:
-  path: /usr/local/esb/logs/hos-broker
-  level: info
-hos:
-  filesystem:
-    url: http://11.1.2.13:9010/dfs/file
-  arbiter:
-    enable: true
-    url: http://11.1.2.13:10135
-  rest:
-    url: http://11.1.2.13:8088
-  timer:
-      period: 10000
-  tenant:
-    name: jkzl
-  mycat:
-    path: /usr/local/mycat/   ##mycat的安装目录
-  #jcraft shell操作
-  jcraft:
-    host: 10.176.97.14
-    port: 22
-    user: root
-    password: ceshi
-  https:
-    enable: false
-
----
-spring:
-  profiles: prod_fzzy
-  activemq:
-    broker-url: tcp://100.100.1.153:61616
-    user: admin
-    password: admin
-  data:
-    mongodb:
-      host: 100.100.1.157
-      port: 29000
-      username: jkzlesb
-      password: fgu$^ezl
-      authenticationDatabase: admin
-      database: log
-      gridFsDatabase: dfs
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://100.100.1.162:8761/eureka/
-log:
-  path: /usr/local/esb/logs/hos-broker
-  level: info
-hos:
-  filesystem:
-    url: http://100.100.1.165:9010/dfs/file
-  arbiter:
-    enable: true
-    url: http://100.100.1.165:10135
-  rest:
-    url: http://100.100.1.165:8088
-  timer:
-      period: 10000
-  tenant:
-    name: jkzl
-  mycat:
-    path: /usr/local/mycat/   ##mycat的安装目录
-  #jcraft shell操作
-  jcraft:
-    host: 100.100.1.165
-    port: 22
-    user: root
-    password: ceshi
-  https:
-    enable: false
 
 

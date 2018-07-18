@@ -1,0 +1,54 @@
+server:
+  port: 9010
+
+---
+spring:
+  profiles: dev
+  data:
+    mongodb:
+      host: 172.19.103.57
+      port: 27017
+      username: esb
+      password: esb
+      authenticationDatabase: admin
+      gridFsDatabase: dfs
+      database: runtime
+hos:
+  zbus:
+    port: 9020
+    store: ./store
+
+---
+spring:
+  profiles: test
+  data:
+    mongodb:
+      host: 172.19.103.57
+      port: 27017
+      username: esb
+      password: esb
+      authenticationDatabase: admin
+      gridFsDatabase: dfs
+      database: runtime
+hos:
+  zbus:
+    port: 9020
+    store: ./store
+
+
+---
+spring:
+  profiles: prod
+  data:
+    mongodb:
+      host: 192.168.50.26
+      port: 20000
+      username: jkzlesb
+      password: fgu$^ezl
+      authenticationDatabase: admin
+      gridFsDatabase: dfs
+      database: runtime
+hos:
+  zbus:
+    port: 9020
+    store: ./store
