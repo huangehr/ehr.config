@@ -70,6 +70,9 @@ fast-dfs:
   public-server: http://172.19.103.52:80
 std:
   version: 59083976eebd
+elasticsearch:
+  jest:
+    uris: http://172.19.103.9:9200
 
 ---
 spring:
