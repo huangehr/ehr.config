@@ -1,7 +1,4 @@
 #log level
-s:
-  s1: 1
-
 logging:
   level:
     org:
