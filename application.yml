@@ -70,7 +70,7 @@ svr-redis-memory.server.port: 10311
 svr-resource.server.port: 10220
 svr-standard.server.port: 10040
 svr-authentication.server.port: 10260
-svr-data-analyze.server.port: 10350
+svr-manager.server.port: 8762
 
 #Application acuator
 endpoints:
