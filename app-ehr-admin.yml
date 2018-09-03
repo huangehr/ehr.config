@@ -49,7 +49,7 @@ app:
   resourceBrowseClientId: W8RDizgDIB
   browseClientId: uzs5G0HgTp
   oauth2InnerUrl: http://172.19.103.70:1235/gateway/authentication/
-  oauth2OuterUrl: http://27.154.233.186:10260/  #厦门-认证外网
+  oauth2OuterUrl: http://27.154.233.186:1235/gateway/authentication/  #厦门-认证外网
 service-gateway:
   username: user
   password: eureka
