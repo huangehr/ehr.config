@@ -1,3 +1,9 @@
+info:
+  app:
+    name: SVR-HEALTH-PROFILE
+    description: EHR Platform Microservice.
+    version: 1.0.0
+
 spring:
   # REDIS
   redis:
@@ -34,12 +40,6 @@ fast-dfs:
     anti-steal-token: no
     secret-key: FastDFS1234567890
 
-# 就诊事件与CDA文档类型关联
-cda-document-type-options:
-  event-type:
-    - "0": 0dae00065684c9920dc35654490aa9ac   # 门诊
-    - "1": 0dae00065684cb220dc35654490aa9ae   # 住院
-
 eip:
   tenant: jkzl
 
@@ -48,8 +48,8 @@ spring:
   profiles: dev
   datasource:
     url: jdbc:mysql://172.19.103.50:3306/healtharchive?useUnicode=true&characterEncoding=UTF-8&useSSL=false
-    username: weifuwu
-    password: weifuwu
+    username: chenweishan
+    password: chenweishan
   redis:
     host: 172.19.103.47
     port: 6379
@@ -60,11 +60,11 @@ fast-dfs:
 
 ---
 spring:
-  profiles: test
+  profiles: prod
   datasource:
     url: jdbc:mysql://172.19.103.50:3306/healtharchive?useUnicode=true&characterEncoding=UTF-8&useSSL=false
-    username: weifuwu
-    password: weifuwu
+    username: chenweishan
+    password: chenweishan
   redis:
     host: 172.19.103.47
     port: 6379
@@ -72,63 +72,3 @@ spring:
 fast-dfs:
   tracker-server: 172.19.103.13:22122
   public-server: http://172.19.103.52:80
-
----
-spring:
-  profiles: prod_fz
-  datasource:
-    url: jdbc:mysql://11.1.2.5:3306/healtharchive?useUnicode=true&characterEncoding=UTF-8&useSSL=false
-    username: healthcloud
-    password: GP8Qz4qU
-  redis:
-    host: 11.1.2.22
-    port: 6390
-    password: Kb6wKDQP1W4
-fast-dfs:
-  tracker-server: 11.1.2.9:22122
-  public-server: http://11.1.2.9:80
-
----
-spring:
-  profiles: prod_sr
-  datasource:
-    url: jdbc:mysql://10.176.97.9:3310/healtharchive?useUnicode=true&characterEncoding=UTF-8&useSSL=false
-    username: healthcloud
-    password: GP8Qz4qU
-  redis:
-    host: 10.176.97.5
-    port: 6390
-    password: q4YaQemf
-fast-dfs:
-  tracker-server: 10.176.97.5:22122
-  public-server: http://10.176.97.5:8888
-
----
-spring:
-  profiles: prod_fzzy
-  datasource:
-    url: jdbc:mysql://100.100.1.159:3310/healtharchive?useUnicode=true&characterEncoding=UTF-8&useSSL=false
-    username: healthcloud
-    password: GP8Qz4qU
-  redis:
-    host: 100.100.1.161
-    port: 6390
-    password: q4YaQemf
-fast-dfs:
-  tracker-server: 100.100.1.157:22122
-  public-server: http://100.100.1.157:8888
-
----
-spring:
-  profiles: prod_srformal
-  datasource:
-    url: jdbc:mysql://192.168.210.3:3310/healtharchive?useUnicode=true&characterEncoding=UTF-8&useSSL=false
-    username: healthcloud
-    password: GP8Qz4qU
-  redis:
-    host: 192.168.50.82
-    port: 6379
-    password: q4YaQemf
-fast-dfs:
-  tracker-server: 192.168.50.116:22122,192.168.50.119:22122
-  public-server: http://192.168.220.62:23000
